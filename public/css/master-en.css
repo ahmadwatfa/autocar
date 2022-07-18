@@ -1,4 +1,5 @@
 /* Global CSS */
+
 * {
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
@@ -7,8 +8,6 @@
 body {
     padding-top: 7.524em;
 }
-
-
 
 .linear {
     margin: 0 0 18px;
@@ -134,7 +133,6 @@ body {
 
 .navbar-dark .dropdown-item {
     color: #f5f5f5;
-
 }
 
 .navbar-light .dropdown-item {
@@ -187,8 +185,6 @@ body {
     z-index: 10;
 }
 
-
-
 .navbar-dark .navbar-spical,
 .navbar-dark .dropdown-menu {
     background-color: #0f141e;
@@ -200,7 +196,6 @@ body {
     background-color: #fff;
     text-align: right;
 }
-
 
 .user-header {
     color: #fff;
@@ -257,11 +252,9 @@ body {
         width: 85px !important;
         height: 50px !important;
     }
-
     .quick-access {
         display: flex;
     }
-
     .quick-access .item-quick {
         background-color: #ee240e;
         width: 100%;
@@ -269,32 +262,36 @@ body {
         margin: 0 3px;
         height: 40px;
     }
-
     .quick-access a,
     .quick-access-light a {
         text-decoration: none;
     }
-
     .quick-access div {
         padding: 10px;
         width: 20%;
         flex: 1;
         text-align: center;
     }
-
     /* .quick-access-light div h3 {
         color: #e8e8e8 !important;
     } */
-
     .quick-access div img {
         width: 60%;
     }
-
     .quick-access div h3 {
         color: #e8e8e8;
         padding-top: 0px;
         font-size: 16px;
         text-decoration: none;
+    }
+    .showrooms .showroom-slid {
+        margin: 0 !important;
+    }
+    .showrooms {
+        margin: 50px 10px !important;
+    }
+    .showrooms .showroom-owner {
+        margin: 50px 0 !important;
     }
 }
 
@@ -447,7 +444,9 @@ body {
     margin: 0;
 }
 
+
 /* Firefox */
+
 .search-body .search-form .search-input input[type=number] {
     -moz-appearance: textfield;
 }
@@ -525,42 +524,37 @@ body {
         height: 35em;
         margin-top: 2em;
     }
-
     .info-slide,
     .search-filed {
         width: 100%;
         padding: 0 10px;
         text-align: center;
     }
-
     .search-filed {
         margin-top: 15px;
     }
-
     .image-slide {
         display: none;
     }
-
     .info-slide,
     .search-filed {
         align-items: center;
     }
-
     .browse {
         margin: 0 !important;
     }
-
     .head-slide h1 {
         display: none;
     }
-
     .head-text h2 {
         display: none;
         text-align: center;
     }
 }
 
+
 /* New new-featured */
+
 .new-featured {
     background-color: #cecece;
     height: 300px;
@@ -636,7 +630,6 @@ body {
     border-right: 1px solid #ccc;
 }
 
-
 .page-header1 {
     background-color: #F1F1F1;
     display: block;
@@ -671,6 +664,8 @@ body {
 
 
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Header */
 
 .title-h {
@@ -792,48 +787,37 @@ body {
     .header .search form {
         width: 100%;
     }
-
     .header .slid .intro {
         width: 100%;
     }
-
     .header .search form input {
         width: 55%;
         font-size: 12px;
     }
-
     .header .search form span {
         margin-right: 25px;
     }
-
     .header .search form span {
         font-size: 20px;
     }
-
     .header .slid .intro h5 {
         font-size: 18px;
     }
-
     .header .slid .intro p {
         font-size: 18px;
     }
-
     .header .slid .intro .btn {
         padding: 15px;
     }
-
     .header .search form button {
         height: 50px;
     }
-
     .header .slid {
         padding-top: 0px;
     }
-
     .header .slid .search {
         margin-top: 140px;
     }
-
     .header .slid img {
         display: none;
     }
@@ -844,32 +828,31 @@ body {
         width: 100%;
         margin-bottom: 85px;
     }
-
     .header .slid img {
         display: none;
     }
-
     .header .search form {
         width: 100%;
         margin-top: 10px;
     }
-
     .header .search form input {
         width: 60%;
         font-size: 18px;
     }
-
     .header .search form span {
         margin-right: 25px;
     }
-
     .header .search form button {
         font-size: 15px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Sell & Buy */
+
 .sell-buy {
     display: block;
     text-align: center;
@@ -923,8 +906,12 @@ body {
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Browse */
+
 .browse {
     display: block;
     text-align: center;
@@ -997,22 +984,23 @@ body {
         grid-template-rows: repeat(2, 1fr);
         gap: 20px;
     }
-
     .browse .categories .category {
         height: 110px;
     }
-
     .browse .categories .category span {
         font-size: 60px;
     }
-
     .browse .categories .category b {
         font-size: 18px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Featured Ads */
+
 .featured-ads {
     display: flex;
     flex-wrap: nowrap;
@@ -1116,23 +1104,24 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-
     .featured-ads .advert .image {
         height: 240px;
     }
-
     .featured-ads .advert .image img {
         width: 99%;
         height: 99%;
     }
-
     .featured-ads .head {
         height: 63px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Featured Ads Filter */
+
 .featured-ads-filter {
     display: flex;
     flex-wrap: nowrap;
@@ -1223,30 +1212,30 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-
     .featured-ads-filter .advert .image {
         height: 240px;
     }
-
     .featured-ads-filter .advert .image img {
         width: 99%;
         height: 99%;
     }
-
     .featured-ads-filter select {
         width: 200px;
         height: 45px;
         margin-bottom: 18px;
         font-size: 18px;
     }
-
     .featured-ads-filter .head {
         height: 63px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Testimonial */
+
 .testimonial {
     display: block;
     text-align: center;
@@ -1326,7 +1315,10 @@ body {
 
 
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Footer */
+
 .footer {
     display: block;
     margin-top: 50px;
@@ -1395,55 +1387,50 @@ body {
 }
 
 @media screen and (min-width: 766px) and (max-width: 1080px) {
-
     .footer .website-info .contact span,
     .links li {
         font-size: 10px;
     }
-
     .contact h5,
     .links h5 {
         margin-bottom: 1rem;
     }
-
     .contact p {
         font-size: 12px;
     }
-
     .footer .website-info .about p {
         font-size: 12px;
     }
 }
 
 @media screen and (max-width: 765px) {
-
     .footer .website-info .contact span,
     .links li {
         font-size: 12px;
     }
-
     .contact h5,
     .links h5 {
         margin-bottom: 1rem;
         font-size: 17px;
     }
-
     .footer .website-info .about p {
         margin-bottom: 30px;
         font-size: 13px;
     }
-
     .contact p {
         font-size: 12px;
     }
-
     .copyright p {
         font-size: 12px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Whatsapp */
+
 .whatsapp {
     display: block;
     width: 65px;
@@ -1464,8 +1451,12 @@ body {
     height: 64px;
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Search Box */
+
 .search-box {
     display: block;
     position: relative;
@@ -1572,8 +1563,12 @@ body {
     font-weight: bold;
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* About */
+
 .about-content {
     display: block;
     height: auto;
@@ -1616,7 +1611,6 @@ body {
         padding: 20px 20px 100px;
         height: auto;
     }
-
     .about-content img {
         width: 90%;
         left: 40px;
@@ -1630,7 +1624,6 @@ body {
         padding: 20px 20px 150px;
         height: auto;
     }
-
     .about-content img {
         width: 90%;
         left: 69px;
@@ -1638,8 +1631,12 @@ body {
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Privacy Policy */
+
 .policy-content {
     display: block;
     height: auto;
@@ -1678,7 +1675,6 @@ body {
         padding: 20px 20px 100px;
         height: auto;
     }
-
     .policy-content img {
         width: 90%;
         left: 40px;
@@ -1692,7 +1688,6 @@ body {
         padding: 20px 20px 150px;
         height: auto;
     }
-
     .policy-content img {
         width: 90%;
         left: 69px;
@@ -1700,8 +1695,12 @@ body {
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Common Questions */
+
 .common-questions-content {
     display: block;
     height: auto;
@@ -1751,22 +1750,23 @@ body {
         left: 40px;
         bottom: 5px;
     }
-
     .common-questions-content .container {
         padding: 20px 20px 85px;
     }
-
     .common-questions-content #accordion .card .card-header h5 button {
         font-size: 20px;
     }
-
     .common-questions-content #accordion .card .card-body {
         font-size: 20px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Add Car Info */
+
 .add-car-info {
     display: block;
     margin: 50px 0;
@@ -1959,7 +1959,6 @@ textarea,
 }
 
 @media screen and (max-width: 765px) {
-
     .add-car-info .steps .step1,
     .add-car-info .steps .step2,
     .add-car-info .steps .step3,
@@ -1967,7 +1966,6 @@ textarea,
     .add-car-info .steps .step5 {
         width: 19.2%;
     }
-
     .add-car-info .steps,
     .add-car-info h5 {
         padding-left: 10px;
@@ -1975,7 +1973,6 @@ textarea,
 }
 
 @media screen and (min-width: 766px) and (max-width: 1080px) {
-
     .add-car-info .steps .step1,
     .add-car-info .steps .step2,
     .add-car-info .steps .step3,
@@ -1985,8 +1982,12 @@ textarea,
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Showrooms */
+
 .showrooms {
     display: block;
     margin: 50px;
@@ -2137,72 +2138,63 @@ textarea,
         flex-direction: column;
         height: auto;
     }
-
     .showrooms .showroom-head h5 {
         text-align: center;
     }
-
     .showrooms .showroom-head form {
         width: 100%;
     }
-
 }
 
 @media screen and (max-width: 765px) {
-
     .showroom .showroom-head,
     h5 {
         width: 100%;
         text-align: center;
         font-size: 0.8rem;
     }
-
     .showrooms .showroom-owner .contact-us {
         width: 100%;
         height: 100px;
     }
-
     .input-group {
         width: 100%;
     }
-
     .showrooms .showroom-owner .contact-us button {
         width: fit-content;
         font-size: 14px;
         padding: 6px 4px;
     }
-
     .showrooms .showroom-head h5 {
         font-size: 17px;
     }
-
     .showrooms .showroom-slid {
         margin: 80px 0 50px;
     }
-
     .showrooms .showroom-head form input[type="text"] {
         width: 75%;
         height: 50px;
         font-size: 14px;
     }
-
     .showrooms .showroom-head .input-group-append {
         width: 25%;
     }
-
     .showrooms .showroom-head form .input-group>.input-group-append>.btn {
         height: 50px;
         font-size: 16px;
     }
-
     .showrooms .showroom-slid .paginate {
         position: relative;
         right: 20px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Showroom */
+
 .showroom {
     display: block;
     margin: 50px 0;
@@ -2364,25 +2356,20 @@ textarea,
 }
 
 @media screen and (min-width: 766px) and (max-width: 1080px) {
-
     .showroom .container,
     .container-md,
     .container-sm {
         max-width: 97%;
     }
-
     .showroom .offset-md-1 {
         display: none;
     }
-
     .showroom .showroom-info {
         padding: 0px;
     }
-
     .showroom .showroom-cars {
         padding: 0px;
     }
-
     .whatsapp {
         z-index: 1000;
     }
@@ -2392,34 +2379,33 @@ textarea,
     .showroom .showroom-info .ads {
         height: auto;
     }
-
     .showroom .showroom-info .ads img {
         width: 140%;
         height: auto;
     }
-
     .showroom .showroom-info,
     .showroom .showroom-cars {
         padding: 0px;
     }
-
     .showroom .showroom-cars .cars-space .cars .advert {
         margin: 10px auto;
         float: inherit;
     }
-
     .whatsapp {
         z-index: 1000;
     }
-
     .whatsapp a img {
         width: 48px;
         height: 48px;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Categories */
+
 .categories {
     display: block;
     margin: 50px 0;
@@ -2580,7 +2566,6 @@ textarea,
     margin: 2px;
 }
 
-
 @media screen and (min-width: 766px) and (max-width: 1080px) {
     .categories .categories-menu .nav li {
         padding: 0px;
@@ -2591,13 +2576,11 @@ textarea,
     .categories .categories-menu .nav li {
         padding: 0px;
     }
-
     .categories .nav {
         align-items: flex-start;
         flex-direction: column;
         padding-left: 0px;
     }
-
     .categories .categories-cars .select-category {
         width: 100%;
         height: 50px;
@@ -2608,14 +2591,17 @@ textarea,
         margin-left: 0px;
         margin-bottom: 10px;
     }
-
     .categories .categories-cars .cars-space .cars .advert {
         float: inherit;
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Favorite Ads */
+
 .favorite-ads {
     display: block;
     margin: 50px 0;
@@ -2785,11 +2771,9 @@ textarea,
         flex-direction: column;
         height: auto;
     }
-
     .favorite-ads .favorite-ads-cars .advert .un-favorite button {
         position: unset;
     }
-
     .favorite-ads .favorite-ads-cars .advert .un-favorite {
         /* margin-left: 10px; */
         height: auto;
@@ -2797,8 +2781,12 @@ textarea,
     }
 }
 
+
 /*/////////////////////////////////////////////////////////////*/
+
+
 /* Ads */
+
 .ads {
     display: block;
     margin: 50px 0;
@@ -2954,7 +2942,6 @@ textarea,
     height: 40px;
 }
 
-
 .ads .ads-space .ads-car-specifications .specifications strong {
     width: 100%;
     text-align: center;
@@ -3065,7 +3052,6 @@ textarea,
     -o-border-radius: 5px;
 }
 
-
 .ads .ads-info .price span a {
     color: #fff;
     text-decoration: none;
@@ -3115,60 +3101,47 @@ textarea,
     height: 46px;
 }
 
-
 @media screen and (max-width: 1080px) {
     .ads .ads-space .space-head {
         flex-direction: column;
     }
-
     .ads .ads-space .space-head h5 {
         font-size: 18px;
         margin-bottom: 15px;
     }
-
     .ads .ads-space .ads-main-image img {
         height: auto;
     }
-
     .ads .ads-space .ads-images img {
         width: 22%;
         height: auto;
     }
-
     .btn {
         font-size: 16px;
     }
-
     .ads .ads-info .price span {
         font-size: 15px;
     }
-
     .ads .ads-info .seller-phone {
         flex-direction: column-reverse;
     }
-
     .ads .ads-info .seller-phone .whatsapp {
         justify-content: center;
     }
-
     div.ads .ads-info .seller {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     .ads .ads-info .seller div.info {
         text-align: center;
     }
-
     .ads .ads-info .seller div.info {
         font-size: 12px;
     }
-
     .ads .ads-space .ads-car-specifications .specifications>div {
         width: 46%;
     }
-
     .ads .ads-space .ads-car-specifications .head,
     .ads .ads-space .ads-car-details .head,
     .ads .ads-space .ads-car-description .head,
@@ -3176,11 +3149,9 @@ textarea,
     .ads .ads-space .ads-car-location .head {
         justify-content: space-between;
     }
-
     /* .ads .head span {
         display: none;
     } */
-
     .ads div.similar-cars h5,
     .ads .ads-space .ads-car-specifications .head h5,
     .ads .ads-space .ads-car-details .head h5,
@@ -3189,23 +3160,19 @@ textarea,
     .ads .ads-space .ads-car-location .head h5 {
         font-size: 18px;
     }
-
     .ads div.similar-cars .advert .image {
         width: 100%;
         display: flex;
         justify-content: center;
         height: auto;
     }
-
     .ads div.similar-cars .advert .image img {
         width: 60%;
         height: auto;
     }
-
     .ads .ads-space .ads-car-details .details {
         flex-direction: column;
     }
-
     .ads .ads-space .ads-car-details .details>div {
         width: 100%;
     }
@@ -3213,6 +3180,7 @@ textarea,
 
 
 /*//////////////////////////////////////////////*/
+
 .ads .similar-cars {
     display: block;
     margin: 150px 0;
@@ -3306,6 +3274,7 @@ textarea,
     }
 }
 
+
 /*//////////////////////////////////////////////*/
 
 .ads .ads-info .seller {
@@ -3385,15 +3354,18 @@ textarea,
 
 
 /* Dashboard User */
+
 .feather {
     width: 16px;
     height: 16px;
     vertical-align: text-bottom;
 }
 
+
 /*
    * Sidebar
    */
+
 
 /* .sidebar {
     position: fixed;
@@ -3406,6 +3378,7 @@ textarea,
     Height of navbar
     box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
 } */
+
 #carouselExampleIndicators,
 #carouselExampleIndicators_car,
 #carouselExampleIndicators-show {
@@ -3424,42 +3397,33 @@ textarea,
 }
 
 @media (max-width: 767.98px) {
-
     #show-adds,
     #section_add,
     #cars-show {
         display: none;
     }
-
     #carouselExampleIndicators,
     #carouselExampleIndicators_car {
         display: block;
     }
-
     #carouselExampleIndicators-show {
         display: flex;
     }
-
     #carouselExampleIndicators-show .carousel-item.active {
         display: flex;
     }
-
     #carouselExampleIndicators-show .carousel-indicators {
         padding: 0;
     }
-
     .navHeight {
         height: 100vh;
     }
-
     .h-85 {
         height: 85%;
     }
-
     .none {
         display: none;
     }
-
     .sidebar {
         top: 5rem;
     }
@@ -3499,9 +3463,12 @@ textarea,
     text-transform: uppercase;
 }
 
+
 /*
    * Navbar
    */
+
+
 /*
 .navbar-brand1 {
     padding-top: .75rem;
@@ -3547,13 +3514,13 @@ textarea,
     margin-right: 4px !important;
 }
 
+
 /* Pagination */
 
 .pagination .active span {
     color: #fff !important;
     background-color: #ee3926 !important;
 }
-
 
 .featured-listing {
     margin-bottom: 20px;
@@ -3657,28 +3624,29 @@ textarea,
 }
 
 @media screen and (max-width: 820px) {
-
     .master-ad,
     .sub-ad {
         margin-bottom: 15px;
     }
-
     .sub-ad,
     .master-ad,
     .master-ad .image-cover,
     .sub-ad .image-cover {
         height: auto !important;
     }
-
     .sub-ad .ad-info p {
         font-size: 12px;
     }
-
     .sub-ad .ad-info h5 {
         font-size: 14px;
     }
-
     .margin-bo {
         margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1080.98px) {
+    .showrooms .showroom-head h5 {
+        top: 0;
     }
 }

@@ -46,14 +46,14 @@
 @include('components.main-site')
 <div class="sell-buy">
     <div class="container">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-6 col-sm-12">
                 <a href="#" class="btn first">اشتري سيارتك الآن</a>
             </div>
             <div class="col-md-6 col-sm-12">
                 <a href="#" class="btn second">بيع سيارتك الآن</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 {{-- @include('components.new-featured') --}}

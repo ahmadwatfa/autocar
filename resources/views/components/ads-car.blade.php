@@ -19,6 +19,12 @@
                     <div class="title">
                         <h6>{{ $ad->title }}</h6>
                     </div>
+                    <div class="title">
+                        <h6>{{ $ad->title }}</h6>
+                    </div>
+                    <div class="title">
+                        <h6>{{ $ad->title }}</h6>
+                    </div>
                     <div class="price">
                         <b>{{ $ad->price == 0 ? "" : ($ad->price . ' ' . __('messages.aed')) }}</b>
                     </div>

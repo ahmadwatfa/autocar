@@ -107,7 +107,8 @@ class AppServiceProvider extends ServiceProvider
             $data = array(
                 'ads' => $ads_car,
                 'car' => $car,
-                'media' => $media
+                'media' => $media,
+                // 'carModel' => $carModel,
             );
             $view->with($data);
         });
