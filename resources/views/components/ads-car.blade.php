@@ -20,7 +20,7 @@
                         <h6>{{ $ad->title }}</h6>
                     </div>
                     <div class="title">
-                        <h6>{{ $ad->title }}</h6>
+                        <h6>{{ $ad->title}}</h6>
                     </div>
                     <div class="title">
                         <h6>{{ $ad->title }}</h6>
