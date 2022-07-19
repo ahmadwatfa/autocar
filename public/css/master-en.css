@@ -3427,6 +3427,9 @@ textarea,
     .sidebar {
         top: 5rem;
     }
+    body {
+        padding-top: 4.524em;
+    }
 }
 
 .sidebar-sticky {
@@ -3648,5 +3651,45 @@ textarea,
 @media (max-width: 1080.98px) {
     .showrooms .showroom-head h5 {
         top: 0;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .quick-access {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #ee240e;
+        margin: 0 -16px;
+    }
+    .header-fixed {
+        height: 80px !important;
+    }
+    body {
+        padding-top: 0.524em;
+    }
+}
+
+
+/* .navbar-dark .navbar-brand {
+    width: 50%;
+} */
+
+@media screen and (max-width: 575.98px) {
+    .quick-access {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #ee240e;
+        margin: 0 -16px;
+    }
+    .header-fixed {
+        height: 80px !important;
+    }
+    body {
+        padding-top: 0.524em;
+    }
+    .navbar-dark .navbar-brand {
+        width: 50%;
     }
 }
