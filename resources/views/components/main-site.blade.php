@@ -17,7 +17,7 @@
                     <form action="{{ route('search.adsCar') }}" method="post">
                         @csrf
                         <div class="search-head">
-                            <div class="search-radio">
+                            {{-- <div class="search-radio">
                                 <input type="radio" id="all">
                                 <label for="all">{{ __('messages.all') }} </label>
                             </div>
@@ -28,7 +28,7 @@
                             <div class="search-radio">
                                 <input type="radio" id="used">
                                 <label for="used">{{ __('messages.used') }}</label>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="search-body">
                             <div class="search-form">

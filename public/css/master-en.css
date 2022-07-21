@@ -155,7 +155,7 @@ body {
 }
 
 .header-fixed {
-    height: 165px !important;
+    height: 90px !important;
     position: fixed;
     z-index: 999;
     background: #fff;
@@ -2604,7 +2604,7 @@ textarea,
 
 .favorite-ads {
     display: block;
-    margin: 50px 0;
+    margin: 160px 0;
 }
 
 .favorite-ads .head h5 {
