@@ -188,7 +188,6 @@ class AdsCarController extends Controller
         $carModel = ComModel::where('id', $adsCar->carModel_id)->first();
 
         $locale = LaravelLocalization::getCurrentLocale();
-        // dd($locale);
 
         if ($locale == 'ar') {
             $car['modelName'] = $carModel->name_ar;
@@ -384,7 +383,7 @@ class AdsCarController extends Controller
     }
 
     public function search_more(Request $request) {
-       
+
         $ads = AdsCar::where('carComany_id', $request->carComany_id)->orWhere('country_id' , $request->country_id)->orWhereBetween('price', [$request->price_from, $request->price_to])->orWhereBetween('mileage', [$request->milage_from, $request->milage_to])->orWhereBetween('year', [$request->year_from, $request->year_to])->paginate(15);
 
 

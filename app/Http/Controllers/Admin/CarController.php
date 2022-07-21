@@ -23,7 +23,7 @@ class CarController extends Controller
     public function index()
     {
         $ads = AdsCar::all();
-        dd($ads);
+        // dd($ads);
         if ($ads) {
             $car = [];
             foreach ($ads as $ad) {
