@@ -19,7 +19,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('Admin-Dashboard.pages.home');
+        return view('admin-dashboard.pages.home');
     }
 
     /**

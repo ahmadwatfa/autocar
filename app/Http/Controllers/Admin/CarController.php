@@ -35,7 +35,7 @@ class CarController extends Controller
                 $ad->city = City::where('id', $ad->city_id)->value('name_en');
             }
         }
-        return view('admin-dashboard.pages.advcar.advcar_table', [
+        return view('Admin-Dashboard.pages.advcar.advcar_table', [
             'ads' => $ads,
             'car' => $car,
         ]);
