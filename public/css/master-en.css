@@ -1130,7 +1130,8 @@ body {
 }
 
 .featured-ads-filter .head {
-    height: 50px;
+    height: 127px;
+    padding-top: 10px;
 }
 
 .featured-ads-filter select {
@@ -1146,7 +1147,7 @@ body {
     color: #212529;
     float: left;
     width: 23%;
-    height: 250px;
+    height: 340px;
     margin: 10px;
     box-shadow: 0 0 5px 1px #ccc;
     border-radius: 5px;
@@ -1179,7 +1180,7 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 90px;
 }
 
 .featured-ads-filter .advert .details>div {
