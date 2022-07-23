@@ -46,8 +46,22 @@
                                     </div>
                                 </div>
                                 <div style="display: flex">
+                                    <div class="search-input">
+                                    <label for="price">{{ __('result.mileage') }}</label>
+                                    <div class="clear"></div>
+                                    <input type="text" name="milage_from" class="form-control price-range"
+                                        id="milage" min="1" placeholder="{{ __('result.min') }}">
+                                    </div>
+                                    <div class="search-input">
+                                        <label for="price">{{ __('result.mileage') }}</label>
+                                    <input type="text" name="milage_to" class="form-control price-range"
+                                        id="milage" min="1" placeholder="{{ __('result.max') }}">
+                                    <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div style="display: flex">
                                     <div class="search-action">
-                                        <a href="{{route('searchmore.adsCar')}}">{{ __('messages.advSearch') }}</a>
+                                        <a href="{{ route('searchmore.adsCar') }}">{{ __('messages.advSearch') }}</a>
                                     </div>
                                     <div class="search-action">
                                         <button>{{ __('messages.search') }}</button>

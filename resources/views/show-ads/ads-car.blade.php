@@ -28,12 +28,12 @@
                             <span>{{ __('messages.published') }} </span>{{ $ads->created_at->diffForHumans() }}
                         </div>
                         <div class="ads-car-specifications">
-                            <div class="head">
+                            <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"><i class="fa fa-chevron-up"></i></span>
+                                    aria-controls="collapseOne"></span>
                             </div>
-                            <div class="specifications">
+                            <div class="specifications panel panel-1">
                                 <div>
                                     <span>{{ __('messages.model') }}</span>
                                     <img src="{{ asset($car['logo']) }}" alt="industry">
@@ -77,12 +77,12 @@
                             </div>
                         </div>
                         <div class="ads-car-details">
-                            <div class="head">
+                            <div class="head accordion" >
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"><i class="fa fa-chevron-up"></i></span>
+                                    aria-controls="collapseOne"></span>
                             </div>
-                            <div class="details">
+                            <div class="details panel panel-1">
                                 <div>
                                     <div>
                                         <span>{{ __('messages.status') }}</span>
@@ -110,12 +110,12 @@
                             </div>
                         </div>
                         <div class="ads-car-description">
-                            <div class="head">
+                            <div class="head accordion">
                                 <h5>{{ __('messages.description') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"><i class="fa fa-chevron-up"></i></span>
+                                    aria-controls="collapseOne"></span>
                             </div>
-                            <div class="description">
+                            <div class="panel panel-1">
                                 <p>
                                     {{ $ads->description }}
                                 </p>
@@ -123,12 +123,12 @@
                             </div>
                         </div>
                         <div class="ads-car-advantages">
-                            <div class="head">
+                            <div class="head accordion">
                                 <h5>{{ __('messages.additions') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"><i class="fa fa-chevron-up"></i></span>
+                                    aria-controls="collapseOne"></span>
                             </div>
-                            <div class="advantages">
+                            <div class="advantages panel panel-1">
                                 <span>Abs</span>
                                 <span>بلوثوت</span>
                                 <span>مصابيح الضباب</span>
@@ -143,12 +143,12 @@
                             </div>
                         </div>
                         <div class="ads-car-location">
-                            <div class="head">
+                            <div class="head accordion">
                                 <h5>{{ __('messages.address') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"><i class="fa fa-chevron-up"></i></span>
+                                    aria-controls="collapseOne"></span>
                             </div>
-                            <div class="location">
+                            <div class="location panel panel-1">
                                 <p>
                                     <span><i class="fa fa-map-marked-alt"></i></span>
                                     {{ $ads->address }}
