@@ -19,7 +19,7 @@ class CityController extends Controller
     public function index($id)
     {
         // dd($id);
-        $cities = City::where('country_id', $id)->get();
+        $cities = City::where('country_id', $id)->paginate(12);
         $country = Country::where('id', $id)->first();
         foreach($cities as $city) {
             $city->country = $country->sortname;
@@ -59,8 +59,8 @@ class CityController extends Controller
         ]);
 
         $city = City::create($input);
-
-        return redirect()->route('city.index', $input['country_id']);
+        return Redirect()->back();
+        // return redirect()->route('city.index', $input['country_id']);
     }
 
     /**

@@ -17,6 +17,7 @@
                     </div><!-- /.box-header -->
 
                     <form action="{{ route('city.update' , $city->id) }}" method="POST" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
                         <div class="box-body col-md-12">
                             <div class="col-md-12">
@@ -42,9 +43,13 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" id="name-en" name="name_en"
-                                                            placeholder="City Name English" required="">
+                                                            placeholder="City Name English" required="" value="{{$city->name_en}}">
                                                     </div>
-                                                    <input type="hidden" value="{{ $country->id }}" name="country_id">
+                                                    {{-- <div class="form-group">
+                                                        <input type="text" class="form-control" id="name-en" name="name_en"
+                                                            placeholder="City Name English" required="">
+                                                    </div> --}}
+                                                    <input type="hidden" value="{{ $city->country_id }}" name="country_id">
 
                                                 </div>
                                             </div>

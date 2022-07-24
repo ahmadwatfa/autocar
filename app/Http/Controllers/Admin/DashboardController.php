@@ -67,7 +67,6 @@ class DashboardController extends Controller
 
     public function showCity($id)
     {
-
         $cities = City::where('country_id', $id)->get();
         $country = Country::where('id', $id)->value('sortname');
         foreach($cities as $city) {
