@@ -44,7 +44,7 @@
                                                         <input type="text" class="form-control" id="name-en" name="name_en"
                                                             placeholder="City Name English" required="">
                                                     </div>
-                                                    <input type="hidden" value="{{ $country->id }}" name="country_id">
+                                                    <input type="hidden" value="{{ $city->country_id }}" name="country_id">
 
                                                 </div>
                                             </div>
