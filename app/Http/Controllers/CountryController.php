@@ -161,7 +161,7 @@ class CountryController extends Controller
             }
         } else {
             foreach ($countries as $country) {
-                $country->name = $country->sortname;
+                $country->name = $country->name_en;
             }
         }
         return response()->json($countries);
