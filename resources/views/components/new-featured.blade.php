@@ -18,6 +18,7 @@
                                         <h4>{{ $ads_spical[0]->price == 0 ? '' : $ads_spical[0]->price . ' ' . __('messages.aed') }}
                                         </h4>
                                     </div>
+                                   
                                 </a>
                             </div>
                             <div class="col-md-6">

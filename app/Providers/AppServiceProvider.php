@@ -103,12 +103,13 @@ class AppServiceProvider extends ServiceProvider
                 // $ads_normal = $ads->where('is_special', 0)->take(12);
                 // dd($ads_normal);
             }
-
+       
+           
             $data = array(
                 'ads' => $ads_car,
                 'car' => $car,
                 'media' => $media,
-                // 'carModel' => $carModel,
+                'carComapny' => $carComapny,                
             );
             $view->with($data);
         });
