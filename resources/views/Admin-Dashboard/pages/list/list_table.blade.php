@@ -9,7 +9,7 @@
         <section class="content-header">
 
             <ol class="breadcrumb">
-                <li><a href="admin"><i class="fa fa-home"></i> الرئيسية</a></li>
+                <li><a href="{{ route('Dashboard.index') }}"><i class="fa fa-home"></i> الرئيسية</a></li>
                 <li class="active">قائمة ثوابت النظام</li>
             </ol>
         </section>

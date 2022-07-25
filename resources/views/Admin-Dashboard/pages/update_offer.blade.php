@@ -3,15 +3,15 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          
+
           <ol class="breadcrumb">
-           <li><a href="<?php echo base_url()?>admin"><i class="fa fa-home"></i> الرئيسية </a></li>
+           <li><a href="{{ route('Dashboard.index') }}"><i class="fa fa-home"></i> الرئيسية </a></li>
             <li><a href="<?php echo base_url()?>admin/offer-table">قائمة العروض</a></li>
            <li class="active">اضافة عرض جديد</li>
 
 
 
-            
+
           </ol>
         </section>
 
@@ -21,14 +21,14 @@
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
-              
+
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title"> تعديل بيانات <small>العرض</small> </h3>
                   <i class="pull-left header fa fa-th"></i>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                
+
                 <form role="form" id="addOfferForm" method="post" action="<?php echo base_url()?>admin/saveupdateoffer/<?php echo $offer->ID?>"  class="form-horizontal">
                   <div class="box-body col-md-12">
                   <div class="col-md-8">
@@ -61,8 +61,8 @@
                       <div class="col-sm-9">
                         <input type="text" class="form-control" id="new_price" name="new_price" placeholder="" data-fv-field="" value="<?= $offer->NEW_PRICE?>">
                       </div>
-                    </div> 
-                      
+                    </div>
+
                   </div>
 
 
@@ -77,9 +77,9 @@
                   </div>
 
                   </div>
-             
-                  
-                 
+
+
+
               </div><!-- /.box-body -->
                   <div class="box-footer"><!-- .box-footer -->
                     <button type="submit" class="btn  btn-primary">تخزين</button>
@@ -89,7 +89,7 @@
                 <!-- form end -->
               </div><!-- /.box -->
 
-       
+
           </div>   <!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->

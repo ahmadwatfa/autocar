@@ -54,7 +54,7 @@
                 <!-- Sidebar user panel -->
                 <ul class="sidebar-menu">
                     <li class="active treeview">
-                        <a href="/admin/index">
+                        <a href="{{ route('Dashboard.index') }}">
                             <i class="fa fa-home"></i> <span>الرئيسية</span>
                         </a>
 

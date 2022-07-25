@@ -3,15 +3,15 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          
+
           <ol class="breadcrumb">
-           <li><a href="<?php echo base_url()?>admin"><i class="fa fa-home"></i> الرئيسية </a></li>
+           <li><a href="{{ route('Dashboard.index') }}"><i class="fa fa-home"></i> الرئيسية </a></li>
             <li><a href="<?php echo base_url()?>admin/product-table">قائمة المنتجات</a></li>
            <li class="active">تعديل بيانات المنتج</li>
-          
-          
-            
-            
+
+
+
+
           </ol>
         </section>
 
@@ -21,21 +21,21 @@
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
-              
+
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title"> بيانات المنتج <small>تعديل</small> </h3>
                   <i class="pull-left header fa fa-th"></i>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                
+
                 <form role="form" id="signupForm1" action="<?php echo base_url()?>admin/saveupdateproduct/<?php echo $product->ID?>" method="post" class="form-horizontal" enctype="multipart/form-data">
                   <div class="box-body col-md-12">
-                  
+
                   <div class="col-md-12">
               <!-- Custom Tabs (Pulled to the right) -->
               <div class="nav-tabs-custom">
-               
+
                 <ul class="nav nav-tabs pull-right">
                   <li class="active"><a href="#tab_1-1" data-toggle="tab">بيانات عامة</a></li>
                   <li><a href="#tab_2-2" data-toggle="tab">المواصفات الفنية </a></li>
@@ -201,7 +201,7 @@
                       <span id="btn-plus" class="btn btn-primary" style=""><i class="fa fa-plus"></i> مواصفات أخرى</span>
                     </div>
 
-                     
+
                   </div><!-- /.tab-pane -->
                   <div class="tab-pane fade" id="tab_3-2">
                     <div class="row">
@@ -221,7 +221,7 @@
 
                      </div>
 
-                     
+
                   </div><!-- /.tab-pane -->
                 </div><!-- /.tab-content -->
               </div><!-- nav-tabs-custom -->
@@ -235,7 +235,7 @@
                 <!-- form end -->
               </div><!-- /.box -->
 
-       
+
           </div>   <!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
