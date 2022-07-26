@@ -122,7 +122,7 @@
         }
 
         .active::after {
-            content: "\00276F";
+            /* content: "\00276F"; */
             transform: rotate(270deg);
         }
 

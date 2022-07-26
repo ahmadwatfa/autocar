@@ -7,11 +7,11 @@
             <h5>السيارات</h5>
             <a href="#" class="btn all-ads">عرض كافة الاعلانات</a>
         </div>
-        <select class="form-control">
+        {{-- <select class="form-control">
             <option value="" disabled selected hidden>اختر...</option>
             <option value="">سيارات جديدة</option>
             <option value="">مركبات متقدمة</option>
-        </select>
+        </select> --}}
        
         @foreach ($ads as $ad)
         

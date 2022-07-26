@@ -3557,6 +3557,7 @@ textarea,
 .sub-ad .image-cover img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -3580,7 +3581,7 @@ textarea,
 .master-ad .ad-info,
 .sub-ad .ad-info {
     width: 100%;
-    height: 100px;
+    height: 180px;
     padding: 10px 20px;
     background-color: #222732;
     color: #fff;
@@ -3616,7 +3617,7 @@ textarea,
 }
 
 .sub-ad {
-    height: 245px;
+    height: 325px;
     margin-bottom: 10px;
     background-color: #ddd;
     border-radius: 10px;

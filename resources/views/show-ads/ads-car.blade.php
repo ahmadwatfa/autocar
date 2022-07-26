@@ -31,7 +31,7 @@
                             <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"><i class="fa fa-chevron-up"></i></span>
+                                    aria-controls="collapseOne"></span>
                             </div>
                             <div class="specifications panel panel-1">
                                 <div>

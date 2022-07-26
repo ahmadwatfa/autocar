@@ -14,7 +14,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('index') }}">{{ __('messages.home') }}</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ __('messages.Categories') }}
@@ -23,7 +23,7 @@
                             <a class="dropdown-item" href="#">تصنيف 1</a>
                             <a class="dropdown-item" href="#">تصنيف 2</a>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('showroom.index')}}">{{ __('messages.CarShows') }}</a>
                     </li>
