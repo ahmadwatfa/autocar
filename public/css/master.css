@@ -244,9 +244,9 @@
                                     flex: 1;
                                     text-align: center;
                                 }
-                                .quick-access-light div h3 {
+                                /* .quick-access-light div h3 {
                                     color: #0f141e !important;
-                                }
+                                } */
                                 .quick-access div img {
                                     width: 60%;
                                 }
@@ -2970,7 +2970,7 @@
                                 justify-content: space-evenly;
                                 align-items: center;
                                 width: 100%;
-                                padding: 20px;
+                               
                             }
                             
                             .ads .ads-space .ads-car-specifications .specifications>div {
@@ -3033,7 +3033,7 @@
                                 justify-content: flex-start;
                                 align-items: center;
                                 width: 100%;
-                                padding: 20px;
+                              
                             }
                             
                             .ads .ads-space .ads-car-description .description p {
@@ -3052,7 +3052,7 @@
                                 justify-content: flex-start;
                                 align-items: center;
                                 width: 100%;
-                                padding: 20px;
+                              
                             }
                             
                             .ads .ads-space .ads-car-advantages .advantages span {
@@ -3065,7 +3065,7 @@
                             .ads .ads-space .ads-car-location .location {
                                 width: 100%;
                                 text-align: right;
-                                padding: 20px;
+                         
                             }
                             
                             .ads .ads-space .ads-car-location .location p span {
