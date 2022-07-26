@@ -27,9 +27,11 @@ class CarController extends Controller
         if ($ads) {
             $car = [];
             foreach ($ads as $ad) {
+
                 $carComapny = Company::where('id', $ad->carComany_id)->first();
                 $carModel = ComModel::where('id', $ad->carModel_id)->first();
                 $car[$ad->id]['modelName'] = $carModel->name_en;
+                // dd($car[$ad->id]['modelName']);
                 $car[$ad->id]['companyName'] = $carComapny->name_en;
                 $car[$ad->id]['year'] = $carModel->year;
                 $ad->city = City::where('id', $ad->city_id)->value('name_en');
