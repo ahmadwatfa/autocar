@@ -5,7 +5,7 @@
     <div class="container">
         <div class="title-h">
             <h5>السيارات</h5>
-            <a href="#" class="btn all-ads">عرض كافة الاعلانات</a>
+            <a href="/allAds" class="btn all-ads">عرض كافة الاعلانات</a>
         </div>
         {{-- <select class="form-control">
             <option value="" disabled selected hidden>اختر...</option>
