@@ -49,6 +49,7 @@ Route::group(
         Route::get('/', [SiteController::class, 'index'])->name('index');
         Route::get('/country/{id}', [SiteController::class, 'country'])->name('country');
         Route::get('/add-Ads', [SiteController::class, 'add_Ads'])->name('new.ads');
+        Route::get('/allAds', [SiteController::class, 'allAds']);
 
         Route::resource('ads-car', AdsCarController::class);
         Route::post('ads-car/{id}/restore', [AdsCarController::class, 'restore']);
