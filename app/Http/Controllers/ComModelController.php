@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ComModel;
 use App\Http\Requests\StoreComModelRequest;
 use App\Http\Requests\UpdateComModelRequest;
+use App\Models\ComModelYear;
 use App\Models\Company;
 use Illuminate\Http\Request;
 
@@ -48,8 +49,13 @@ class ComModelController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $city = ComModel::create($input);
+        $comModel = ComModel::create($input);
 
+        for ($request->year_from; $request->year_from <= $request->year_to ; $request->year_from++ ) {
+            $car['model_id'] = $comModel->id;
+            $car['year'] = $request->year_from;
+            $comModelYear = ComModelYear::create($car);
+        }
         return redirect()->route('brand.index', $input['company_id']);
     }
 

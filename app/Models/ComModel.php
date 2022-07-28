@@ -17,4 +17,9 @@ class ComModel extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function ComModelYear()
+    {
+        return $this->hasMany(ComModelYear::class);
+    }
 }
