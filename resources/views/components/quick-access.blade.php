@@ -7,16 +7,16 @@
     </div>
 
     <div class="item-quick">
-        <a href="#">
+        <a href="{{ route('new.ads') }}">
             {{-- <img src="{{ asset('images/quick-access/plus.png') }}" alt="Add-Ads"> --}}
             <h3>{{ __('messages.AddAdv1') }}</h3>
         </a>
     </div>
 
     <div class="item-quick">
-        <a href="#">
+        <a href="{{ route('showroom.index')}}">
             {{-- <img src="{{ asset('images/quick-access/car.png') }}" alt="Category"> --}}
-            <h3>{{ __('messages.Categories') }}</h3>
+            <h3>{{ __('messages.CarShows') }}</h3>
         </a>
     </div>
 

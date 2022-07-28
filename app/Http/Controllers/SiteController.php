@@ -84,6 +84,12 @@ class SiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+      public function allAds()
+    {
+
+        return view('allAds');
+    }
+    
     public function create()
     {
         //

@@ -5,24 +5,26 @@
     <div class="container">
         <div class="title-h">
             <h5>السيارات</h5>
-            <a href="/allAds" class="btn all-ads">عرض كافة الاعلانات</a>
+
+            {{-- <a href="/allAds" class="btn all-ads">عرض كافة الاعلانات</a> --}}
+
         </div>
-        {{-- <select class="form-control">
+        <select class="form-control">
             <option value="" disabled selected hidden>اختر...</option>
             <option value="">سيارات جديدة</option>
             <option value="">مركبات متقدمة</option>
-        </select> --}}
-       
+        </select>
+
         @foreach ($ads as $ad)
-        
+
         <a id="section_add" href="{{ route('ads-car.show', $ad->id) }}">
             <div class="advert">
                 <div class="head">
                     <div class="title">
                         <h6>{{ $ad->title }}</h6>
                     </div>
-                    @if(app()->getLocale() == 'ar') 
-                    
+                    @if(app()->getLocale() == 'ar')
+
                     <div class="title">
                         <h6>{{ App\Models\Company::where('id', $ad->carComany_id)->first()->name_ar }}</h6>
                     </div>
@@ -31,8 +33,8 @@
                         <h6>{{ App\Models\Company::where('id', $ad->carComany_id)->first()->name_en }}</h6>
                     </div>
                     @endif
-                    @if(app()->getLocale() == 'ar') 
-                    
+                    @if(app()->getLocale() == 'ar')
+
                     <div class="title">
                         <h6>{{ App\Models\ComModel::where('id', $ad->carModel_id)->first()->name_ar }}</h6>
                     </div>
@@ -41,7 +43,7 @@
                         <h6>{{ App\Models\ComModel::where('id', $ad->carModel_id)->first()->name_en }}</h6>
                     </div>
                     @endif
-                    
+
                     <div class="price">
                         <b>{{ $ad->price == 0 ? "" : ($ad->price . ' ' . __('messages.aed')) }}</b>
                     </div>
@@ -115,5 +117,8 @@
         </div>
     </div>
 </div>
+
+{{ $ads->links() }}
+
 @endif
 @endif
