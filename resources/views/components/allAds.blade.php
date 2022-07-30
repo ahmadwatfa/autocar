@@ -26,23 +26,23 @@
                     @if(app()->getLocale() == 'ar')
 
                     <div class="title">
-                        <h6>{{ App\Models\Company::where('id', $ad->carComany_id)->first()->name_ar }}</h6>
+                        <h6>{{ App\Models\Company::where('id', $ad->carComany_id)->first()->name_ar }} - {{ App\Models\ComModel::where('id', $ad->carModel_id)->first()->name_ar }}</h6>
                     </div>
                     @else
                     <div class="title">
-                        <h6>{{ App\Models\Company::where('id', $ad->carComany_id)->first()->name_en }}</h6>
+                        <h6>{{ App\Models\Company::where('id', $ad->carComany_id)->first()->name_en }} - {{ App\Models\ComModel::where('id', $ad->carModel_id)->first()->name_en }}</h6>
                     </div>
                     @endif
-                    @if(app()->getLocale() == 'ar')
+                    {{-- @if(app()->getLocale() == 'ar')
 
                     <div class="title">
-                        <h6>{{ App\Models\ComModel::where('id', $ad->carModel_id)->first()->name_ar }}</h6>
+                        <h6></h6>
                     </div>
                     @else
                     <div class="title">
-                        <h6>{{ App\Models\ComModel::where('id', $ad->carModel_id)->first()->name_en }}</h6>
+                        <h6></h6>
                     </div>
-                    @endif
+                    @endif --}}
 
                     <div class="price">
                         <b>{{ $ad->price == 0 ? "" : ($ad->price . ' ' . __('messages.aed')) }}</b>
