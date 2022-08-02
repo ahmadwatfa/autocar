@@ -35,6 +35,9 @@
                                 <select name="carComany_id" id="carCompany" class="search-makes">
                                     <option value="" hidden>{{ __('messages.makeCar') }}</option>
                                 </select>
+                                <select name="carModel_id" id="carModel" class="search-makes" style="margin-top: 2em;">
+                                    <option value="" hidden>{{ __('messages.model') }}</option>
+                                </select>
                                 <div style="display: flex">
                                     <div class="search-input">
                                         <label for="price_from">{{ __('messages.minPrice') }}</label>
@@ -97,5 +100,27 @@
                 });
             }
         });
+
+        $('select#carCompany').change(function() {
+                var idCompany = $(this).val();
+                $("#carModel").html('');
+                $.ajax({
+                    url: "{{ url('api/carmodels') }}",
+                    type: "POST",
+                    data: {
+                        companyID: idCompany,
+                        local: '{{ app()->getLocale() }}',
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        $('#carModel').html('<option value="" hidden>موديل السيارة</option>');
+                        $.each(result, function(index, el) {
+                            $("select#carModel").append('<option value="' + el
+                                .id + '">' + el.name + '</option>');
+                        });
+                    }
+                });
+            });
     </script>
 @endsection
