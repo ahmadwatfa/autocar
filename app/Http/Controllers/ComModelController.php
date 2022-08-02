@@ -53,15 +53,15 @@ class ComModelController extends Controller
         $input = $request->all();
         $comModel = ComModel::create($input);
 
-        if (isNull($request->year_to )) {
-            $request->year_to = 2022;
-        }
+        // if (isNull($request->year_to )) {
+        //     $request->year_to = 2022;
+        // }
 
-        for ($request->year_from; $request->year_from <= $request->year_to ; $request->year_from++ ) {
-            $car['model_id'] = $comModel->id;
-            $car['year'] = $request->year_from;
-            $comModelYear = ComModelYear::create($car);
-        }
+        // for ($request->year_from; $request->year_from <= $request->year_to ; $request->year_from++ ) {
+        //     $car['model_id'] = $comModel->id;
+        //     $car['year'] = $request->year_from;
+        //     $comModelYear = ComModelYear::create($car);
+        // }
         return redirect()->route('brand.index', $input['company_id']);
     }
 

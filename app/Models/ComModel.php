@@ -10,7 +10,7 @@ class ComModel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id', 'name_ar', 'name_en', 'year', 'company_id',
+        'id', 'name_ar', 'name_en', 'company_id',
     ];
 
     public function company()

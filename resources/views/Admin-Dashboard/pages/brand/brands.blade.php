@@ -55,9 +55,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($cars as $car)
+                                    @foreach ($cars as $i => $car)
                                         <tr>
-                                            <td>{{ $car->id }}</td>
+                                            <td>{{ $i+1 }}</td>
                                             <td>{{ $car->name_en }}</td>
                                             <td>{{ $car->year }}</td>
                                             <td>{{ $company }}</td>

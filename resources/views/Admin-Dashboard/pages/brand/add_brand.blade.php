@@ -43,13 +43,13 @@
                                                         <input type="text" class="form-control" id="name-en" name="name_en"
                                                             placeholder="Brand Name English" required="">
                                                     </div>
-                                                    <div class="form-group">
+                                                    {{-- <div class="form-group">
                                                         <input type="number" class="form-control" id="year" name="year_from"
-                                                            placeholder="{{__('Manufacturing Year')}}" required="">
+                                                            placeholder="{{__('Manufacturing Year')}}">
 
                                                         <input type="number" class="form-control" id="years" name="year_to"
                                                             placeholder="{{__('Manufacturing Year')}}">
-                                                    </div>
+                                                    </div> --}}
                                                     <input type="hidden" name="company_id" value="{{$company->id}}">
 
 
