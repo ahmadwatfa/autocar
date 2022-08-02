@@ -9,6 +9,8 @@ use App\Models\ComModelYear;
 use App\Models\Company;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isNull;
+
 class ComModelController extends Controller
 {
     /**
@@ -50,6 +52,10 @@ class ComModelController extends Controller
     {
         $input = $request->all();
         $comModel = ComModel::create($input);
+
+        if (isNull($request->year_to )) {
+            $request->year_to = 2022;
+        }
 
         for ($request->year_from; $request->year_from <= $request->year_to ; $request->year_from++ ) {
             $car['model_id'] = $comModel->id;

@@ -48,7 +48,7 @@
                                                             placeholder="{{__('Manufacturing Year')}}" required="">
 
                                                         <input type="number" class="form-control" id="years" name="year_to"
-                                                            placeholder="{{__('Manufacturing Year')}}" required="">
+                                                            placeholder="{{__('Manufacturing Year')}}">
                                                     </div>
                                                     <input type="hidden" name="company_id" value="{{$company->id}}">
 
