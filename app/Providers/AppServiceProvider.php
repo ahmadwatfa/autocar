@@ -111,9 +111,10 @@ class AppServiceProvider extends ServiceProvider
                     'media' => $media,
                     'carComapny' => $carComapny,
                 );
+                $view->with($data);
             }
 
-            $view->with($data);
+
         });
 
         view()->composer('components.allAds', function ($view) {
