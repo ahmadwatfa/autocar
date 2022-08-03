@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="carModel">موديل السيارة</label>
-                            <select name="" id="carModel" class="form-control input-text">
+                            <select name="carModel_id" id="carModel" class="form-control input-text">
                                 <option value="" hidden>موديل السيارة</option>
                             </select>
                         </div>
@@ -48,15 +48,12 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="year">{{ __('messages.year') }}</label>
-                            <select name="carModel_id" id="year" class="form-control input-text">
-                                <option value="{{ __('messages.year') }}" name="year" disabled selected hidden>{{ __('messages.year') }}</option>
-                            </select>
+                            <input type="text" name="year" id="year" class="form-control input-text">
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="mileage">المسافة المقطوعة</label>
                             <input type="text" min="1000" id="mileage" name="mileage" class="form-control input-text"
                                 placeholder="">
-
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="price1">السعر المطلوب (درهم)</label>
@@ -540,28 +537,28 @@
                 });
             });
 
-            $('select#carModel').change(function() {
-                var carID = $(this).val();
-                $("#year").html('');
-                $.ajax({
-                    url: "{{ url('api/caryear') }}",
-                    type: "POST",
-                    data: {
-                        id: carID,
-                        local: '{{ app()->getLocale() }}',
-                        _token: '{{ csrf_token() }}'
-                    },
-                    dataType: 'json',
-                    success: function(result) {
-                        $('#year').html(
-                            '<option value="">{{ __('messages.year') }}</option>');
-                        $.each(result, function(index, el) {
-                            $("select#year").append('<option value="' + el
-                                .id + '">' + el.year + '</option>');
-                        });
-                    }
-                });
-            });
+            // $('select#carModel').change(function() {
+            //     var carID = $(this).val();
+            //     $("#year").html('');
+            //     $.ajax({
+            //         url: "{{ url('api/caryear') }}",
+            //         type: "POST",
+            //         data: {
+            //             id: carID,
+            //             local: '{{ app()->getLocale() }}',
+            //             _token: '{{ csrf_token() }}'
+            //         },
+            //         dataType: 'json',
+            //         success: function(result) {
+            //             $('#year').html(
+            //                 '<option value="">{{ __('messages.year') }}</option>');
+            //             $.each(result, function(index, el) {
+            //                 $("select#year").append('<option value="' + el
+            //                     .id + '">' + el.year + '</option>');
+            //             });
+            //         }
+            //     });
+            // });
 
             $.ajax({
                 url: "{{ url('api/itemList') }}",

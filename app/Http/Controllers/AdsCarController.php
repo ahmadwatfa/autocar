@@ -109,7 +109,7 @@ class AdsCarController extends Controller
             $inputs['address'] = Auth::user()->address;
         }
         $com_mod = ComModel::where('id' , $request->carModel_id)->first();
-        $inputs['year'] = $com_mod->year;
+        // $inputs['year'] = $com_mod->year;
         // dd($inputs);
         $adv = AdsCar::create($inputs);
 

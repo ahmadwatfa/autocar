@@ -13,7 +13,7 @@ class AdsCar extends Model
         'type', 'user_id', 'showroom_id', 'title', 'country_id', 'city_id', 'carComany_id', 'carModel_id', 'specification',
         'mileage', 'price', 'status_car', 'status_engine', 'body', 'door', 'clynder',
         'gear', 'color', 'is_insurance', 'description', 'additions', 'address', 'name',
-         'email', 'phone', 'year' , 'is_special', 'status', 'petrol_type', 'deletet_at'
+         'email', 'phone', 'year', 'is_special', 'status', 'petrol_type', 'deletet_at'
     ];
     public function media()
     {
