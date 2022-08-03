@@ -35,7 +35,7 @@
                                             <span>{{   $ads_spical[0]->year }}</span>
                                         </div>
                                     </div>
-
+                                   
                                 </a>
                             </div>
                             <div class="col-md-6">
@@ -47,12 +47,12 @@
                                                 <img src="{{ asset('images/advs/' . $media[$ad->id]->file_name) }}" alt="car">
                                                 <span class="star"><i class="fa fa-star"></i></span>
                                             </div>
-
+                                            
                                             <div class="ad-info">
                                                 <p>{{ $ad->title }}</p>
                                                 <h5>{{ $ad->price == 0 ? '' : $ad->price . ' ' . __('messages.aed') }}
                                                 </h5>
-
+                                                
                                             </div>
                                             <div class="details">
                                                 <div class="location">
@@ -68,7 +68,7 @@
                                                 <div class="year">
                                                     <span><i class="fa fa-cog"></i></span>
                                                     <br>
-                                                    <span>{{ $ad->year }}</span>
+                                                    <span>{{ $car[$ad->id]['year'] }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                                 <div class="year">
                                                     <span><i class="fa fa-cog"></i></span>
                                                     <br>
-                                                    <span>{{ $ad->year }}</span>
+                                                    <span>{{ $car[$ad->id]['year'] }}</span>
                                                 </div>
                                             </div>
                                         </div>

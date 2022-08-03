@@ -658,11 +658,11 @@
             </div>
         </div>
     </div>
-
+{{-- 
     <!-- WhatsApp -->
     <div class="whatsapp">
         <a href="#"><img src="images/whatsapp.png" alt=""></a>
-    </div>
+    </div> --}}
 
     <footer class="footer">
         <div class="website-info">

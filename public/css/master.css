@@ -625,7 +625,7 @@
                             .details>div {
                                 width: 33%;
                                 text-align: center;
-                                /* color: #ccc; */
+                                color: #ccc;
                             }
                             
                             .details .distance {
@@ -3645,7 +3645,8 @@
                             .sub-ad {
                                 height: 325px;
                                 margin-bottom: 10px;
-                                background-color: #ddd;
+                                /* background-color: #ddd; */
+                                box-shadow: 0 0 5px 1px #ccc;
                                 border-radius: 10px;
                             }
                             
@@ -3712,6 +3713,7 @@
                                 justify-content: center;
                                 align-items: center;
                                 height: 80px;
-                                background-color: #ddd;
+                                /* background-color: #ddd; */
                                 border-radius: 10px;
+                                box-shadow: 0 0 5px 1px #ccc;
                             }

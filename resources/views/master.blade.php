@@ -145,9 +145,9 @@
     <div class="container-box">
         @yield('content')
 
-        <div class="whatsapp">
+        {{-- <div class="whatsapp">
             <a href="#"><img src="{{ asset('images/whatsapp.png') }}" alt=""></a>
-        </div>
+        </div> --}}
 
         <footer class="footer">
             <!-- WhatsApp -->
