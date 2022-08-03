@@ -53,7 +53,7 @@ Route::group(
 
         Route::resource('ads-car', AdsCarController::class);
         Route::post('ads-car/{id}/restore', [AdsCarController::class, 'restore']);
-        Route::post('search', [AdsCarController::class, 'search'])->name('search.adsCar');
+        Route::get('search', [AdsCarController::class, 'search'])->name('search.adsCar');
         Route::get('search/more', [AdsCarController::class, 'search_view'])->name('searchmore.adsCar');
         Route::post('search/more', [AdsCarController::class, 'search_more'])->name('searchmore.adsCar');
 

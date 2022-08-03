@@ -367,7 +367,7 @@ class AdsCarController extends Controller
                 $car[$ad->id]['logo'] = $carComapny->logo;
             }
         }
-
+        // $ads->setPath('results');
         return view('result', [
             'ads' => $ads,
             'car' => $car,

@@ -14,8 +14,8 @@
             </div>
             <div class="search-filed">
                 <div class="form-main">
-                    <form action="{{ route('search.adsCar') }}" method="post">
-                        @csrf
+                    <form action="{{ route('search.adsCar') }}" method="get">
+                        {{-- @csrf --}}
                         <div class="search-head">
                             {{-- <div class="search-radio">
                                 <input type="radio" id="all">
