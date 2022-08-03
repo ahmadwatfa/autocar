@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(['master', 'account.master'], function ($view) {
             $user = Auth::user();
             if ($user) {
-                if ($user->type_user == 3 && !Showroom::where('user_id' ,$user->id)->value('data_complete')) {
+                if ($user->type_user == 3 && !Showroom::where('user_id', $user->id)->value('data_complete')) {
                     $data = array(
                         'countries' => CountryController::country(1),
                         'showroomInfo' => 1,
@@ -81,12 +81,12 @@ class AppServiceProvider extends ServiceProvider
             if ($ads_car) {
                 $car = [];
                 $media = [];
-                foreach($ads_car as $ad) {
+                foreach ($ads_car as $ad) {
                     // dd($ad->id);
                     $carComapny = Company::where('id', $ad->carComany_id)->first();
                     $carModel = ComModel::where('id', $ad->carModel_id)->first();
                     $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                    if(app()->getLocale() == 'ar') {
+                    if (app()->getLocale() == 'ar') {
                         $car[$ad->id]['modelName'] = $carModel->name_ar;
                         $car[$ad->id]['companyName'] = $carComapny->name_ar;
                         $ad->city = City::where('id', $ad->city_id)->value('name_ar');
@@ -103,30 +103,32 @@ class AppServiceProvider extends ServiceProvider
                 // $ads_normal = $ads->where('is_special', 0)->take(12);
                 // dd($ads_normal);
             }
-       
-           
-            $data = array(
-                'ads' => $ads_car,
-                'car' => $car,
-                'media' => $media,
-                'carComapny' => $carComapny,                
-            );
+
+            if (isset($carComapny)) {
+                $data = array(
+                    'ads' => $ads_car,
+                    'car' => $car,
+                    'media' => $media,
+                    'carComapny' => $carComapny,
+                );
+            }
+
             $view->with($data);
         });
 
-         view()->composer('components.allAds', function ($view) {
+        view()->composer('components.allAds', function ($view) {
 
             $ads_car = AdsCar::where('status', 1)->where('is_special', 0)->orderBy('id', 'desc')->simplePaginate(8);
-        //  dd($ads_car);
+            //  dd($ads_car);
             if ($ads_car) {
                 $car = [];
                 $media = [];
-                foreach($ads_car as $ad) {
+                foreach ($ads_car as $ad) {
                     // dd($ad->id);
                     $carComapny = Company::where('id', $ad->carComany_id)->first();
                     $carModel = ComModel::where('id', $ad->carModel_id)->first();
                     $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                    if(app()->getLocale() == 'ar') {
+                    if (app()->getLocale() == 'ar') {
                         $car[$ad->id]['modelName'] = $carModel->name_ar;
                         $car[$ad->id]['companyName'] = $carComapny->name_ar;
                         $ad->city = City::where('id', $ad->city_id)->value('name_ar');
@@ -160,12 +162,12 @@ class AppServiceProvider extends ServiceProvider
             if ($ads_car) {
                 $car = [];
                 $media = [];
-                foreach($ads_car as $ad) {
+                foreach ($ads_car as $ad) {
                     // dd($ad->id);
                     $carComapny = Company::where('id', $ad->carComany_id)->first();
                     $carModel = ComModel::where('id', $ad->carModel_id)->first();
                     $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                    if(app()->getLocale() == 'ar') {
+                    if (app()->getLocale() == 'ar') {
                         $car[$ad->id]['modelName'] = $carModel->name_ar;
                         $car[$ad->id]['companyName'] = $carComapny->name_ar;
                         $ad->city = City::where('id', $ad->city_id)->value('name_ar');
@@ -178,7 +180,7 @@ class AppServiceProvider extends ServiceProvider
                     $car[$ad->id]['logo'] = $carComapny->logo;
                 }
             }
-            
+
             $data = array(
                 'ads_spical' => $ads_car,
                 'car' => $car,
@@ -186,7 +188,5 @@ class AppServiceProvider extends ServiceProvider
             );
             $view->with($data);
         });
-
-
     }
 }
