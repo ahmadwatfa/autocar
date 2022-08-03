@@ -51,6 +51,7 @@ class ComModelController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        $input['name_ar'] = $request->name_en ;
         $comModel = ComModel::create($input);
 
         // if (isNull($request->year_to )) {
@@ -130,7 +131,7 @@ class ComModelController extends Controller
 
     public function fetchCarModels(Request $request)
     {
-        $data = ComModel::where("company_id",$request->companyID)->get()->unique('name_en')->values()->all();;
+        $data = ComModel::where("company_id",$request->companyID)->orderBy('name_en', 'asc')->get()->unique('name_en')->values()->all();
         if ($request['local'] == 'ar') {
             foreach ($data as $model) {
                 $model->name = $model->name_ar;

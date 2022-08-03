@@ -44,10 +44,10 @@
                                                         <input type="text" class="form-control" id="name-en" name="name_en"
                                                             placeholder="Brand Name English" required="" value="{{$car->name_en}}">
                                                     </div>
-                                                    <div class="form-group">
+                                                    {{-- <div class="form-group">
                                                         <input type="number" class="form-control" id="year" name="year"
                                                             placeholder="{{__('Manufacturing Year')}}" required="" value="{{$car->year}}">
-                                                    </div>
+                                                    </div> --}}
                                                     <input type="hidden" name="company_id" value="{{$car->company_id}}">
 
 

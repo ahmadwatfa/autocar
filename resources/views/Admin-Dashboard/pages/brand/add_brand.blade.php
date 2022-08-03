@@ -35,10 +35,10 @@
                                                 </div>
                                                 </div>
                                                 <div class="card-body">
-                                                    <div class="form-group">
+                                                    {{-- <div class="form-group">
                                                         <input type="text" class="form-control" id="name-ar" name="name_ar"
                                                             placeholder="Brand Name Arabic" required="">
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" id="name-en" name="name_en"
                                                             placeholder="Brand Name English" required="">
