@@ -119,7 +119,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('components.allAds', function ($view) {
 
-            $ads_car = AdsCar::where('status', 1)->where('is_special', 0)->orderBy('id', 'desc')->simplePaginate(8);
+            $ads_car = AdsCar::where('status', 1)->where('is_special', 0)->orderBy('id', 'desc')->paginate(20);
             //  dd($ads_car);
             if ($ads_car) {
                 $car = [];

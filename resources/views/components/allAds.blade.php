@@ -118,7 +118,7 @@
     </div>
 </div>
 
-{{ $ads->links() }}
+{{ $ads->links('components.paginate.result') }}
 
 @endif
 @endif

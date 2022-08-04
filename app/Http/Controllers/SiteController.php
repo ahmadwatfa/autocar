@@ -86,10 +86,9 @@ class SiteController extends Controller
      */
       public function allAds()
     {
-
         return view('allAds');
     }
-    
+
     public function create()
     {
         //

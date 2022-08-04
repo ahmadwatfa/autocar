@@ -51,7 +51,7 @@
                                                 <div class="year">
                                                     <span><i class="fa fa-cog"></i></span>
                                                     <br>
-                                                    <span>{{ $car[$ad->id]['year'] }}</span>
+                                                    <span>{{ $ad->year }}</span>
                                                 </div>
                                             </div>
                                         </div>
