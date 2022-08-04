@@ -17,7 +17,7 @@
                 <div id="first-car-info" class="col-sm-12">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <label class="label label-input" for="country">الدولة</label>
+                            <label class="label label-input" for="country">{{ __('messages.Country') }}</label>
                             <select name="country_id" id="country" class="form-control input-text" required>
                                 <option value="" hidden>{{ __('messages.selectCountry') }}</option>
                             </select>
@@ -192,7 +192,7 @@
 
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="name">اسم المعلن</label>
-                            <input type="text" name="name" class="form-control input-text" required>
+                            <input type="text" name="name" class="form-control input-text">
                         </div>
 
                         <div class="col-md-6 col-sm-12">

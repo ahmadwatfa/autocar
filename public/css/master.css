@@ -2598,6 +2598,7 @@ textarea,
 }
 
 .categories .categories-cars .cars-space .cars .advert .image img {
+    object-fit: contain;
     width: 100%;
     height: 169px;
 }
