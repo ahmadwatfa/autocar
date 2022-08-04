@@ -1258,7 +1258,7 @@ body {
 }
 
 .featured-ads-filter .advert .image img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }
