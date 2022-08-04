@@ -1843,7 +1843,14 @@ body {
 .add-car-info {
     display: block;
     margin: 50px 0;
+    margin: 5em 0;
 }
+
+@media screen and (max-width: 992px) {
+    .add-car-info {
+        margin: 5em 0;
+    }
+  }
 
 .add-car-info h5 {
     color: #ee3926;
@@ -2036,11 +2043,11 @@ textarea,
     .add-car-info .steps .step3,
     .add-car-info .steps .step4,
     .add-car-info .steps .step5 {
-        width: 19.2%;
+        width: 16.7%;
     }
     .add-car-info .steps,
     .add-car-info h5 {
-        padding-right: 10px;
+        padding-right: 20px;
     }
 }
 

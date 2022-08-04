@@ -102,4 +102,6 @@ return [
     'maxPrice' => 'أعلى سعر',
     'search' => 'بحث',
     'advSearch' => 'بحث متقدم',
+
+    'Country' => 'الدولة'
 ];
