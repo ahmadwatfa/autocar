@@ -4,7 +4,7 @@
             <a class="navbar-brand logo-specail" href="{{ route('index') }}">
                 <img src="{{ asset('images/logo.png') }}" alt="AutoMark" class="logo-header">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" id="buttonMenu" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -14,7 +14,7 @@
                     <li class="nav-item {{ request()->url() == route('index') ? "active" : "" }}">
                         <a class="nav-link" href="{{ route('index') }}">{{ __('messages.home') }}</a>
                     </li>
-                    {{-- <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ __('messages.Categories') }}
@@ -23,7 +23,7 @@
                             <a class="dropdown-item" href="#">تصنيف 1</a>
                             <a class="dropdown-item" href="#">تصنيف 2</a>
                         </div>
-                    </li> --}}
+                    </li>
                     <li class="nav-item {{ request()->url() == route('showroom.index') ? "active" : "" }}">
                         <a class="nav-link"
                             href="{{ route('showroom.index') }}">{{ __('messages.CarShows') }}</a>
@@ -58,8 +58,8 @@
                 <a class="btn btn-danger my-2 my-sm-0 ml-2"
                     href="{{ route('new.ads') }}">{{ __('messages.AddAdv1') }}</a>
                 @guest
-                    <button class="btn btn-danger my-2 my-sm-0" type="button" data-toggle="modal"
-                        data-target="#exampleModalCenter">{{ __('messages.SignIn') }}</button>
+                    <button class="btn btn-danger my-2 my-sm-0" id="SignLogin" type="button" data-toggle="modal"
+                        data-target="#exampleModalCenter" onclick="hidemenu()">{{ __('messages.SignIn') }}</button>
                 @endguest
 
                 @auth

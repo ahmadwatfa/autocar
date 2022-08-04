@@ -157,6 +157,23 @@
                                                     alt="car">
                                                 <span class="star"><i class="fa fa-star"></i></span>
                                             </div>
+                                            <div class="details">
+                                                <div class="location">
+                                                    <span><i class="fa fa-map-marker-alt"></i></span>
+                                                    <br>
+                                                    <span>{{ $ad->city }}</span>
+                                                </div>
+                                                <div class="distance">
+                                                    <span><i class="fa fa-tachometer-alt"></i></span>
+                                                    <br>
+                                                    <span>{{ $ad->mileage . ' ' . __('messages.km') }}</span>
+                                                </div>
+                                                <div class="year">
+                                                    <span><i class="fa fa-cog"></i></span>
+                                                    <br>
+                                                    <span>{{ $ad->year }}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </a>
                                 @endforeach

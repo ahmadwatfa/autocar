@@ -133,10 +133,8 @@
             transition: all 0.2s ease-out;
             border-radius: 0 0 10px 10px;
             text-align: justify;
-            
+
         }
-
-
     </style>
 </head>
 
@@ -440,6 +438,10 @@
         }
     </script>
     <script type="text/javascript">
+        function hidemenu() {
+            document.getElementById("buttonMenu").click();
+        }
+
         @if (count($errors) > 0)
             $(localStorage.getItem('modalError')).modal('show');
         @endif
