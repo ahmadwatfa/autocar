@@ -18,7 +18,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
+        $companies = Company::paginate(12);
         return view('Admin-Dashboard.pages.company.companies_list', [
 
             'companies' => $companies,

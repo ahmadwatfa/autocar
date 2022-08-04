@@ -5,6 +5,10 @@
     font-family: "Cairo", sans-serif;
 }
 
+.nondecoration {
+    text-decoration: none !important;
+}
+
 body {
     padding-top: 7.524em;
 }
@@ -624,7 +628,7 @@ body {
 .details > div {
     width: 33%;
     text-align: center;
-    color: #ccc;
+    color: #212529;
 }
 
 .details .distance {
@@ -3342,7 +3346,7 @@ textarea,
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-color: #f1f1f1;
     padding: 20px 0;
     border-radius: 5px;

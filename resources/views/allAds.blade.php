@@ -37,7 +37,8 @@
                         <p id="error">{{ Session::get('message_error') }}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #fff">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                            style="color: #fff">Close</button>
                     </div>
                 </div>
             </div>
@@ -69,8 +70,10 @@
             </div>
             <div class="categories">
                 <div class="category">
-                    <span><i class="fa fa-car-side"></i></span>
-                    <b>سيارات</b>
+                    <a href="{{ route('allAds') }}" class="nondecoration">
+                        <span><i class="fa fa-car-side"></i></span>
+                        <b>سيارات</b>
+                    </a>
                 </div>
                 <div class="category">
                     <span><i class="fa fa-motorcycle"></i></span>
@@ -103,14 +106,14 @@
                             data-toggle="modal" data-target="#exampleModalCenter">
                             <span aria-hidden="true">&rightarrow;</span>
                         </button> --}}
-                        {{-- <h5 class="modal-title" id="exampleModalLongTitle">إعلن مجاناً</h5>
+        {{-- <h5 class="modal-title" id="exampleModalLongTitle">إعلن مجاناً</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body" id="modal-body" style="margin: 0 auto;">
                         {{-- <div style="margin: 0 auto; text-align:center;">أعلن على موقع أوتو مارك مجاناً</div> --}}
-                        {{-- <button href="" class="btn btn-danger new-ads"
+        {{-- <button href="" class="btn btn-danger new-ads"
                             onclick="window.open('{{ route('new.ads') }}','_self')">أضف إعلانك مجانا على موقع أوتو
                             مارك</button>
                     </div>
@@ -123,7 +126,7 @@
 @section('pagescript')
     <script>
         @guest
-            $('#adsFree').modal('show');
+        $('#adsFree').modal('show');
         @endguest
 
         $('#ModalWorng').modal("show");

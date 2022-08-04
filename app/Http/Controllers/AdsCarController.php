@@ -214,14 +214,27 @@ class AdsCarController extends Controller
         }
         $car['year'] = $carModel->year;
         $car['logo'] = $carComapny->logo;
-
         $media = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->get();
-        return view('show-ads.ads-car', [
-            'ads' => $adsCar,
-            'car' => $car,
-            'main_img' => $media->where('is_main', 1)->first(),
-            'medias' => $media,
-        ]);
+
+        if(isset($adsCar->showroom_id)) {
+            $showroom = Showroom::where('id', $adsCar->showroom_id)->first();
+            // dd($showroom);
+            return view('show-ads.ads-car', [
+                'ads' => $adsCar,
+                'showroom' => $showroom,
+                'car' => $car,
+                'main_img' => $media->where('is_main', 1)->first(),
+                'medias' => $media,
+            ]);
+        } else {
+            return view('show-ads.ads-car', [
+                'ads' => $adsCar,
+                'car' => $car,
+                'main_img' => $media->where('is_main', 1)->first(),
+                'medias' => $media,
+            ]);
+        }
+
     }
 
     /**
@@ -344,7 +357,13 @@ class AdsCarController extends Controller
 
     public function search(Request $request) {
 
-        $ads = AdsCar::where('carComany_id', $request->carComany_id)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
+        // dd($request);
+        if(isset($request->carModel_id)) {
+            $ads = AdsCar::where('carModel_id', $request->carModel_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
+        }
+        else {
+            $ads = AdsCar::where('carComany_id', $request->carComany_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
+        }
 
         if ($ads) {
             $car = [];
@@ -367,7 +386,6 @@ class AdsCarController extends Controller
                 $car[$ad->id]['logo'] = $carComapny->logo;
             }
         }
-        // $ads->setPath('results');
         return view('result', [
             'ads' => $ads,
             'car' => $car,

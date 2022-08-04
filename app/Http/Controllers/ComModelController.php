@@ -20,7 +20,7 @@ class ComModelController extends Controller
      */
     public function index($id)
     {
-        $cars = ComModel::where('company_id', $id)->get();
+        $cars = ComModel::where('company_id', $id)->paginate(12);
         $company = Company::where('id', $id)->value('name_en');
         return view('Admin-Dashboard.pages.brand.brands', [
             'cars' => $cars,

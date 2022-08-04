@@ -42,7 +42,7 @@
                                 <div>
                                     <span>{{ __('messages.year') }}</span>
                                     <img src="{{ asset('images/productivity.png') }}" alt="industry">
-                                    <strong>{{ $car['year'] }}</strong>
+                                    <strong>{{ $ads->year }}</strong>
                                 </div>
                                 <div>
                                     <span>{{ __('messages.mileage') }}</span>
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="ads-car-details">
-                            <div class="head accordion" >
+                            <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
@@ -160,7 +160,11 @@
                 <div class="col-md-3 col-sm-12">
                     <div class="ads-info">
                         <div class="price">
-                            <span>{!! $ads->price != 0 ? $ads->price . ' ' . __('messages.aed') : "<a href='http://wa.me/$ads->phone?text=" . URL::current() . "%0a أود معرفة سعر السيارة' target='_blank'>تواصل لمعرفة السعر</a>" !!}</span>
+                            <span>{!! $ads->price != 0
+                                ? $ads->price . ' ' . __('messages.aed')
+                                : "<a href='http://wa.me/$ads->phone?text=" .
+                                    URL::current() .
+                                    "%0a أود معرفة سعر السيارة' target='_blank'>تواصل لمعرفة السعر</a>" !!}</span>
                         </div>
                         <div class="seller-phone">
                             <div class="phone">
@@ -172,19 +176,23 @@
                                 <img src="{{ asset('images/whatsapp.png') }}" alt="whatsapp">
                             </div>
                         </div>
-                        <div class="seller">
-                            <div class="image">
-                                {{-- <img src="{{ asset('images/person.png') }}" alt="person"> --}}
-                                <img src="{{ asset('images/person.png') }}" alt="person">
+
+                        @if (isset($showroom))
+                            <div class="seller">
+                                <div class="image" style="height: 80px; clip-path: circle();">
+                                    <img src="{{ asset($showroom->logo) }}" alt="person" height="80">
+                                </div>
+                                <div class="info">
+                                    <span>{{ $showroom->name }}</span>
+                                    <br>
+                                    <span>{{ $showroom->mobile }}</span>
+                                    <br>
+                                    <span class="email">{{ $showroom->address }}</span>
+
+                                </div>
                             </div>
-                            <div class="info">
-                                <span>{{ $ads->name }}</span>
-                                <br>
-                                <span class="email">{{ $ads->email }}</span>
-                                <br>
-                                <span>دبي - العين</span>
-                            </div>
-                        </div>
+                        @endif
+
                         <div class="sell-now">
                             <p>{{ __('messages.ads1') }}</p>
                             <a href="{{ route('new.ads') }}" class="btn">{{ __('messages.ads1_p') }}</a>

@@ -442,6 +442,19 @@
             document.getElementById("buttonMenu").click();
         }
 
+        $('.base-modal .modal-body .email').on('click', function() {
+            $('.base-modal').modal("hide");
+        });
+        $('.modal-email .left-arrow-email').on('click', function() {
+            $('.modal-email').modal("hide");
+        });
+        $('.base-modal .modal-footer .new-account').on('click', function() {
+            $('.base-modal').modal("hide");
+        });
+        $('.modal-account .left-arrow-account').on('click', function() {
+            $('.modal-account').modal("hide");
+        });
+
         @if (count($errors) > 0)
             $(localStorage.getItem('modalError')).modal('show');
         @endif

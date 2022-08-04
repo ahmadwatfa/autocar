@@ -104,6 +104,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $companies->appends(Request::all())->links('components.paginate.result') }}
                         <div class="modal" id="modaldemo9">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content modal-content-demo">

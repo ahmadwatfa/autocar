@@ -157,18 +157,18 @@
                 });
             });
 
-            $('.base-modal .modal-body .email').on('click', function() {
-                $('.base-modal').modal("hide");
-            });
-            $('.modal-email .left-arrow-email').on('click', function() {
-                $('.modal-email').modal("hide");
-            });
-            $('.base-modal .modal-footer .new-account').on('click', function() {
-                $('.base-modal').modal("hide");
-            });
-            $('.modal-account .left-arrow-account').on('click', function() {
-                $('.modal-account').modal("hide");
-            });
+            // $('.base-modal .modal-body .email').on('click', function() {
+            //     $('.base-modal').modal("hide");
+            // });
+            // $('.modal-email .left-arrow-email').on('click', function() {
+            //     $('.modal-email').modal("hide");
+            // });
+            // $('.base-modal .modal-footer .new-account').on('click', function() {
+            //     $('.base-modal').modal("hide");
+            // });
+            // $('.modal-account .left-arrow-account').on('click', function() {
+            //     $('.modal-account').modal("hide");
+            // });
 
             $('.step1').on('mouseover', function() {
                 $('.step1').css('cursor', 'pointer');

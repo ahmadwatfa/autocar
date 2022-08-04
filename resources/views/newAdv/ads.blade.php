@@ -39,7 +39,7 @@
                                 <div>
                                     <span>{{ __('messages.year') }}</span>
                                     <img src="{{ asset('images/productivity.png') }}" alt="industry">
-                                    <strong>{{ $car['year'] }}</strong>
+                                    <strong>{{ $ads->year }}</strong>
                                 </div>
                                 <div>
                                     <span>{{ __('messages.mileage') }}</span>
@@ -173,12 +173,11 @@
                             <div class="image">
                                 <img src="{{ asset('images/person.png') }}" alt="person">
                             </div>
+                            @if
                             <div class="info">
                                 <span>{{ $ads->name }}</span>
                                 <br>
                                 <span class="email">{{ $ads->email }}</span>
-                                <br>
-                                <span>دبي - العين</span>
                             </div>
                         </div>
                         <div class="sell-now">

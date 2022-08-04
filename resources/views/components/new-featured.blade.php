@@ -45,7 +45,7 @@
                                             @foreach ($ads_spical as $key => $ad)
                                                 @if ($key >= 1 && $key < 5)
                                                     <a href="{{ route('ads-car.show', $ad->id) }}"
-                                                        class="col-md-6 tex-decoration">
+                                                        class="col-md-6 nondecoration">
                                                         <div class="sub-ad">
 
 
