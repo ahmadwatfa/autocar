@@ -113,7 +113,7 @@
                                 <p>
                                     {{ $ads->description }}
                                 </p>
-                                <a href="#">{{ __('messages.readMore') }}</a>
+                                {{-- <a href="#">{{ __('messages.readMore') }}</a> --}}
                             </div>
                         </div>
                         <div class="ads-car-advantages">
