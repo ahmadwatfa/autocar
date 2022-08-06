@@ -10,7 +10,7 @@
 
             <ol class="breadcrumb">
                 <li><a href="{{ route('Dashboard.index') }}"><i class="fa fa-home"></i> الرئيسية</a></li>
-                <li class="active">قائمة الشركات</li>
+                <li class="active">قائمة المعارض</li>
             </ol>
         </section>
 
@@ -37,10 +37,8 @@
 
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة الشركات </h3>
-                            <a href="{{ route('company.create') }}" class="btn btn-primary pull-left"><i
-                                    class="fa fa-plus"></i> إضافة شركة
-                                جديدة </a>
+                            <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة المعارض </h3>
+                           
 
                         </div><!-- /.box-header -->
                         <div class="box-body">
@@ -48,71 +46,54 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Company</th>
-                                        <th>logo</th>
-                                        <th>Actions</th>
+                                        <th>اسم المعرض</th>
+                                        <th>صورة المعرض</th>
+                                        <th>صاحب المعرض</th>
+                                        <th>حالة  المعرض</th>
+                                        <th> الاجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($companies as $company)
+                                   @foreach ($showrooms as $showroom)
                                         <tr>
-                                            <td>{{ $company->id }}</td>
-                                            <td> <a href="{{ route('brand.index', $company->id) }}" class="icon blue"
-                                                data-toggle="tooltip" data-placement="top" title="Show Cars Model">
-                                                {{ $company->name_en }}
-                                            </a>
-                                        </td>
-                                            <td><img src="{{asset($company->logo)}}" width="60" height="60"></td>
+                                            <td>{{ $i = 1 }}</td>
+                                            <td>{{ $showroom->name }}</td>
+                                            <td><img src="{{ $showroom->image }}" height="150" width="150"></td>
+                                            <td>{{ $showroom->user->name }}</td>
+                                            @if($showroom->status == 1)
+                                            <td>مفعل</td>
+                                            @else
+                                            <td>غير مفعل</td>
+                                            @endif
+                                            {{-- <a href="{{route('aboutus.show' , $about->id )}}" class="btn btn-xs {{$about->is_publish ?  "btn-default" : "btn-warning"}}">{{$about->is_publish ? "عدم نشر" : "نشر"}}</a> --}}
                                             <td width="20%" align="center">
-
-                                                <a href="{{ route('company.edit' , $company->id) }}" title="تعديل"
-                                                    type="button" class="btn btn-primary btn-xs">
-                                                    <span class=" glyphicon glyphicon-edit" aria-hidden="true">
-                                                    </span>
-                                                    تعديل
-                                                </a>
-
+                                                <a href="{{route('showrooms.show',$showroom->id)}}" class="btn btn-xs {{$showroom->status==1 ?  "btn-default" : "btn-warning"}}">{{$showroom->status==1 ? "تعطيل" : "تفعيل"}}</a>
                                                 <button  data-effect="effect-scale"
-                                                    data-id="{{ $company->id }}" data-toggle="modal"
+                                                    data-id="{{$showroom->id}}" data-toggle="modal"
                                                     href="#modaldemo9" title="حذف" type="button"
                                                     class="btn btn-danger btn-xs delete">
                                                     <span class=" glyphicon glyphicon-trash" aria-hidden="true">
                                                     </span>
-                                                    حذف
+
                                                 </button>
 
                                         </td>
-                                            {{-- <td>
-                                                <div class="td-actions">
-                                                    <a href="{{-- {{route('edit.Country', $company->id)}} " class="icon red" data-toggle="tooltip" data-placement="top"
-                                                        title="View Company">
-                                                        <span class="icon-eye"></span>
-                                                    </a>
-                                                    <a href="#" class="icon green" data-toggle="tooltip" data-placement="top"
-                                                        title="Disable Country">
-                                                        <span class="icon-remove_circle"></span>
-                                                    </a>
-                                                    <a href="{{-- {{route('carsModel', $company->id)}} " class="icon blue" data-toggle="tooltip" data-placement="top"
-                                                        title="Show Cars Model">
-                                                        <span class="icon-directions_car"></span>
-                                                    </a>
-                                                </div>
-                                            </td> --}}
                                         </tr>
-                                    @endforeach
-
+                                        @endforeach
                                 </tbody>
                             </table>
                         </div>
-                        {{ $companies->appends(Request::all())->links('components.paginate.result') }}
+
+                       
+
                         <div class="modal" id="modaldemo9">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content modal-content-demo">
                                     <div class="modal-header">
-                                        <h6 class="modal-title">حذف الشركة</h6><button aria-label="Close" class="close"
+                                        <h6 class="modal-title">حذف المعرض</h6><button aria-label="Close" class="close"
                                             data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                                     </div>
-                                    <form action="/dashboard/company/{company}" method="post">
+                                    <form action="/dashboard/showrooms/{showroom}" method="post">
                                         @csrf
                                         @method('delete')
 

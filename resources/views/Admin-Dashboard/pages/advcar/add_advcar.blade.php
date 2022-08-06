@@ -12,7 +12,7 @@
 
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title"> اضافة نبذة <small>جديد</small> </h3>
+                      
                         <i class="pull-left header fa fa-th"></i>
                     </div><!-- /.box-header -->
 

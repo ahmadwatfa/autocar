@@ -14,6 +14,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ListsController;
 use App\Http\Controllers\ShowroomController;
+use App\Http\Controllers\ShowroomsAdminController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserSettingdController;
 use App\Models\AdsCar;
@@ -64,6 +65,7 @@ Route::group(
         Route::resource('settings', UserSettingdController::class);
 
         Route::resource('showroom', ShowroomController::class);
+     
         Route::post('search/showroom', [ShowroomController::class, 'search'])->name('search.showroom');
 
         // Route::get('test', function() {
@@ -89,6 +91,7 @@ Route::group([
     Route::resource('lists', ListsController::class);
     Route::resource('AdminAds', AdminAds::class);
     Route::get('/adsCar', [AdminDashboardController::class, 'adsCarChangeStatus'])->name('Admin.AdsCar');
+    Route::resource('showrooms', ShowroomsAdminController::class);
 });
 
 

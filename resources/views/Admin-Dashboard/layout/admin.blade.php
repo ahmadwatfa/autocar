@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>لوحة التحكم | تكنو Techno</title>
+    <title>لوحة التحكم | اوتومارك automark</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -69,9 +69,9 @@
 
                         <ul class="treeview-menu">
                             <li><a href="{{route('advcar.index')}}"><i class="fa fa-circle-o"></i> اعلانات السيارات</a></li>
-                            <li><a href=""><i class="fa fa-circle-o"></i>اعلانات القوارب</a></li>
+                            {{-- <li><a href=""><i class="fa fa-circle-o"></i>اعلانات القوارب</a></li>
                             <li><a href=""><i class="fa fa-circle-o"></i>اعلانات الدراجات النارية</a></li>
-                            <li><a href=""><i class="fa fa-circle-o"></i>اعلانات العربات الثقيلة</a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i>اعلانات العربات الثقيلة</a></li> --}}
                         </ul>
 
                     </li>
@@ -99,8 +99,20 @@
                         <ul class="treeview-menu">
                             <li><a href="{{route('company.index')}}"><i class="fa fa-circle-o"></i> قائمة انواع السيارات
                                 </a></li>
-                            <li><a href=""><i class="fa fa-circle-o"></i> إضافة نوع سيارة
+                            <li><a href="{{route('company.create')}}"><i class="fa fa-circle-o"></i> إضافة نوع سيارة
                                     جديدة</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>المعارض </span>
+                            <i class="fa fa-angle-left pull-left"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{route('showrooms.index')}}"><i class="fa fa-circle-o"></i> قائمة المعارض
+                                </a></li>
+                            
                         </ul>
                     </li>
                     <li class="treeview">

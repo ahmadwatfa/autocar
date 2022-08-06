@@ -10,7 +10,7 @@
 
             <ol class="breadcrumb">
                 <li><a href="{{ route('Dashboard.index') }}"><i class="fa fa-home"></i> الرئيسية</a></li>
-                <li class="active">قائمة الموديلات</li>
+                <li class="active">قائمة المدن</li>
             </ol>
         </section>
 
@@ -44,7 +44,7 @@
 
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                            <table class="table custom-table m-0">
+                            <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
