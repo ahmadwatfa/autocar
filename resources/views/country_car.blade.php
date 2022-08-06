@@ -205,7 +205,7 @@
         <div class="featured-ads-filter">
             <div class="container">
                 <div class="title-h">
-                    <h5>السيارات</h5>
+                    <h5>{{ __('messages.cars') }}</h5>
                     <a href="#" class="btn all-ads">عرض كافة الاعلانات</a>
                 </div>
                 <select class="form-control">

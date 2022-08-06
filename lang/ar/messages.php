@@ -73,7 +73,6 @@ return [
     'published' => 'تم النشر',
     'searchany' => 'بحث عن أي شيء ...',
 
-
     /////// Acccount Panel
 
     'myaccount' => 'حسابي',
@@ -103,5 +102,23 @@ return [
     'search' => 'بحث',
     'advSearch' => 'بحث متقدم',
 
-    'Country' => 'الدولة'
+    'Country' => 'الدولة',
+    'signInFB' => 'سجل دخولك باستخدام فيس بوك',
+    'signInGO' => 'سجل دخولك باستخدام جوجل',
+    'signInEmail' => 'سجل دخولك باستخدام ايميلك',
+    'orRigester' => 'أو قم بتسجيل حساب جديد',
+    'registerNewUser' => 'تسجيل مستخدم جديد',
+
+    'login' => 'دخول',
+    'forgetPassword' => 'هل نسيت كلمة السر؟',
+    'restPassword' => 'إعادة تعيين كلمة السر',
+    'createNewAccount' => 'أنشئ حسابك الجديد',
+    'name' => 'الإسم',
+    'Email' => 'البريد الإلكتروني',
+    'rePassword' => 'تأكيد كلمة المرور',
+    'phone' => 'رقم الهاتف 05xxxxxxxx',
+    'createAccount' => 'انشاء حساب',
+    'similarAds' => 'سيارات مشابهة',
+
+    'cars' => 'السيارات'
 ];

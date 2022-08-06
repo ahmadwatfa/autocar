@@ -211,7 +211,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header modal-header-general">
-                    <h5 class="modal-title" id="exampleModalLongTitle">تسجيل الدخول</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ __('messages.SignIn') }}</h5>
                     @if (LaravelLocalization::getLocalizedURL('en') != route('new.ads') &&
                         LaravelLocalization::getLocalizedURL('ar') != route('new.ads'))
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -225,27 +225,25 @@
 
                             <img src="{{ asset('images/facebook.png') }}" alt="Facebook">
                         </div>
-                        <span>سجل دخولك باستخدام فيس بوك</span>
-
-
+                        <span>{{ __('messages.signInFB') }}</span>
                     </a>
                     <a class="google" href="{{ url('auth/google') }}">
                         <div class="google-icon">
                             <img src="{{ asset('images/google.png') }}" alt="Google">
                         </div>
-                        <span>سجل دخولك باستخدام جوجل</span>
+                        <span>{{ __('messages.signInGO') }}</span>
                     </a>
                     <a class="email" data-toggle="modal" data-target="#exampleModalCenterEmail">
                         <div class="email-icon">
                             <img src="{{ asset('images/email.png') }}" alt="Email">
                         </div>
-                        <span>سجل دخولك باستخدام ايميلك</span>
+                        <span>{{ __('messages.signInEmail') }}</span>
                     </a>
                 </div>
                 <div class="modal-footer">
-                    <p>أو قم بتسجيل حساب جديد</p>
+                    <p>{{ __('messages.orRigester') }}</p>
                     <button type="button" class="btn btn-danger new-account" data-toggle="modal"
-                        data-target="#exampleModalCenterAccount">تسجيل مستخدم جديد</button>
+                        data-target="#exampleModalCenterAccount">{{ __('messages.registerNewUser') }}</button>
                 </div>
             </div>
         </div>
@@ -260,7 +258,7 @@
                         data-toggle="modal" data-target="#exampleModalCenter">
                         <span aria-hidden="true">&rightarrow;</span>
                     </button>
-                    <h5 class="modal-title" id="exampleModalLongTitle">سجل دخولك باستخدام ايميلك</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ __('messages.signInEmail') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -277,16 +275,16 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="البريد الالكتروني "
+                            <input type="email" class="form-control" placeholder="{{ __('messages.email') }}"
                                 name="email" :value="old('email')" required autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="كلمة السر" name="password"
+                            <input type="password" class="form-control" placeholder="{{ __('messages.password') }}" name="password"
                                 required autocomplete="current-password">
                         </div>
-                        <button type="submit" class="btn btn-danger">الدخول</button>
+                        <button type="submit" class="btn btn-danger">{{ __('messages.login') }}</button>
                     </form>
-                    <p>هل نسيت كلمة السر؟ <a href="{{ route('password.request') }}">إعادة تعيين كلمة السر</a></p>
+                    <p class="restPassword">{{ __('messages.forgetPassword') }} <a href="{{ route('password.request') }}" style="color: #EE3926">{{ __('messages.restPassword') }}</a></p>
                 </div>
             </div>
         </div>
@@ -301,7 +299,7 @@
                         data-toggle="modal" data-target="#exampleModalCenter">
                         <span aria-hidden="true">&rightarrow;</span>
                     </button>
-                    <h5 class="modal-title" id="exampleModalLongTitle">أنشئ حسابك الجديد</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ __('messages.createNewAccount') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -317,25 +315,25 @@
                             <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         </div>
                         <div class="form-group">
-                            <input name="name" type="text" class="form-control" placeholder="الاسم"
+                            <input name="name" type="text" class="form-control" placeholder="{{ __('messages.name') }}"
                                 value="{{ old('name') }}">
                         </div>
                         <div class="form-group">
                             <input name="email" type="email" class="form-control"
-                                placeholder="البريد الالكتروني " value="{{ old('email') }}">
+                                placeholder="{{ __('messages.Email') }}" value="{{ old('email') }}">
                         </div>
                         <div class="form-group">
-                            <input name="password" type="password" class="form-control" placeholder="كلمة السر"
+                            <input name="password" type="password" class="form-control" placeholder="{{ __('messages.password') }}"
                                 required autocomplete="new-password">
                         </div>
                         <div class="form-group">
                             <input name="password_confirmation" type="password" class="form-control"
-                                placeholder="كلمة السر" required>
+                                placeholder="{{ __('messages.rePassword') }}" required>
                         </div>
 
                         <div class="form-group">
                             <select name="phonecode" id="phonecode" class="form-control">
-                                <option value="" disabled selected hidden>اختر الدولة</option>
+                                <option value="" disabled selected hidden>{{ __('messages.selectCountry') }}</option>
                                 @foreach ($countries as $country)
                                     <option value="{{ $country->phonecode }}"
                                         {{ old('phonecode') == $country->phonecode ? 'selected' : '' }}>
@@ -346,19 +344,17 @@
                         </div>
                         <div class="form-group">
                             <input name="mobile" type="text" class="form-control"
-                                placeholder="رقم الهاتف 05xxxxxxxx" {{ old('mobile') }}>
+                                placeholder="{{ __('messages.phone') }}" {{ old('mobile') }}>
                         </div>
                         <div class="form-group">
                             <select name="type_user" class="form-control">
-                                <option disabled selected hidden>نوع المستخدم</option>
-                                <option value="1" {{ old('type_user') == 1 ? 'selected' : '' }}>مستخدم عادي
-                                </option>
-                                <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>تاجر</option>
-                                <option value="3" {{ old('type_user') == 3 ? 'selected' : '' }}>معرض سيارات
-                                </option>
+                                <option disabled selected hidden>{{ __('messages.AccountType') }}</option>
+                                <option value="1" {{ old('type_user') == 1 ? 'selected' : '' }}>{{ __('messages.normalUser') }}</option>
+                                <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>{{ __('messages.dealer') }}</option>
+                                <option value="3" {{ old('type_user') == 3 ? 'selected' : '' }}>{{ __('messages.showroom') }}</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-danger">انشاء حساب</button>
+                        <button type="submit" class="btn btn-danger">{{ __('messages.createAccount') }}</button>
                     </form>
                 </div>
             </div>

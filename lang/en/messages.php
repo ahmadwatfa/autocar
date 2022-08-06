@@ -70,11 +70,29 @@ return [
     'myaccount' => 'My Account',
     'welcome' => 'Welcome',
     'main-image' => 'Choose the main image for your ad',
-
     'error' => 'Whoops! Something went wrong',
-
     'published' => 'Published',
     'searchany' => 'Search for anything ...',
+
+    /////// Acccount Panel
+
+    'myaccount' => 'My Account',
+    'welcome' => 'Welcome',
+    'AccountPanel' => 'Accoubt Setting',
+    'AccountType' => 'Account Type',
+    'normalUser' => 'Normal User',
+    'dealer' => 'Dealer',
+    'showroom' => 'Showroom',
+
+    'ads' => 'Ads',
+    'PersonalProfile' => 'Personal Profile',
+    'favorites' => 'Favorites',
+    'trashed' => 'Deleted Ads',
+    'manageAds' => 'Manage your ads',
+
+    'ad' => 'Advertising',
+    'created_at' => 'date of publication',
+    'action' => 'Actions',
 
     'all' => 'All',
     'used' => 'Used',
@@ -85,6 +103,22 @@ return [
     'search' => 'Search',
     'advSearch' => 'Advanced Search',
 
-    'Country' => 'Country'
+    'Country' => 'Country',
+    'signInFB' => 'Sign In with Facebook',
+    'signInGO' => 'Sign In with Google',
+    'signInEmail' => 'Sign In with your email',
+    'orRigester' => 'Or register a new account',
+    'registerNewUser' => 'Register a new user',
+    'login' => 'Login',
+    'forgetPassword' => 'Forgot your password?',
+    'restPassword' => 'Reset the password',
+    'createNewAccount' => 'Create New Account',
+    'name' => 'Full Name',
+    'Email' => 'Email',
+    'rePassword' => 'Confirm Password',
+    'phone' => 'Phone Number 05xxxxxxxx',
+    'createAccount' => 'Create Account',
+    'similarAds' => 'Similar cars',
 
+    'cars' => 'Cars',
 ];

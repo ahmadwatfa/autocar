@@ -188,7 +188,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="similar-cars">
-                        <h5>سيارات مشابهة </h5>
+                        <h5>{{ __('messages.similarAds') }}</h5>
                         <div class="slider slik-demo">
                             <div class="advert">
                                 <div class="head">

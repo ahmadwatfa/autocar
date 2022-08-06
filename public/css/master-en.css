@@ -3707,3 +3707,8 @@ textarea,
     border-bottom-left-radius: 10px;
     box-shadow: 0 0 5px 1px #ccc;
 }
+
+.restPassword {
+    margin-top: 0.8em;
+    text-align: left !important;
+}
