@@ -68,7 +68,7 @@
                             <div class="col-sm-12 featured-listing">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{ route('ads-car.show', $ads_spical[0]->id) }}" class="master-ad">
+                                        <a href="{{ route('ads-car.show', $ads_spical[0]->id) }}" class="master-ad nondecoration">
 
                                             <div class="ad-info">
                                                 <p>{{ $ads_spical[0]->title }}</p>
@@ -150,7 +150,7 @@
                                         <div class="row">
                                             @foreach ($ads_spical as $key => $ad)
                                                 @if ($key >= 5 && $key < 10)
-                                                    <a class="col-md-3" href="{{ route('ads-car.show', $ad->id) }}">
+                                                    <a class="col-md-3 nondecoration" href="{{ route('ads-car.show', $ad->id) }}">
                                                         <div class="sub-ad">
 
                                                             <div class="ad-info">
