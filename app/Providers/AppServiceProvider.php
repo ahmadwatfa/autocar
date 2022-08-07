@@ -12,7 +12,9 @@ use App\Models\Showroom;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Jenssegers\Agent\Agent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Paginator::defaultView('default');
+        $agent = new Agent();
+        View::share('agent', $agent);
 
         view()->composer(['master', 'account.master'], function ($view) {
             $user = Auth::user();

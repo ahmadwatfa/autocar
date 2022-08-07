@@ -17,10 +17,12 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 use Illuminate\Validation\Rules;
 
 use Intervention\Image\Facades\Image;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Jenssegers\Agent\Agent;
 
 class AdsCarController extends Controller
 {
@@ -89,10 +91,9 @@ class AdsCarController extends Controller
 
         $inputs = request()->except('images');
         $user_id = Auth::user();
-        if($user_id->type_user == 2 )
-        {
-            $show_id = Showroom::where('user_id' ,$user_id->id)->first();
-            $inputs['showroom_id'] =$show_id->id;
+        if ($user_id->type_user == 2) {
+            $show_id = Showroom::where('user_id', $user_id->id)->first();
+            $inputs['showroom_id'] = $show_id->id;
         }
         $inputs['type'] = 1;
         $inputs['name'] = Auth::user()->name;
@@ -108,7 +109,7 @@ class AdsCarController extends Controller
         if (!$request->address) {
             $inputs['address'] = Auth::user()->address;
         }
-        $com_mod = ComModel::where('id' , $request->carModel_id)->first();
+        $com_mod = ComModel::where('id', $request->carModel_id)->first();
         // $inputs['year'] = $com_mod->year;
         // dd($inputs);
         $adv = AdsCar::create($inputs);
@@ -182,6 +183,8 @@ class AdsCarController extends Controller
      */
     public function show(AdsCar $adsCar)
     {
+        $agent = new Agent();
+        View::share('agent', $agent);
         // $ads = Adv::where('id', $id)->first();
         $list = Lists::all();
         $carComapny = Company::where('id', $adsCar->carComany_id)->first();
@@ -216,9 +219,10 @@ class AdsCarController extends Controller
         $car['logo'] = $carComapny->logo;
         $media = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->get();
 
-        if(isset($adsCar->showroom_id)) {
+        if (isset($adsCar->showroom_id)) {
             $showroom = Showroom::where('id', $adsCar->showroom_id)->first();
             // dd($showroom);
+
             return view('show-ads.ads-car', [
                 'ads' => $adsCar,
                 'showroom' => $showroom,
@@ -227,6 +231,7 @@ class AdsCarController extends Controller
                 'medias' => $media,
             ]);
         } else {
+
             return view('show-ads.ads-car', [
                 'ads' => $adsCar,
                 'car' => $car,
@@ -234,7 +239,6 @@ class AdsCarController extends Controller
                 'medias' => $media,
             ]);
         }
-
     }
 
     /**
@@ -355,25 +359,25 @@ class AdsCarController extends Controller
     //     return response()->json(['success' => 'SPECIAL change successfully.']);
     // }
 
-    public function search(Request $request) {
+    public function search(Request $request)
+    {
 
         // dd($request);
-        if(isset($request->carModel_id)) {
+        if (isset($request->carModel_id)) {
             $ads = AdsCar::where('carModel_id', $request->carModel_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
-        }
-        else {
+        } else {
             $ads = AdsCar::where('carComany_id', $request->carComany_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
         }
 
         if ($ads) {
             $car = [];
             $media = [];
-            foreach($ads as $ad) {
+            foreach ($ads as $ad) {
                 // dd($ad->id);
                 $carComapny = Company::where('id', $ad->carComany_id)->first();
                 $carModel = ComModel::where('id', $ad->carModel_id)->first();
                 $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                if(app()->getLocale() == 'ar') {
+                if (app()->getLocale() == 'ar') {
                     $car[$ad->id]['modelName'] = $carModel->name_ar;
                     $car[$ad->id]['companyName'] = $carComapny->name_ar;
                     $ad->city = City::where('id', $ad->city_id)->value('name_ar');
@@ -400,20 +404,21 @@ class AdsCarController extends Controller
         return view('result');
     }
 
-    public function search_more(Request $request) {
+    public function search_more(Request $request)
+    {
 
-        $ads = AdsCar::where('carComany_id', $request->carComany_id)->orWhere('country_id' , $request->country_id)->orWhereBetween('price', [$request->price_from, $request->price_to])->orWhereBetween('mileage', [$request->milage_from, $request->milage_to])->orWhereBetween('year', [$request->year_from, $request->year_to])->paginate(15);
+        $ads = AdsCar::where('carComany_id', $request->carComany_id)->orWhere('country_id', $request->country_id)->orWhereBetween('price', [$request->price_from, $request->price_to])->orWhereBetween('mileage', [$request->milage_from, $request->milage_to])->orWhereBetween('year', [$request->year_from, $request->year_to])->paginate(15);
 
 
         if ($ads) {
             $car = [];
             $media = [];
-            foreach($ads as $ad) {
+            foreach ($ads as $ad) {
                 // dd($ad->id);
                 $carComapny = Company::where('id', $ad->carComany_id)->first();
                 $carModel = ComModel::where('id', $ad->carModel_id)->first();
                 $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                if(app()->getLocale() == 'ar') {
+                if (app()->getLocale() == 'ar') {
                     $car[$ad->id]['modelName'] = $carModel->name_ar;
                     $car[$ad->id]['companyName'] = $carComapny->name_ar;
                     $ad->city = City::where('id', $ad->city_id)->value('name_ar');

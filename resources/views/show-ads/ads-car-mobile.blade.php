@@ -27,133 +27,55 @@
                         <div>
                             <span>{{ __('messages.published') }} </span>{{ $ads->created_at->diffForHumans() }}
                         </div>
-                        @if ($agent->isMobile())
                         <div class="ads-car-specifications">
                             <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
                             </div>
-                            <ul class="specification-mobile">
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.model') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $car['companyName'] }}</strong>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.year') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->year }}</strong>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.mileage') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->mileage . ' ' . __('messages.km') }}</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.insurance') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->is_insurance ? __('messages.yes') : __('messages.no') }}</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.colorEx') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->color }}</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.fuel') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->petrol_type }}</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.gear') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->gear == 1 ? __('messages.noraml') : __('messages.automatic') }}</strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="name-specific">
-                                        <span>{{ __('messages.regional') }}</span>
-                                    </div>
-                                    <div class="details-specific">
-                                        <strong>{{ $ads->specification }}</strong>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        @else
-                            <div class="ads-car-specifications">
-                                <div class="head accordion">
-                                    <h5>{{ __('messages.carspec') }}</h5>
-                                    <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                        aria-controls="collapseOne"></span>
+                            <div class="specifications panel panel-1">
+                                <div>
+                                    <span>{{ __('messages.model') }}</span>
+                                    <img src="{{ asset($car['logo']) }}" alt="industry">
+                                    <strong>{{ $car['companyName'] }}</strong>
                                 </div>
-                                <div class="specifications panel panel-1">
-                                    <div>
-                                        <span>{{ __('messages.model') }}</span>
-                                        <img src="{{ asset($car['logo']) }}" alt="industry">
-                                        <strong>{{ $car['companyName'] }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.year') }}</span>
-                                        <img src="{{ asset('images/productivity.png') }}" alt="industry">
-                                        <strong>{{ $ads->year }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.mileage') }}</span>
-                                        <img src="{{ asset('images/car-speed.png') }}" alt="industry">
-                                        <strong>{{ $ads->mileage . ' ' . __('messages.km') }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.insurance') }}</span>
-                                        <img src="{{ asset('images/guarantee-certificate.png') }}" alt="industry">
-                                        <strong>{{ $ads->is_insurance ? __('messages.yes') : __('messages.no') }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.colorEx') }}</span>
-                                        <img src="{{ asset('images/car-color.png') }}" alt="industry">
-                                        <strong>{{ $ads->color }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.fuel') }}</span>
-                                        <img src="{{ asset('images/gas-station.png') }}" alt="industry">
-                                        <strong>{{ $ads->petrol_type }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.gear') }}</span>
-                                        <img src="{{ asset('images/plastic.png') }}" alt="industry">
-                                        <strong>{{ $ads->gear == 1 ? __('messages.noraml') : __('messages.automatic') }}</strong>
-                                    </div>
-                                    <div>
-                                        <span>{{ __('messages.regional') }}</span>
-                                        <img src="{{ asset('images/sedan-car-model.png') }}" alt="industry">
-                                        <strong>{{ $ads->specification }}</strong>
-                                    </div>
+                                <div>
+                                    <span>{{ __('messages.year') }}</span>
+                                    <img src="{{ asset('images/productivity.png') }}" alt="industry">
+                                    <strong>{{ $ads->year }}</strong>
+                                </div>
+                                <div>
+                                    <span>{{ __('messages.mileage') }}</span>
+                                    <img src="{{ asset('images/car-speed.png') }}" alt="industry">
+                                    <strong>{{ $ads->mileage . ' ' . __('messages.km') }}</strong>
+                                </div>
+                                <div>
+                                    <span>{{ __('messages.insurance') }}</span>
+                                    <img src="{{ asset('images/guarantee-certificate.png') }}" alt="industry">
+                                    <strong>{{ $ads->is_insurance ? __('messages.yes') : __('messages.no') }}</strong>
+                                </div>
+                                <div>
+                                    <span>{{ __('messages.colorEx') }}</span>
+                                    <img src="{{ asset('images/car-color.png') }}" alt="industry">
+                                    <strong>{{ $ads->color }}</strong>
+                                </div>
+                                <div>
+                                    <span>{{ __('messages.fuel') }}</span>
+                                    <img src="{{ asset('images/gas-station.png') }}" alt="industry">
+                                    <strong>{{ $ads->petrol_type }}</strong>
+                                </div>
+                                <div>
+                                    <span>{{ __('messages.gear') }}</span>
+                                    <img src="{{ asset('images/plastic.png') }}" alt="industry">
+                                    <strong>{{ $ads->gear == 1 ? __('messages.noraml') : __('messages.automatic') }}</strong>
+                                </div>
+                                <div>
+                                    <span>{{ __('messages.regional') }}</span>
+                                    <img src="{{ asset('images/sedan-car-model.png') }}" alt="industry">
+                                    <strong>{{ $ads->specification }}</strong>
                                 </div>
                             </div>
-                        @endif
+                        </div>
                         <div class="ads-car-details">
                             <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>

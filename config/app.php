@@ -182,7 +182,7 @@ return [
 
         'Intervention\Image\ImageServiceProvider',
         // Intervention\Image\ImageServiceProvider::class,
-
+        Jenssegers\Agent\AgentServiceProvider::class,
     ],
 
     /*
@@ -200,7 +200,7 @@ return [
 
         'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ])->toArray(),
 
 ];
