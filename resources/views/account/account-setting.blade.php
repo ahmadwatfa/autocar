@@ -47,7 +47,6 @@
                     @csrf
                         <div class="row">
                         <div class="col-md-5">
-                            <form>
                                 <div class="form-group">
                                     <label> Full Name</label>
                                     <input type="text" class="form-control" name="name" placeholder="Your full name..."
@@ -67,8 +66,8 @@
 
                                         <div class="col-4" style="padding: 0;">
                                             <select class="js-example-basic-single form-control" name="phonecode" style="width: 100%">
-                                                <option value="971">+971 - UAE</option>
-                                                <option value="966">+966 - KSA</option>
+                                                <option @if(Auth::user()->phonecode == '971') selected @endif value="971">+971 - UAE</option>
+                                                <option @if(Auth::user()->phonecode == '966') selected @endif  value="966">+966 - KSA</option>
                                             </select>
                                         </div>
                                     </div>
@@ -80,7 +79,6 @@
                                         value="{{ Auth::user()->email }}">
                                     
                                 </div>
-                            </form>
                         </div>
                         <div class="offset-md-1" style="border-left: 1px solid #ccc; margin: 0 80px;"></div>
                         <div class="col-md-5">
@@ -122,20 +120,22 @@
                     </div>
                 </form>
                     <hr>
+                    <form action="{{ route('setting.changePassword') }}" method="POST">
+                        @csrf
                     <h4 class="text-profile">Password</h4>
                     <div class="row">
                         <div class="col-md-5">
-                            <form>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <a href="#"
-                                        style="color: #ee3926; font-weight: 700; font-size: 14px; float: right;">Change
-                                        Password</a>
-                                    <input type="password" class="form-control" disabled="disabled" value="1234567890">
+                                    <input type="hidden" class="form-control" id="id" name="id" value="{{ Auth::user()->id }}">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="password" data-fv-field="">
+                                    <input style="margin-top: 20px" type="password" class="form-control"  name="password_confirmation" placeholder="password confirmation" data-fv-field="">
                                 </div>
-                            </form>
+                                <div class="col-md-12 text-center save-change-container">
+                                    <button class="btn btn-base btn-md">change password</button>
+                                </div>
                         </div>
                     </div>
+                    </form>
                 </div>
                 <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
                     <div class="row">
