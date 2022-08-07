@@ -625,6 +625,10 @@ body {
     color: #212529;
 }
 
+.details span {
+    color: #bbb;
+}
+
 .details .distance {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;

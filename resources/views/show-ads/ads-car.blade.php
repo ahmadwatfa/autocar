@@ -122,7 +122,7 @@
                                 {{-- <a href="#">{{ __('messages.readMore') }}</a> --}}
                             </div>
                         </div>
-                        <div class="ads-car-advantages">
+                        {{-- <div class="ads-car-advantages">
                             <div class="head accordion">
                                 <h5>{{ __('messages.additions') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
@@ -154,7 +154,7 @@
                                     {{ $ads->address }}
                                 </p>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-12">
