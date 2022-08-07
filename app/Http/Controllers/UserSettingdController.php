@@ -7,6 +7,7 @@ use App\Models\City;
 use App\Models\ComModel;
 use App\Models\Company;
 use App\Models\Media;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -91,7 +92,10 @@ class UserSettingdController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request->all());
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        return redirect()->route('settings.index');
     }
 
     /**
