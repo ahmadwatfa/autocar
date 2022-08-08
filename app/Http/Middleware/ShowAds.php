@@ -17,7 +17,10 @@ class ShowAds
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->id != 0) {
+        if(Auth::user()->id == 0) {
+            return $next($request);
+        }
+        if (Auth::user()) {
             if ($request->ads_car->status != 1) {
                 if ($request->user()->id == $request->ads_car->user_id) {
                     return $next($request);
