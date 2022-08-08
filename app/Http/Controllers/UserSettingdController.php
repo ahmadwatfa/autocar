@@ -93,6 +93,7 @@ class UserSettingdController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request->all());
         $user = User::findOrFail($id);
         $user->update($request->all());
         return redirect()->route('settings.index');
