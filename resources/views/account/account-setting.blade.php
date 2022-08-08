@@ -42,12 +42,14 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade" id="personal-profile" role="tabpanel" aria-labelledby="personalProfile">
                     <h4 class="text-profile">Profile</h4>
-                    <div class="row">
+                    <form action="{{ route('settings.update' , Auth::user()->id) }}" method="POST" enctype="multipart/form-data" >
+                    @method('put')
+                    @csrf
+                        <div class="row">
                         <div class="col-md-5">
-                            <form>
                                 <div class="form-group">
                                     <label> Full Name</label>
-                                    <input type="text" class="form-control" placeholder="Your full name..."
+                                    <input type="text" class="form-control" name="name" placeholder="Your full name..."
                                         value="{{ Auth::user()->name }}">
                                 </div>
                                 <div class="form-group">
@@ -55,32 +57,28 @@
                                     <div class="form-row">
 
                                         <div class="col-8" style="padding: 0;">
-                                            <input type="text" class="form-control" placeholder="Your phone number..."
-                                                value="{{ Auth::user()->mobile }}">
+                                            <input type="text" class="form-control" name="mobile" placeholder="Your phone number..."
+                                                value="{{ old('mobile' , Auth::user()->mobile) }}">
                                             <small class="text-muted">
                                                 مثال: 50123456(971+)
                                             </small>
                                         </div>
 
                                         <div class="col-4" style="padding: 0;">
-                                            <select class="js-example-basic-single form-control" style="width: 100%">
-                                                <option>+971 - UAE</option>
-                                                <option>+966 - KSA</option>
+                                            <select class="js-example-basic-single form-control" name="phonecode" style="width: 100%">
+                                                <option @if(Auth::user()->phonecode == '971') selected @endif value="971">+971 - UAE</option>
+                                                <option @if(Auth::user()->phonecode == '966') selected @endif  value="966">+966 - KSA</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input type="email" class="form-control" disabled="disabled"
-                                        aria-describedby="emailHelp" placeholder="Enter email"
+                                    <input type="email" class="form-control" 
+                                        aria-describedby="emailHelp" name="email" placeholder="Enter email"
                                         value="{{ Auth::user()->email }}">
-                                    <small id="emailHelp" class="form-text text-muted">
-                                        Your email is not verified. Wehave sent you an email to verify you account
-                                        <a href="#" style="color: #ee3926;">Send again</a>
-                                    </small>
+                                    
                                 </div>
-                            </form>
                         </div>
                         <div class="offset-md-1" style="border-left: 1px solid #ccc; margin: 0 80px;"></div>
                         <div class="col-md-5">
@@ -93,11 +91,12 @@
                                         <div class="col-xs-6 col-sm-8 col-md-6 col-lg-5">
                                             <div class="form-group"><a id="img_profile">
                                                     <div class="img-profile" data-toggle="modal"
+                                                        name="modal_upload"
                                                         data-target="#modal_upload"
                                                         style="background-image: url({{ asset(Auth::user()->avatar) }})">
                                                     </div>
                                                     {{-- <img src="{{ asset( Auth::user()->avatar) }}"> --}}
-                                                    <div class="camera-icon" data-toggle="modal"
+                                                    <div class="camera-icon" data-toggle="modal" name="modal_upload"
                                                         data-target="#modal_upload"><i class="fa fa-camera fa-lg"></i><span
                                                             class="hidden-xs">&nbsp;&nbsp;Upload image</span></div>
                                                 </a></div>
@@ -116,24 +115,27 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-center save-change-container">
-                            <button class="btn btn-base btn-md" id="save_changed">Save changes</button>
+                            <button class="btn btn-base btn-md">Save changes</button>
                         </div>
                     </div>
+                </form>
                     <hr>
+                    <form action="{{ route('setting.changePassword') }}" method="POST">
+                        @csrf
                     <h4 class="text-profile">Password</h4>
                     <div class="row">
                         <div class="col-md-5">
-                            <form>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <a href="#"
-                                        style="color: #ee3926; font-weight: 700; font-size: 14px; float: right;">Change
-                                        Password</a>
-                                    <input type="password" class="form-control" disabled="disabled" value="1234567890">
+                                    <input type="hidden" class="form-control" id="id" name="id" value="{{ Auth::user()->id }}">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="password" data-fv-field="">
+                                    <input style="margin-top: 20px" type="password" class="form-control"  name="password_confirmation" placeholder="password confirmation" data-fv-field="">
                                 </div>
-                            </form>
+                                <div class="col-md-12 text-center save-change-container">
+                                    <button class="btn btn-base btn-md">change password</button>
+                                </div>
                         </div>
                     </div>
+                    </form>
                 </div>
                 <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
                     <div class="row">

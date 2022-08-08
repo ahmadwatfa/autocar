@@ -63,6 +63,7 @@ Route::group(
         Route::resource('ads-motorcycle', AdsMotorcycleController::class);
 
         Route::resource('settings', UserSettingdController::class);
+        Route::post('settings/change+password', [UserSettingdController::class, 'change_password'])->name('setting.changePassword');
 
         Route::resource('showroom', ShowroomController::class);
      

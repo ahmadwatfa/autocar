@@ -7,8 +7,10 @@ use App\Models\City;
 use App\Models\ComModel;
 use App\Models\Company;
 use App\Models\Media;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserSettingdController extends Controller
 {
@@ -91,7 +93,9 @@ class UserSettingdController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        return redirect()->route('settings.index');
     }
 
     /**
@@ -103,5 +107,18 @@ class UserSettingdController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function change_password(Request $request)
+    {
+        $request->validate([
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+        'confirmed' => 'كلمة المرور غير متطابقة' ,
+    ]);
+            $user = User::findOrFail($request->id);
+            $password = Hash::make($request->post('password'));
+            $user->update(['password'=>$password,]);
+            return redirect()->route('settings.index');
     }
 }
