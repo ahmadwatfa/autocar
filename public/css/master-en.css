@@ -663,6 +663,41 @@ body {
     border-color: #ee3926;
 }
 
+
+.list-search {
+    height: auto;
+    max-height: 30em;
+    position: relative;
+    z-index: 999;
+    display: none;
+}
+
+.list-search ul {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.list-search ul li {
+    list-style: none;
+    text-align: right;
+}
+
+.list-search ul li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.list-search ul li:hover {
+    background-color: #707070;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.list-search ul li:hover a {
+    color: #fff;
+}
+
 /*/////////////////////////////////////////////////////////////*/
 
 /* Header */

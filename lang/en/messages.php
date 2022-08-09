@@ -28,7 +28,7 @@ return [
     'car' => 'Cars',
     'motorcycles' => 'Motorcycles',
     'boats' => 'Boats',
-    'Trucks' => 'Cars',
+    'trucks' => 'Trucks',
     'year' => 'Manufacturing Year',
     'car' => 'Car',
     'km' => 'km',

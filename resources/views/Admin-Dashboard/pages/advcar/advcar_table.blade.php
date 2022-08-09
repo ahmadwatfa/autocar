@@ -41,16 +41,14 @@
                             {{-- <a href="" class="btn btn-primary pull-left"><i class="fa fa-plus"></i> إضافة اعلان
                                 جديد </a> --}}
 
-                            </div><!-- /.box-header -->
-                            <div class="box-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Car</th>
                                         <th>User Name</th>
-                                        <th>Phone</th>
-                                        <th>Address</th>
                                         <th>SPECIAL</th>
                                         <th>Status</th>
                                         <th>Actions</th>
@@ -58,39 +56,54 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($ads as $ad)
-
                                         <tr id="{{ $ad->id }}"
-                                            style="{{ $ad->status==1 ? '' : 'background-color: rgb(255,0,0,.5);' }}">
+                                            style="{{ $ad->status == 1 ? '' : 'background-color: rgb(255,0,0,.5);' }}">
                                             <td>{{ $ad->id }}</td>
                                             <td>{{ $car[$ad->id]['companyName'] . ' ' . $car[$ad->id]['modelName'] . ' ' . $car[$ad->id]['year'] }}
                                             </td>
                                             <td>{{ $ad->name }}</td>
-                                            <td>{{ $ad->Phone }}</td>
-                                            <td>{{ $ad->Address }}</td>
-                                            @if($ad->is_special == 1)
-                                            <td>متميز</td>
+                                            @if ($ad->is_special == 1)
+                                                <td>متميز</td>
                                             @else
-                                            <td>غير متميز</td>
+                                                <td>غير متميز</td>
                                             @endif
-                                            @if($ad->status == 1)
-                                            <td>منشور</td>
+                                            @if ($ad->status == 1)
+                                                <td>منشور</td>
                                             @else
-                                            <td>غير منشور</td>
+                                                <td>غير منشور</td>
                                             @endif
                                             {{-- <a href="{{route('aboutus.show' , $about->id )}}" class="btn btn-xs {{$about->is_publish ?  "btn-default" : "btn-warning"}}">{{$about->is_publish ? "عدم نشر" : "نشر"}}</a> --}}
-                                            <td width="20%" align="center">
-                                                <a href="{{route('status.AdsCar',$ad->id)}}" class="btn btn-xs {{$ad->status==1 ?  "btn-default" : "btn-warning"}}">{{$ad->status==1 ? "عدم نشر" : "نشر"}}</a>
-                                                <a href="{{route('special.AdsCar',$ad->id)}}" class="btn btn-xs {{$ad->is_special==1 ?  "btn-default" : "btn-warning"}}">{{$ad->is_special==1 ? "غير متميز" : "متميز"}}</a>
-                                                <button  data-effect="effect-scale"
-                                                    data-id="{{$ad->id}}" data-toggle="modal"
-                                                    href="#modaldemo9" title="حذف" type="button"
+                                            <td width="20%" align="left">
+                                                <a href="{{ route('status.AdsCar', $ad->id) }}"
+                                                    class="btn btn-xs {{ $ad->status == 1 ? 'btn-default' : 'btn-warning' }}">{{ $ad->status == 1 ? 'عدم نشر' : 'نشر' }}</a>
+                                                <a href="{{ route('special.AdsCar', $ad->id) }}"
+                                                    class="btn btn-xs {{ $ad->is_special == 1 ? 'btn-default' : 'btn-warning' }}">{{ $ad->is_special == 1 ? 'غير متميز' : 'متميز' }}</a>
+                                                <button data-effect="effect-scale" data-id="{{ $ad->id }}"
+                                                    data-toggle="modal" href="#modaldemo9" title="حذف" type="button"
                                                     class="btn btn-danger btn-xs delete">
                                                     <span class=" glyphicon glyphicon-trash" aria-hidden="true">
                                                     </span>
-
                                                 </button>
 
-                                        </td>
+                                                <a href="{{ route('ads-car.show', $ad->id) }}" class="view" title="View" data-toggle="tooltip">
+                                                    <i data-effect="effect-scale" data-id="{{ $ad->id }}"
+                                                        title="عرض الإعلان" type="button"
+                                                        class="btn btn-info btn-xs delete">
+                                                        <span class=" glyphicon glyphicon-eye-open" aria-hidden="true">
+                                                        </span>
+                                                    </i>
+                                                </a>
+
+                                                <a href="{{ route('ads-car.edit', $ad->id) }}" class="view" title="View" data-toggle="tooltip">
+                                                    <i data-effect="effect-scale" data-id="{{ $ad->id }}"
+                                                        title="تعديل الإعلان" type="button"
+                                                        class="btn btn-success btn-xs delete">
+                                                        <span class=" glyphicon glyphicon-pencil" aria-hidden="true">
+                                                        </span>
+                                                    </i>
+                                                </a>
+
+                                            </td>
                                         </tr>
                                     @endforeach
 

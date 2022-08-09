@@ -112,7 +112,7 @@
                         <ul class="treeview-menu">
                             <li><a href="{{route('showrooms.index')}}"><i class="fa fa-circle-o"></i> قائمة المعارض
                                 </a></li>
-                            
+
                         </ul>
                     </li>
                     <li class="treeview">

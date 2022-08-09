@@ -9,7 +9,6 @@
                         <th>Car</th>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th>Address</th>
                         <th>SPECIAL</th>
                         <th>Status</th>
                         <th>Actions</th>
@@ -23,7 +22,6 @@
                             </td>
                             <td>{{ $ad->name }}</td>
                             <td>{{ $ad->phone }}</td>
-                            <td>{{ $ad->address }}</td>
                             <td>
                                 <input data-id="{{ $ad->id }}" class="toggle-special" type="checkbox"
                                     data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active"
@@ -80,8 +78,6 @@
                         } else {
                             document.getElementById(id).style.background = "rgb(0,255,0,.5)";
                         }
-
-                        // $("'" + '#' + id + "'").style('background-color: rgb(255,0,0,.5);');
                     }
                 });
             })

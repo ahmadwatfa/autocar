@@ -217,11 +217,6 @@
                                     autocomplete="new-password">
                             </div>
 
-                            {{-- <div class="col-md-6 col-sm-12">
-                                <label class="label label-input" for=""></label>
-                                <input type="text" name="address" class="form-control" placeholder="العنوان">
-                            </div> --}}
-
                             <div class="col-sm-12">
                                 <button type="submit" class="btn bottom-btn" id="move-forth-car-info">أعلن الآن</button>
                             </div>
@@ -231,46 +226,6 @@
                 </div>
             </form>
         </div>
-        {{-- <div class="modal fade modal-email" id="loginAddAds" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header modal-header-email">
-                        <button type="button" class="left-arrow-email" data-dismiss="modal" aria-label="Close"
-                            data-toggle="modal" data-target="#exampleModalCenter">
-                            <span aria-hidden="true">&rightarrow;</span>
-                        </button>
-                        <h5 class="modal-title" id="exampleModalLongTitle">سجل دخولك باستخدام ايميلك</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="loginForm" method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <div class="form-group notification">
-                                <!-- Session Status -->
-                                <x-auth-session-status class="mb-4" :status="session('status')" />
-
-                                <!-- Validation Errors -->
-                                <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="البريد الالكتروني "
-                                    name="emailLogin" :value="old('emailLogin')" autofocus>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="كلمة السر" name="passwordLogin"
-                                    autocomplete="current-password">
-                            </div>
-                            <button type="submit" class="btn btn-danger">الدخول</button>
-                        </form>
-                        <p> لا تملك حساب ؟<a id="regis" href="#">أكمل تسجيلك هنا</a></p>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </div>
 @endsection
 

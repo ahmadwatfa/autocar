@@ -279,12 +279,14 @@
                                 name="email" :value="old('email')" required autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="{{ __('messages.password') }}" name="password"
-                                required autocomplete="current-password">
+                            <input type="password" class="form-control" placeholder="{{ __('messages.password') }}"
+                                name="password" required autocomplete="current-password">
                         </div>
                         <button type="submit" class="btn btn-danger">{{ __('messages.login') }}</button>
                     </form>
-                    <p class="restPassword">{{ __('messages.forgetPassword') }} <a href="{{ route('password.request') }}" style="color: #EE3926">{{ __('messages.restPassword') }}</a></p>
+                    <p class="restPassword">{{ __('messages.forgetPassword') }} <a
+                            href="{{ route('password.request') }}"
+                            style="color: #EE3926">{{ __('messages.restPassword') }}</a></p>
                 </div>
             </div>
         </div>
@@ -315,16 +317,16 @@
                             <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         </div>
                         <div class="form-group">
-                            <input name="name" type="text" class="form-control" placeholder="{{ __('messages.name') }}"
-                                value="{{ old('name') }}">
+                            <input name="name" type="text" class="form-control"
+                                placeholder="{{ __('messages.name') }}" value="{{ old('name') }}">
                         </div>
                         <div class="form-group">
                             <input name="email" type="email" class="form-control"
                                 placeholder="{{ __('messages.Email') }}" value="{{ old('email') }}">
                         </div>
                         <div class="form-group">
-                            <input name="password" type="password" class="form-control" placeholder="{{ __('messages.password') }}"
-                                required autocomplete="new-password">
+                            <input name="password" type="password" class="form-control"
+                                placeholder="{{ __('messages.password') }}" required autocomplete="new-password">
                         </div>
                         <div class="form-group">
                             <input name="password_confirmation" type="password" class="form-control"
@@ -333,7 +335,8 @@
 
                         <div class="form-group">
                             <select name="phonecode" id="phonecode" class="form-control">
-                                <option value="" disabled selected hidden>{{ __('messages.selectCountry') }}</option>
+                                <option value="" disabled selected hidden>{{ __('messages.selectCountry') }}
+                                </option>
                                 @foreach ($countries as $country)
                                     <option value="{{ $country->phonecode }}"
                                         {{ old('phonecode') == $country->phonecode ? 'selected' : '' }}>
@@ -349,9 +352,12 @@
                         <div class="form-group">
                             <select name="type_user" class="form-control">
                                 <option disabled selected hidden>{{ __('messages.AccountType') }}</option>
-                                <option value="1" {{ old('type_user') == 1 ? 'selected' : '' }}>{{ __('messages.normalUser') }}</option>
-                                <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>{{ __('messages.dealer') }}</option>
-                                <option value="3" {{ old('type_user') == 3 ? 'selected' : '' }}>{{ __('messages.showroom') }}</option>
+                                <option value="1" {{ old('type_user') == 1 ? 'selected' : '' }}>
+                                    {{ __('messages.normalUser') }}</option>
+                                <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>
+                                    {{ __('messages.dealer') }}</option>
+                                <option value="3" {{ old('type_user') == 3 ? 'selected' : '' }}>
+                                    {{ __('messages.showroom') }}</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-danger">{{ __('messages.createAccount') }}</button>
@@ -515,9 +521,7 @@
                         touchMove: true,
                         centerMode: true,
                         {
-                            {
-                                app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true'
-                            }
+                            app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true'
                         },
 
                     });
@@ -563,9 +567,7 @@
                         touchMove: true,
                         centerMode: false,
                         {
-                            {
-                                app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true'
-                            }
+                            app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true'
                         },
                     });
 

@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="carModel">موديل السيارة</label>
-                            <select name="" id="carModel" class="form-control input-text">
+                            <select name="carModel_id" id="carModel" class="form-control input-text">
                                 <option value="" hidden>موديل السيارة</option>
                             </select>
                         </div>
@@ -52,9 +52,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="year">{{ __('messages.year') }}</label>
-                            <select name="carModel_id" id="year" class="form-control input-text">
-                                <option value="" disabled selected hidden>{{ __('messages.year') }}</option>
-                            </select>
+                            <input type="text" name="year" id="year" class="form-control input-text" value="{{ $ads->year }}">
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="mileage">المسافة المقطوعة</label>
@@ -144,7 +142,6 @@
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="insurance">هل يتوفر تأمين للمركبة</label>
                             <select name="is_insurance" id="insurance" class="form-control input-text">
-                                {{-- <option value="" disabled selected hidden>هل يتوفر تأمين للمركبة</option> --}}
                                 <option value="1" {{ $ads->is_insurance == 1 ? "selected" : "" }}>نعم</option>
                                 <option value="0" {{ $ads->is_insurance == 0 ? "selected" : "" }}>لا</option>
                             </select>
@@ -161,7 +158,6 @@
                                 <div class="input-group ">
                                     <input readonly="" class="file-caption-name form-control  kv-fileinput-caption"
                                         placeholder="{{ __('messages.main-image') }}" title="">
-
                                     <span class="file-caption-icon"></span>
                                     <div class="input-group-btn input-group-append">
 
@@ -169,7 +165,6 @@
                                             class="btn btn-default btn-outline-secondary kv-hidden fileinput-cancel fileinput-cancel-button"><i
                                                 class="bi-slash-circle"></i> <span
                                                 class="hidden-xs">Cancel</span></button>
-
 
                                         <div class="btn btn-primary btn-file" tabindex="500"><i class="bi-folder2-open"></i>
                                             <span class="hidden-xs">Browse …</span><input type="file" name="main_image"
@@ -222,11 +217,6 @@
                                     autocomplete="new-password">
                             </div>
 
-                            {{-- <div class="col-md-6 col-sm-12">
-                                <label class="label label-input" for=""></label>
-                                <input type="text" name="address" class="form-control" placeholder="العنوان">
-                            </div> --}}
-
                             <!-- Modal Login And Post Ads -->
                         @endguest
                     </div>
@@ -243,7 +233,13 @@
         let error_price = false;
         let empty = false;
 
-        $('.bottom-btn').prop('disabled', true);
+        $('.bottom-btn').prop('disabled', false);
+
+        // $(document).on('ready', function() {
+        //     error_milage = true;
+        //     error_price = true;
+        //     handler();
+        // });
 
         $('#first-car-info input').keyup(function() {
             // empty = false;
