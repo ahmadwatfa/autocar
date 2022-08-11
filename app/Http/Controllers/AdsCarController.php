@@ -250,9 +250,11 @@ class AdsCarController extends Controller
     public function edit(AdsCar $adsCar)
     {
         // $this->authorize('edit', $adsCar);
+        $media = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->get();
 
         return view('edit-ads.edit-adsCar', [
             'ads' => $adsCar,
+            'medias' => $media,
         ]);
     }
 

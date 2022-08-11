@@ -520,9 +520,8 @@
                         pauseOnFocus: true,
                         touchMove: true,
                         centerMode: true,
-                        {
-                            app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true'
-                        },
+                        rtl: '{{app()->getLocale()}}' == 'ar' ? 'true' : 'false',
+                        // app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true',
 
                     });
 
@@ -566,9 +565,9 @@
                         pauseOnFocus: true,
                         touchMove: true,
                         centerMode: false,
-                        {
-                            app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true'
-                        },
+                        rtl: '{{app()->getLocale()}}' == 'ar' ? 'true' : 'false',
+                        // app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true',
+
                     });
 
                     $('.base-modal .modal-body .email').on('click', function() {

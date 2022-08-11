@@ -52,12 +52,13 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="year">{{ __('messages.year') }}</label>
-                            <input type="text" name="year" id="year" class="form-control input-text" value="{{ $ads->year }}">
+                            <input type="text" name="year" id="year" class="form-control input-text"
+                                value="{{ $ads->year }}">
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="mileage">المسافة المقطوعة</label>
-                            <input type="text" min="1000" id="mileage" name="mileage" class="form-control input-text"
-                                value="{{ $ads->mileage }}">
+                            <input type="text" min="1000" id="mileage" name="mileage"
+                                class="form-control input-text" value="{{ $ads->mileage }}">
 
                         </div>
                         <div class="col-md-6 col-sm-12">
@@ -98,14 +99,15 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="clynder">عدد الإسطوانات</label>
-                            <input type="text" name="clynder" class="form-control input-text" value="{{ $ads->clynder }}">
+                            <input type="text" name="clynder" class="form-control input-text"
+                                value="{{ $ads->clynder }}">
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="gear">نوع ناقل الحركة</label>
                             <select name="gear" id="gear" class="form-control input-text">
                                 <option value="" disabled selected hidden>ناقل الحركة</option>
-                                <option value="1" {{ $ads->gear == 1 ? "selected" : "" }}>عادي</option>
-                                <option value="2" {{ $ads->gear == 2 ? "selected" : "" }}>أوتوماتيك</option>
+                                <option value="1" {{ $ads->gear == 1 ? 'selected' : '' }}>عادي</option>
+                                <option value="2" {{ $ads->gear == 2 ? 'selected' : '' }}>أوتوماتيك</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-sm-12">
@@ -137,13 +139,14 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="additions">إضافات أخرى</label>
-                            <input type="text" name="additions" class="form-control input-text" value="{{ $ads->additions }}">
+                            <input type="text" name="additions" class="form-control input-text"
+                                value="{{ $ads->additions }}">
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="insurance">هل يتوفر تأمين للمركبة</label>
                             <select name="is_insurance" id="insurance" class="form-control input-text">
-                                <option value="1" {{ $ads->is_insurance == 1 ? "selected" : "" }}>نعم</option>
-                                <option value="0" {{ $ads->is_insurance == 0 ? "selected" : "" }}>لا</option>
+                                <option value="1" {{ $ads->is_insurance == 1 ? 'selected' : '' }}>نعم</option>
+                                <option value="0" {{ $ads->is_insurance == 0 ? 'selected' : '' }}>لا</option>
                             </select>
                         </div>
                         <div class="col-sm-12">
@@ -166,9 +169,11 @@
                                                 class="bi-slash-circle"></i> <span
                                                 class="hidden-xs">Cancel</span></button>
 
-                                        <div class="btn btn-primary btn-file" tabindex="500"><i class="bi-folder2-open"></i>
-                                            <span class="hidden-xs">Browse …</span><input type="file" name="main_image"
-                                                id="main-image" class="form-control" multiple="multiple">
+                                        <div class="btn btn-primary btn-file" tabindex="500"><i
+                                                class="bi-folder2-open"></i>
+                                            <span class="hidden-xs">Browse …</span><input type="file"
+                                                name="main_image" id="main-image" class="form-control"
+                                                multiple="multiple">
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +182,8 @@
 
                         <div class="col-sm-12">
                             <label class="label label-input" for=""></label>
-                            <input type="file" name="images[]" id="car-images" class="form-control" multiple="multiple">
+                            <input type="file" name="images[]" id="car-images" class="form-control"
+                                multiple="multiple">
                         </div>
 
                         <div class="col-sm-12">
@@ -690,5 +696,26 @@
                 }
             });
         }
+        $(document).ready(function() {
+            // var medias = {!! json_encode($medias->toArray()) !!};
+
+            $("#car-images").fileinput({
+                actionDelete: '<button type="button" class="kv-file-remove {removeClass}" title="{removeTitle}"{dataUrl}{dataKey}>{removeIcon}</button>\n',
+                showRemove: true,
+                initialPreview: [
+                    @foreach ($medias as $media)
+                        '<img src="{{ asset('images/advs') }}/{{ $media->file_name }}" class="file-preview-image">',
+                    @endforeach
+                ],
+                previewFileIconSettings: {
+                    'docx': '<i class="fas fa-file-word text-primary"></i>',
+                    'xlsx': '<i class="fas fa-file-excel text-success"></i>',
+                    'pptx': '<i class="fas fa-file-powerpoint text-danger"></i>',
+                    'jpg': '<i class="fas fa-file-image text-warning"></i>',
+                    'pdf': '<i class="fas fa-file-pdf text-danger"></i>',
+                    'zip': '<i class="fas fa-file-archive text-muted"></i>',
+                }
+            });
+        });
     </script>
 @endsection
