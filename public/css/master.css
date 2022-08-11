@@ -3750,3 +3750,40 @@ textarea,
     margin-top: 0.8em;
     text-align: right;
 }
+
+.specification-mobile {
+    padding: 0px 1em;
+    margin: 0px 0px 0px 15px;
+    list-style: none;
+
+}
+
+.specification-mobile > li {
+    border-bottom: 1px solid rgb(238, 240, 241);
+    padding: 8px 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.specification-mobile .name-specific {
+    text-align: right;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 41.6667%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.specification-mobile .details-specific {
+    text-align: right;
+    box-sizing: border-box;
+    width: 58.3333%;
+    padding: 0px;
+    margin: 0px;
+}
