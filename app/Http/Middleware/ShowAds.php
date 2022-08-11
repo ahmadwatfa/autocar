@@ -18,20 +18,24 @@ class ShowAds
     public function handle(Request $request, Closure $next)
     {
         // dd(Auth::user());
-        if(Auth::user()->type_user == 0) {
-            return $next($request);
-        } elseif (Auth::user()->type_user != 0) {
-            if ($request->ads_car->status != 1) {
-                if ($request->user()->id == $request->ads_car->user_id) {
+
+        if (Auth::user()) {
+            if(Auth::user()->type_user == 0) {
+                return $next($request);
+            } elseif (Auth::user()->type_user != 0) {
+                if ($request->ads_car->status != 1) {
+                    if ($request->user()->id == $request->ads_car->user_id) {
+                        return $next($request);
+                    } else {
+                        abort(403, 'Access denied');
+                    }
+                }
+                else {
                     return $next($request);
-                } else {
-                    abort(403, 'Access denied');
                 }
             }
-            else {
-                return $next($request);
-            }
-        } elseif ($request->ads_car->status == 1) {
+        }
+        elseif ($request->ads_car->status == 1) {
             return $next($request);
         }
         else {
