@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('assets/account-setting/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/account-setting/css/master.css') }}">
+    @if (app()->getLocale() == 'en')
+        <link rel="stylesheet" href="{{ asset('assets/account-setting/css/master.css') }}">
+    @else
+        <link rel="stylesheet" href="{{ asset('assets/account-setting/css/master-ar.css') }}">
+    @endif
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +41,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
                         <div class="about">
-                            <img src="images/logo.png" alt="Auto Mark">
+                            <img src="{{ asset('images/logo.png') }}" alt="Auto Mark">
                             <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد يمكنك أن تولد مثل هذا
                                 النص أو العديد من النصوص ا</p>
                             <div class="social-icons">

@@ -31,7 +31,7 @@ class AdsCarController extends Controller
     {
 
         // $this->middleware('auth', ['except' => ['index', 'show', 'restore', 'search']]);
-        $this->middleware(['throttle:3,1', 'CheckAdsNum'], ['only' => ['create', 'store']]);
+        $this->middleware(['throttle:3,1', 'CheckAdsNum', 'verified'], ['only' => ['create', 'store']]);
         $this->middleware('ShowAds', ['only' => ['show']]);
         // $this->authorizeResource(AdsCar::class , ['post', 'edit', 'update']);
     }

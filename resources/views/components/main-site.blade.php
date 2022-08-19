@@ -2,6 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="info-slide">
+                <div class="image-slide">
+                    <img src="{{ asset('images/big-mercedes.png') }}" alt="">
+                </div>
+            </div>
+            {{-- <div class="info-slide">
                 <div class="head-slide">
                     <h1>هل تبحث عن</h1>
                     <h1>سيارة أحلامك</h1>
@@ -11,7 +16,7 @@
                     <h2>يمكننا مساعدتك في العثور على أفضل سيارة. تحقق من مراجعاتنا ، قارن النماذج وابحث عن سيارات للبيع.
                     </h2>
                 </div>
-            </div>
+            </div> --}}
             <div class="search-filed">
                 <div class="form-main">
                     <form action="{{ route('search.adsCar') }}" method="get">
@@ -75,9 +80,9 @@
                     </form>
                 </div>
             </div>
-            <div class="image-slide">
+            {{-- <div class="image-slide">
                 <img src="{{ asset('images/big-mercedes.png') }}" alt="">
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
