@@ -515,6 +515,7 @@ body {
 
 .image-slide img {
     max-width: 39em;
+    left: 8em;
     top: 11em;
     position: absolute;
 }

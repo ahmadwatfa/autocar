@@ -134,6 +134,8 @@ class AdsCarController extends Controller
                 'file_sort' => 0,
                 'is_main' => 1,
             ]);
+
+            $this->notifyNew();
         }
 
         if ($request->images && count($request->images) > 0) {

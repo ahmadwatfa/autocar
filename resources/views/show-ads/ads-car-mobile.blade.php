@@ -28,7 +28,7 @@
                             <span>{{ __('messages.published') }} </span>{{ $ads->created_at->diffForHumans() }}
                         </div>
                         <div class="ads-car-specifications">
-                            <div class="head accordion">
+                            <div class="head accordion active">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>

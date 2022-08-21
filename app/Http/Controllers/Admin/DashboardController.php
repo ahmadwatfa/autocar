@@ -9,6 +9,8 @@ use App\Models\CarModel;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Lists;
+use App\Models\User;
+use App\Notifications\AddNew;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
@@ -193,5 +195,16 @@ class DashboardController extends Controller
         $item = Lists::create($input);
 
         return redirect(route('list'));
+    }
+
+    public function notifyNew() {
+        $users = User::where('type_user', 0)->get();
+
+        foreach ($users as $key => $user) {
+            # code...
+            $user->notify(new AddNew("User Add New Ads"));
+
+            return 1;
+        }
     }
 }
