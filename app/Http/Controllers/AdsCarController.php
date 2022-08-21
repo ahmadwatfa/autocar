@@ -183,8 +183,6 @@ class AdsCarController extends Controller
         foreach ($users as $key => $user) {
             # code...
             $user->notify(new AddNew("User Add New Ads"));
-
-            return 1;
         }
     }
     /**
