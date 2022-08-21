@@ -3,7 +3,7 @@
     <div class="add-car-info">
         <div class="container">
             <div class="row">
-                <h5>أضف معلومات سيارتك</h5>
+                <h5>{{ __('messages.Add_ad_info') }}</h5>
             </div>
             <div class="row steps">
                 <div class="step0 step-move"></div>
@@ -16,46 +16,46 @@
                 @csrf
                 <div id="first-car-info" class="col-sm-12">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="country">{{ __('messages.Country') }}</label>
                             <select name="country_id" id="country" class="form-control input-text" required>
                                 <option value="" hidden>{{ __('messages.selectCountry') }}</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="city">المدينة</label>
                             <select name="city_id" id="city" class="form-control input-text">
                                 <option value="" hidden>{{ __('messages.selectCity') }}</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="carCompany">شركة التصنيع</label>
                             <select name="carComany_id" id="carCompany" class="form-control input-text">
                                 <option value="" hidden>شركة التصنيع</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="carModel">موديل السيارة</label>
                             <select name="carModel_id" id="carModel" class="form-control input-text">
                                 <option value="" hidden>موديل السيارة</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="specification">المواصفات الاقليمية</label>
                             <select name="specification" id="specification" class="form-control input-text">
                                 <option value="" hidden>المواصفات الاقليمية</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="year">{{ __('messages.year') }}</label>
                             <input type="text" name="year" id="year" class="form-control input-text">
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="mileage">المسافة المقطوعة</label>
                             <input type="text" min="1000" id="mileage" name="mileage" class="form-control input-text"
                                 placeholder="">
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="price1">السعر المطلوب (درهم)</label>
                             <input type="text" name="price" id="price1" class="form-control input-text" placeholder="">
                         </div>
@@ -66,35 +66,35 @@
                 </div>
                 <div id="second-car-info" class="col-sm-12">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="status_car">حالة السيارة</label>
                             <select name="status_car" id="status_car" class="form-control input-text">
                                 <option value="" disabled selected hidden>الحالة</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="status_engine">الحالة الميكانيكة</label>
                             <select name="status_engine" id="status_engine" class="form-control input-text">
                                 <option value="" disabled selected hidden>الحالة الميكانيكة</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="body">شكل السيارة</label>
                             <select name="body" id="body" class="form-control input-text">
                                 <option value="" disabled selected hidden>شكل جسم المركبة</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="door">عدد الأبواب</label>
                             <select name="door" id="door" class="form-control input-text">
                                 <option value="" disabled selected hidden>عدد الأبواب</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="clynder">عدد الإسطوانات</label>
                             <input type="text" name="clynder" class="form-control input-text" placeholder="">
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="gear">نوع ناقل الحركة</label>
                             <select name="gear" id="gear" class="form-control input-text">
                                 <option value="" disabled selected hidden>ناقل الحركة</option>
@@ -102,14 +102,14 @@
                                 <option value="2">أوتوماتيك</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="petrol_type">نوع الوقود</label>
                             <select name="petrol_type" id="petrol_type" class="form-control input-text">
                                 <option value="" disabled selected hidden>نوع الوقود</option>
                             </select>
                         </div>
 
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="color">لون المركبة</label>
                             <select name="color" id="color" class="form-control input-text">
                                 <option value="" disabled selected hidden>لون المركبة</option>
@@ -124,16 +124,16 @@
                 </div>
                 <div id="third-car-info" class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 textalign">
                             <label class="label label-input" for="description">وصف السيارة</label>
                             <textarea class="form-control input-text" name="description" id="" rows="3"></textarea>
                             {{-- تحدث عن طول المدة التي تملكتها , حالة المركبة الميكانيكية , أي  تعديلات أو إصلاحات  قمت بها , تفاصيل ضمانها الخ --}}
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="additions">إضافات أخرى</label>
                             <input type="text" name="additions" class="form-control input-text" placeholder="">
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="insurance">هل يتوفر تأمين للمركبة</label>
                             <select name="is_insurance" id="insurance" class="form-control input-text">
                                 {{-- <option value="" disabled selected hidden>هل يتوفر تأمين للمركبة</option> --}}
@@ -185,17 +185,17 @@
                 <div id="last-car-info" class="col-sm-12">
                     <div class="row">
 
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="title">النوع والموديل</label>
                             <input type="text" name="title" class="form-control input-text" required>
                         </div>
 
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="name">اسم المعلن</label>
                             <input type="text" name="name" class="form-control input-text">
                         </div>
 
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="phone">رقم الهاتف</label>
                             <input type="text" name="phone" class="form-control input-text" required>
                         </div>
@@ -205,13 +205,13 @@
                             </div>
                         @endauth
                         @guest
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-12 textalign">
                                 <label class="label label-input" for="email">الايميل</label>
                                 <input type="email" name="email" class="form-control input-text" placeholder=""
                                     value="{{-- $user->email --}}">
                             </div>
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-12 textalign">
                                 <label class="label label-input" for="password">كلمة السر</label>
                                 <input name="password" type="password" class="form-control input-text" placeholder=""
                                     autocomplete="new-password">

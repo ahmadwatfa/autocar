@@ -13,6 +13,7 @@ use App\Models\Lists;
 use App\Models\Media;
 use App\Models\Showroom;
 use App\Models\User;
+use App\Notifications\AddNew;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -134,8 +135,6 @@ class AdsCarController extends Controller
                 'file_sort' => 0,
                 'is_main' => 1,
             ]);
-
-            $this->notifyNew();
         }
 
         if ($request->images && count($request->images) > 0) {
@@ -173,10 +172,21 @@ class AdsCarController extends Controller
                 $i++;
             }
         }
-
+        $this->notifyNew();
         return redirect()->route('index');
     }
 
+
+    public function notifyNew() {
+        $users = User::where('type_user', 0)->get();
+
+        foreach ($users as $key => $user) {
+            # code...
+            $user->notify(new AddNew("User Add New Ads"));
+
+            return 1;
+        }
+    }
     /**
      * Display the specified resource.
      *

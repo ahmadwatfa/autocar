@@ -24,7 +24,7 @@
                                     alt="ads">
                             @endforeach
                         </div>
-                        <div>
+                        <div class="published">
                             <span>{{ __('messages.published') }} </span>{{ $ads->created_at->diffForHumans() }}
                         </div>
                         <div class="ads-car-specifications">

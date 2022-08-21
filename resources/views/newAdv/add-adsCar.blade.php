@@ -3,7 +3,7 @@
     <div class="add-car-info">
         <div class="container">
             <div class="row">
-                <h5>أضف معلومات سيارتك</h5>
+                <h5>{{ __('messages.Add_ad_info') }}</h5>
             </div>
             <div class="row steps">
                 <div class="step0 step-move"></div>
@@ -17,40 +17,40 @@
                 @csrf
                 <div id="first-car-info" class="col-sm-12">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <select name="country_id" id="country" class="form-control">
                                 <option value="" disabled selected hidden>{{ __('messages.selectCountry') }}</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <select name="city_id" id="city" class="form-control">
                                 <option value="" disabled selected hidden>{{ __('messages.selectCity') }}</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <select name="carComany_id" id="carCompany" class="form-control">
                                 <option value="" disabled selected hidden>شركة التصنيع</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <select name="" id="carModel" class="form-control">
                                 <option value="" disabled selected hidden>موديل السيارة</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <select name="specification" id="specification" class="form-control">
                                 <option value="" disabled selected hidden>المواصفات الاقليمية</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <select name="carModel_id" id="year" class="form-control">
                                 <option value="" disabled selected hidden>{{ __('messages.year') }}</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <input type="text" name="mileage" class="form-control" placeholder="المسافة المقطوعة">
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 textalign">
                             <input type="text" name="price" class="form-control" placeholder="السعر المطلوب (درهم)">
                         </div>
                         <div class="col-sm-12">
@@ -60,7 +60,7 @@
                 </div>
                 <div id="second-car-info" class="col-sm-12">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 ">
                             <select name="status_car" id="status_car" class="form-control">
                                 <option value="" disabled selected hidden>الحالة</option>
                             </select>

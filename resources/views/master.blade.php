@@ -352,7 +352,7 @@
                         <div class="form-group">
                             <select name="type_user" class="form-control">
                                 <option disabled selected hidden>{{ __('messages.AccountType') }}</option>
-                                <option value="1" {{ old('type_user') == 1 ? 'selected' : '' }}>
+                                <option value="1" selected {{ old('type_user') == 1 ? 'selected' : '' }}>
                                     {{ __('messages.normalUser') }}</option>
                                 <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>
                                     {{ __('messages.dealer') }}</option>

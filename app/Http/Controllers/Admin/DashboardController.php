@@ -197,14 +197,4 @@ class DashboardController extends Controller
         return redirect(route('list'));
     }
 
-    public function notifyNew() {
-        $users = User::where('type_user', 0)->get();
-
-        foreach ($users as $key => $user) {
-            # code...
-            $user->notify(new AddNew("User Add New Ads"));
-
-            return 1;
-        }
-    }
 }

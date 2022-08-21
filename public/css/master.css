@@ -8,6 +8,9 @@
 .nondecoration {
     text-decoration: none !important;
 }
+.textalign {
+    text-align: right;
+}
 
 body {
     padding-top: 7.524em;
@@ -1850,7 +1853,7 @@ body {
     .add-car-info {
         margin: 5em 0;
     }
-  }
+}
 
 .add-car-info h5 {
     color: #ee3926;
@@ -2924,6 +2927,7 @@ textarea,
     object-fit: cover;
     max-width: 49em;
     max-height: 20em;
+    cursor: pointer;
     /* width: 100%;
     height: 330px; */
 }
@@ -2955,6 +2959,10 @@ textarea,
 .ads .ads-space .ads-images img:hover {
     filter: blur(0);
     -webkit-filter: blur(0);
+}
+
+.ads .ads-space .published {
+    text-align: right;
 }
 
 .ads .ads-space .ads-car-specifications,
@@ -3755,7 +3763,6 @@ textarea,
     padding: 0px 1em;
     margin: 0px 0px 0px 15px;
     list-style: none;
-
 }
 
 .specification-mobile > li {
@@ -3787,3 +3794,5 @@ textarea,
     padding: 0px;
     margin: 0px;
 }
+
+
