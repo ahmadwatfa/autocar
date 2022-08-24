@@ -14,24 +14,31 @@
                                             class="fa fa-heart"></i></span></button>
                             </div>
                         </div>
-                        {{-- <a href="#" id="pop" class="ads-main-image">
-                            <img id="imageresource" src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img" alt="ads">
-                        </a> --}}
-
-                        <div class="row" id="gallery" data-toggle="modal" data-target="#viewImages">
-                            <div class="ads-main-image">
-                                <img src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img"
+                        @if ($agent->isMobile())
+                            <div class="price-mobile">
+                                <span>{!! $ads->price != 0
+                                    ? $ads->price . ' ' . __('messages.aed')
+                                    : "<a href='http://wa.me/$ads->phone?text=" .
+                                        URL::current() .
+                                        "%0a أود معرفة سعر السيارة' target='_blank'>تواصل لمعرفة السعر</a>" !!}</span>
+                            </div>
+                        @endif
+                        <a href="{{ asset('images/advs/' . $main_img->file_name) }}" class="ads-main-image glightbox">
+                            <img src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img" alt="ads">
+                        </a>
+                        <div class="ads-images">
+                            @foreach ($medias as $key => $media)
+                                <a href="{{ asset('images/advs/' . $media->file_name) }}" class="glightbox"></a>
+                                <img id="{{ $key }}" src="{{ asset('images/advs/' . $media->file_name) }}"
                                     alt="ads">
-                            </div>
-                            <div class="ads-images">
-                                @foreach ($medias as $key => $media)
-                                    <img id="{{ $key }}" src="{{ asset('images/advs/' . $media->file_name) }}"
-                                        alt="ads">
-                                @endforeach
-                            </div>
+                                </a>
+                            @endforeach
                         </div>
+                        {{-- <div id="gallery" data-toggle="modal" data-target="#viewImages">
 
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        </div> --}}
+
+                        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -50,7 +57,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
 
 
@@ -135,7 +142,7 @@
                             </div>
                         @else
                             <div class="ads-car-specifications">
-                                <div class="head accordion">
+                                <div class="head accordion active">
                                     <h5>{{ __('messages.carspec') }}</h5>
                                     <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                         aria-controls="collapseOne"></span>
@@ -185,12 +192,12 @@
                             </div>
                         @endif
                         <div class="ads-car-details">
-                            <div class="head accordion">
+                            <div class="head accordion active">
                                 <h5>{{ __('messages.carspec') }}</h5>
-                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"></span>
+                                {{-- <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne"></span> --}}
                             </div>
-                            <div class="details panel panel-1">
+                            <div class="details panel panel-1" style="max-height: 400px;">
                                 <div>
                                     <div>
                                         <span>{{ __('messages.status') }}</span>
@@ -216,18 +223,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ads-car-description">
-                            <div class="head accordion">
+                            <div class="description0x">
                                 <h5>{{ __('messages.description') }}</h5>
-                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne"></span>
-                            </div>
-                            <div class="panel panel-1">
                                 <p>
                                     {{ $ads->description }}
                                 </p>
-                                {{-- <a href="#">{{ __('messages.readMore') }}</a> --}}
                             </div>
                         </div>
                         {{-- <div class="ads-car-advantages">
@@ -287,7 +287,7 @@
 
                         @if (isset($showroom))
                             <div class="seller">
-                                <div class="image" style="height: 80px; clip-path: circle();">
+                                <div class="image" style="height: 64px; clip-path: circle();">
                                     <img src="{{ asset($showroom->logo) }}" alt="person" height="80">
                                 </div>
                                 <div class="info">
@@ -487,13 +487,11 @@
                                 </div>
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExample" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExample" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>

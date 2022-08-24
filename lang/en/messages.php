@@ -29,7 +29,7 @@ return [
     'motorcycles' => 'Motorcycles',
     'boats' => 'Boats',
     'trucks' => 'Trucks',
-    'year' => 'Manufacturing Year',
+    'year' => 'sYear',
     'car' => 'Car',
     'km' => 'km',
     'aed' => 'AED',

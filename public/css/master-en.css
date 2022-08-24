@@ -2875,6 +2875,7 @@ textarea,
     object-fit: cover;
     max-width: 49em;
     max-height: 20em;
+    cursor: pointer;
 }
 
 .ads .ads-space .ads-images {
@@ -2920,16 +2921,42 @@ textarea,
     padding-top: 20px;
 }
 
+.ads .ads-space .ads-car-details{
+    margin-bottom: 0px;
+}
 .ads .ads-space .ads-car-specifications .head,
-.ads .ads-space .ads-car-details .head,
+.ads .ads-space .ads-car-location .head,
 .ads .ads-space .ads-car-description .head,
-.ads .ads-space .ads-car-advantages .head,
-.ads .ads-space .ads-car-location .head {
+.ads .ads-space .ads-car-advantages .head{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.ads .ads-space .ads-car-details .head {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    align-content: flex-start;
+    padding-bottom: 1em;
+}
+
+.description0x{
+    text-align: left;
+    padding: 1em;
+}
+
+.description0x h5 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.description0x p{
+    padding-top: .5em;
 }
 
 .ads .ads-space .ads-car-specifications .head h5,
@@ -3148,6 +3175,7 @@ textarea,
     }
     .ads .ads-space .ads-main-image img {
         height: auto;
+        width: 100%;
     }
     .ads .ads-space .ads-images img {
         width: 22%;
@@ -3158,6 +3186,21 @@ textarea,
     }
     .ads .ads-info .price span {
         font-size: 15px;
+    }
+
+    .price-mobile {
+        margin: .5em 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        color: #fff;
+        background-color: #ee3926;
+        text-decoration: none;
+    }
+    .price-mobile a {
+        color: #fff;
+        font-weight: 600;
     }
     .ads .ads-info .seller-phone {
         flex-direction: column-reverse;
@@ -3340,8 +3383,8 @@ textarea,
 }
 
 .ads .ads-info .seller .image img {
-    width: 45px;
-    height: 45px;
+    max-width: 96px;
+    height: auto;
 }
 
 .ads .ads-info .seller .info {
@@ -3716,9 +3759,9 @@ textarea,
     body {
         padding-top: 0.524em;
     }
-    .navbar-dark .navbar-brand {
+    /* .navbar-dark .navbar-brand {
         width: 50%;
-    }
+    } */
 }
 
 .special-details {
