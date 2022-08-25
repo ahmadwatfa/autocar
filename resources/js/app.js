@@ -1,7 +1,13 @@
 import './bootstrap';
+import Vue from 'vue';
+import CropGram from 'vue-cropgram';
+Vue.component('crop-gram', CropGram);
 
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+window.onload = function () {
+    var app = new Vue({
+        el: '#app',
+        components: {
+            'crop-gram': CropGram,
+        }
+    });
+}

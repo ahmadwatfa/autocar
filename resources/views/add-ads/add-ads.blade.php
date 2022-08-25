@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 @extends('master')
 @section('content')
     <div class="add-car-info">
@@ -304,3 +306,4 @@
         // });
     </script>
 @endsection
+>>>>>>> parent of e837efa (25.08.2022)

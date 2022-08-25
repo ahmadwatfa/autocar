@@ -421,8 +421,6 @@ body {
     background: #fff;
     border-radius: 10px;
     position: relative;
-    direction: ltr;
-    text-align: right;
 }
 
 .search-body .search-form .search-input {
@@ -3740,9 +3738,9 @@ textarea,
     body {
         padding-top: 0.524em;
     }
-    /* .navbar-dark .navbar-brand {
+    .navbar-dark .navbar-brand {
         width: 50%;
-    } */
+    }
 }
 
 .special-details {

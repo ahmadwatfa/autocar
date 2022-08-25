@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
@@ -22,7 +24,6 @@
     {{-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css'> --}}
     <link rel="stylesheet" href="{{ asset('fonts/css/all.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -521,7 +522,7 @@
                         pauseOnFocus: true,
                         touchMove: true,
                         centerMode: true,
-                        rtl: '{{ app()->getLocale() }}' == 'ar' ? 'true' : 'false',
+                        rtl: '{{app()->getLocale()}}' == 'ar' ? 'true' : 'false',
                         // app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true',
 
                     });
@@ -566,7 +567,7 @@
                         pauseOnFocus: true,
                         touchMove: true,
                         centerMode: false,
-                        rtl: '{{ app()->getLocale() }}' == 'ar' ? 'true' : 'false',
+                        rtl: '{{app()->getLocale()}}' == 'ar' ? 'true' : 'false',
                         // app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true',
 
                     });
@@ -593,14 +594,6 @@
                 });
             }
         </script>
-
-        <script type="module">
-            import 'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js';
-            const lightbox = GLightbox({
-                loop: true,
-                moreLength: 10,
-            });
-        </script>
     @endif
 
     @yield('pagescript')
@@ -609,3 +602,4 @@
 </body>
 
 </html>
+>>>>>>> parent of e837efa (25.08.2022)

@@ -1,24 +1,17 @@
 <div id="header" class="page-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark header-special" id="main-navbar">
-            <button class="navbar-toggler" type="button" id="buttonMenu" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <a class="navbar-brand logo-specail" href="{{ route('index') }}">
                 <img src="{{ asset('images/logo.png') }}" alt="AutoMark" class="logo-header">
             </a>
-            <button class="navbar-toggler" type="button" id="buttonMenu" data-toggle="collapse"
-                data-target="#CountrySelect" aria-controls="CountrySelect" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" id="buttonMenu" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
             <div class="collapse navbar-collapse navbar-spical" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ request()->url() == route('index') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->url() == route('index') ? "active" : "" }}">
                         <a class="nav-link" href="{{ route('index') }}">{{ __('messages.home') }}</a>
                     </li>
                     {{-- <li class="nav-item dropdown">
@@ -31,17 +24,20 @@
                             <a class="dropdown-item" href="#">تصنيف 2</a>
                         </div>
                     </li> --}}
-                    <li class="nav-item {{ request()->url() == route('showroom.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('showroom.index') }}">{{ __('messages.CarShows') }}</a>
+                    <li class="nav-item {{ request()->url() == route('showroom.index') ? "active" : "" }}">
+                        <a class="nav-link"
+                            href="{{ route('showroom.index') }}">{{ __('messages.CarShows') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{ __('messages.about') }}</a>
                     </li>
                     <li class="nav-item">
                         @if (app()->getLocale() == 'en')
-                            <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">العربية</a>
+                            <a class="nav-link"
+                                href="{{ LaravelLocalization::getLocalizedURL('ar') }}">العربية</a>
                         @elseif (app()->getLocale() == 'ar')
-                            <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a>
+                            <a class="nav-link"
+                                href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a>
                         @endif
                     </li>
 
@@ -53,9 +49,8 @@
                         </a>
                         <div id="countries" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($countries as $country)
-                                <a class="dropdown-item" href="/country/{{ $country->id }}">{{ $country->name }} <img
-                                        src="{{ asset($country->flag) }}" alt="country" width="20"
-                                        height="20"></a>
+                                <a class="dropdown-item" href="/country/{{$country->id}}">{{ $country->name }} <img
+                                        src="{{ asset($country->flag) }}" alt="country" width="20" height="20"></a>
                             @endforeach
                         </div>
                     </li>
@@ -76,7 +71,7 @@
                                 @php
                                     $regex = preg_match('[ ]', $user->name);
                                     if ($regex) {
-                                        $t = explode(' ', trim($user->name));
+                                        $t = explode(' ',trim($user->name));
                                         $s = $t[0];
                                     } else {
                                         $s = $user->name;
@@ -90,22 +85,15 @@
                                 <a class="dropdown-item" href="#">اعلاناتي</a>
                                 <a class="dropdown-item" href="#">المفضلة</a>
                                 <a class="dropdown-item" href="{{ route('settings.index') }}">اعدادات الحساب</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}">{{ __('messages.signOut') }}</a>
+                                <a class="dropdown-item"
+                                    href="{{ route('logout') }}">{{ __('messages.signOut') }}</a>
                             </div>
                         </div>
                     </div>
                 @endauth
             </div>
-
-            <div class="collapse navbar-collapse navbar-spical" id="CountrySelect">
-                <ul>
-                    <li>UAE</li>
-                    <li>KSA</li>
-                    <li>BH</li>
-                </ul>
-            </div>
         </nav>
-
+     
         {{-- <nav class="navbar navbar-expand-lg navbar-dark header-special quick-access">
             Quick Access
         </nav> --}}

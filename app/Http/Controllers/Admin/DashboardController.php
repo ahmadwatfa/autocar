@@ -162,6 +162,7 @@ class DashboardController extends Controller
     public function saveModel(Request $request) {
         $input = $request->all();
         $city = CarModel::create($input);
+
         return redirect(route('carsModel', $input['cars_company_id']));
     }
 
@@ -195,4 +196,5 @@ class DashboardController extends Controller
 
         return redirect(route('list'));
     }
+
 }

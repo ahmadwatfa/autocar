@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('master')
 @section('content')
     <div class="add-car-info">
@@ -16,6 +17,15 @@
                 @csrf
                 <div id="first-car-info" class="col-sm-12">
                     <div class="row">
+                        <div id="app" class="col-sm-12">
+                            <crop-gram
+                            ref="cropgram"
+                            placeholder-color="#ff4605"
+                            selection-text="اختر صور الإعلان"
+                            selection-text-class="px-2 mb-1 text-left small-9 text-uppercase text-primary2 spacing-05"
+                            has-changed
+                            ></crop-gram>
+                        </div>
                         <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="country">{{ __('messages.Country') }}</label>
                             <select name="country_id" id="country" class="form-control input-text" required>
@@ -52,12 +62,13 @@
                         </div>
                         <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="mileage">المسافة المقطوعة</label>
-                            <input type="text" min="1000" id="mileage" name="mileage" class="form-control input-text"
-                                placeholder="">
+                            <input type="text" min="1000" id="mileage" name="mileage"
+                                class="form-control input-text" placeholder="">
                         </div>
                         <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="price1">السعر المطلوب (درهم)</label>
-                            <input type="text" name="price" id="price1" class="form-control input-text" placeholder="">
+                            <input type="text" name="price" id="price1" class="form-control input-text"
+                                placeholder="">
                         </div>
                         <div class="col-sm-12">
                             <button type="button" class="btn bottom-btn" id="move-first-car-info">التالي</button>
@@ -163,9 +174,11 @@
                                                 class="hidden-xs">Cancel</span></button>
 
 
-                                        <div class="btn btn-primary btn-file" tabindex="500"><i class="bi-folder2-open"></i>
-                                            <span class="hidden-xs">Browse …</span><input type="file" name="main_image"
-                                                id="main-image" class="form-control" multiple="multiple">
+                                        <div class="btn btn-primary btn-file" tabindex="500"><i
+                                                class="bi-folder2-open"></i>
+                                            <span class="hidden-xs">Browse …</span><input type="file"
+                                                name="main_image" id="main-image" class="form-control"
+                                                multiple="multiple">
                                         </div>
                                     </div>
                                 </div>
@@ -201,14 +214,14 @@
                         </div>
                         @auth
                             <div class="col-sm-12">
-                                <button type="submit" class="btn bottom-btn" id="move-forth-car-info">أعلن الآن</button>
+                                <button type="submit" class="btn bottom-btn">أعلن الآن</button>
                             </div>
                         @endauth
                         @guest
                             <div class="col-md-6 col-sm-12 textalign">
                                 <label class="label label-input" for="email">الايميل</label>
                                 <input type="email" name="email" class="form-control input-text" placeholder=""
-                                    value="{{-- $user->email --}}">
+                                    value="{{ $user->email }}">
                             </div>
 
                             <div class="col-md-6 col-sm-12 textalign">
@@ -218,10 +231,10 @@
                             </div>
 
                             <div class="col-sm-12">
-                                <button type="submit" class="btn bottom-btn" id="move-forth-car-info">أعلن الآن</button>
+                                <button type="submit" class="btn bottom-btn">أعلن الآن</button>
                             </div>
                             <!-- Modal Login And Post Ads -->
-                        @endguest
+                        @endguest --}}
                     </div>
                 </div>
             </form>
@@ -637,3 +650,5 @@
         });
     </script>
 @endsection
+=======
+>>>>>>> 30c5091d15fcce9da866a327fe707bf7ce89c5f2
