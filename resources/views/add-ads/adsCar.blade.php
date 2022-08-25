@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('master')
 @section('content')
     <div class="add-car-info">
@@ -650,5 +649,3 @@
         });
     </script>
 @endsection
-=======
->>>>>>> 30c5091d15fcce9da866a327fe707bf7ce89c5f2

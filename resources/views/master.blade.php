@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
@@ -38,11 +36,8 @@
         <link rel="stylesheet" href="{{ asset('css/master.css') }}">
     @endif
     <link rel="stylesheet" href="{{ asset('css/fileinput.min.css') }}">
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="{{ mix('js/app.js') }}"></script>
     <style type="text/css">
         .slider {
             width: 90%;
@@ -602,4 +597,3 @@
 </body>
 
 </html>
->>>>>>> parent of e837efa (25.08.2022)
