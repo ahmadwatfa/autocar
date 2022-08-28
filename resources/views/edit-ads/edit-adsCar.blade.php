@@ -521,7 +521,7 @@
                 });
             }
 
-            $('select#carModel').change(function() {
+            $('select#carCompany').change(function() {
                 var carID = $(this).val();
                 fetchModel(carID);
             });
