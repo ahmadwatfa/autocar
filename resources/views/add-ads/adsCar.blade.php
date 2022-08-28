@@ -16,15 +16,12 @@
                 @csrf
                 <div id="first-car-info" class="col-sm-12">
                     <div class="row">
-                        <div id="app" class="col-sm-12">
-                            <crop-gram
-                            ref="cropgram"
-                            placeholder-color="#ff4605"
-                            selection-text="اختر صور الإعلان"
-                            selection-text-class="px-2 mb-1 text-left small-9 text-uppercase text-primary2 spacing-05"
-                            has-changed
-                            ></crop-gram>
-                        </div>
+                        {{-- <div id="app" class="col-sm-12 justify-content-center">
+                            <crop-gram v-show="true" ref="cropgram" placeholder-color="#ff4605"
+                                selection-text="اختر صور الإعلان"
+                                selection-text-class="px-2 mb-1 text-left small-9 text-uppercase text-primary2 spacing-05"
+                                has-changed></crop-gram>
+                        </div> --}}
                         <div class="col-md-6 col-sm-12 textalign">
                             <label class="label label-input" for="country">{{ __('messages.Country') }}</label>
                             <select name="country_id" id="country" class="form-control input-text" required>
@@ -159,34 +156,9 @@
                 <div id="forth-car-info" class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="file-caption">
-                                <div class="input-group ">
-                                    <input readonly="" class="file-caption-name form-control  kv-fileinput-caption"
-                                        placeholder="{{ __('messages.main-image') }}" title="">
-
-                                    <span class="file-caption-icon"></span>
-                                    <div class="input-group-btn input-group-append">
-
-                                        <button type="button" title="Abort ongoing upload"
-                                            class="btn btn-default btn-outline-secondary kv-hidden fileinput-cancel fileinput-cancel-button"><i
-                                                class="bi-slash-circle"></i> <span
-                                                class="hidden-xs">Cancel</span></button>
-
-
-                                        <div class="btn btn-primary btn-file" tabindex="500"><i
-                                                class="bi-folder2-open"></i>
-                                            <span class="hidden-xs">Browse …</span><input type="file"
-                                                name="main_image" id="main-image" class="form-control"
-                                                multiple="multiple">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
                             <label class="label label-input" for=""></label>
-                            <input type="file" name="images[]" id="car-images" class="form-control" multiple="multiple">
+                            <input type="file" name="images[]" id="car-images" class="form-control"
+                                multiple="multiple">
                         </div>
 
                         <div class="col-sm-12">
@@ -233,7 +205,7 @@
                                 <button type="submit" class="btn bottom-btn">أعلن الآن</button>
                             </div>
                             <!-- Modal Login And Post Ads -->
-                        @endguest --}}
+                        @endguest
                     </div>
                 </div>
             </form>
@@ -316,6 +288,30 @@
     </script>
 
     <script>
+        function selectMain(selectedID, indexImage) {
+
+            var inputIndex = document.createElement('input');
+            inputIndex.type = 'hidden';
+            inputIndex.name = 'mainImageIndex';
+            inputIndex.id = 'inputIndex';
+            inputIndex.value = indexImage;
+
+            allElements = document.querySelectorAll('.removeSelected');
+            allElements.forEach(box => {
+                box.setAttribute("class", "bi-check-circle text-warning removeSelected");
+            });
+            document.getElementById(selectedID).children[1].children[1].children[0].setAttribute("class",
+                "bi-check-circle-fill text-success removeSelected");
+
+            allInputs = document.querySelectorAll('#inputIndex');
+            allInputs.forEach(box => {
+                box.remove();
+            });
+
+            document.getElementById(selectedID).appendChild(inputIndex);
+
+        }
+
         $(document).on('ready', function() {
             $('.base-modal .modal-body .email').on('click', function() {
                 $('.base-modal').modal("hide");

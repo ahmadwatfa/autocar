@@ -67,9 +67,12 @@ class AdsCarController extends Controller
     {
         // dd($request->emailLogin . ' '  .  );
         // dd($request);
-
+        // dd($request->mainImageIndex);
         if (!is_null($request->emailLogin) && !is_null($request->passwordLogin)) {
             Auth::attempt(['email' => $request->emailLogin, 'password' => $request->passwordLogin], 1);
+        }
+        if ($request->mainImageIndex == null) {
+            $request->mainImageIndex = 0;
         }
         // dd(Auth::check());
         if (Auth::guest()) {
@@ -116,35 +119,29 @@ class AdsCarController extends Controller
         $adv = AdsCar::create($inputs);
 
 
-        if (isset($request->main_image)) {
-            $file_name = 'adv' . time() . '' . 0 . '.' . $request->main_image->getClientOriginalExtension();
-            $file_size = $request->main_image->getSize();
-            $file_type = $request->main_image->getMimeType();
-            $path = \public_path('/images/advs/' . $file_name);
+        // if (isset($request->main_image)) {
+        //     $file_name = 'adv' . time() . '' . 0 . '.' . $request->main_image->getClientOriginalExtension();
+        //     $file_size = $request->main_image->getSize();
+        //     $file_type = $request->main_image->getMimeType();
+        //     $path = \public_path('/images/advs/' . $file_name);
 
 
-            $image = Image::make($request->main_image->getRealPath());
-            $image->insert(public_path('images/watermark.png'), 'bottom-right', 20, 20);
-            $image->save($path, 100);
+        //     $image = Image::make($request->main_image->getRealPath());
+        //     $image->insert(public_path('images/watermark.png'), 'bottom-right', 20, 20);
+        //     $image->save($path, 100);
 
-            $adv->media()->create([
-                'file_name' => $file_name,
-                'file_size' => $file_size,
-                'file_type' => $file_type,
-                'file_status' => true,
-                'file_sort' => 0,
-                'is_main' => 1,
-            ]);
-        }
+        //     $adv->media()->create([
+        //         'file_name' => $file_name,
+        //         'file_size' => $file_size,
+        //         'file_type' => $file_type,
+        //         'file_status' => true,
+        //         'file_sort' => 0,
+        //         'is_main' => 1,
+        //     ]);
+        // }
 
-        if ($request->images && count($request->images) > 0) {
-            // $i = 0;
-            if (isset($request->main_image)) {
-                $i = 1;
-            } else {
-                $i = 0;
-            }
-
+        if ($request->images && count($request->images) >= 0) {
+            $i = 0;
             foreach ($request->images as $image) {
                 $file_name = 'adv' . time() . '' . $i . '.' . $image->getClientOriginalExtension();
                 $file_size = $image->getSize();
@@ -155,17 +152,22 @@ class AdsCarController extends Controller
                 $image->insert(public_path('images/watermark.png'), 'bottom-right', 20, 20);
                 $image->save($path, 100);
 
-                $adv->media()->create([
-                    'file_name' => $file_name,
-                    'file_size' => $file_size,
-                    'file_type' => $file_type,
-                    'file_status' => true,
-                    'file_sort' => $i,
-                ]);
-
-                if ($i == 0) {
-                    $adv->media()->update([
+                if ($i == $request->mainImageIndex) {
+                    $adv->media()->create([
+                        'file_name' => $file_name,
+                        'file_size' => $file_size,
+                        'file_type' => $file_type,
+                        'file_status' => true,
+                        'file_sort' => $i,
                         'is_main' => 1,
+                    ]);
+                } else {
+                    $adv->media()->create([
+                        'file_name' => $file_name,
+                        'file_size' => $file_size,
+                        'file_type' => $file_type,
+                        'file_status' => true,
+                        'file_sort' => $i,
                     ]);
                 }
 
@@ -177,7 +179,8 @@ class AdsCarController extends Controller
     }
 
 
-    public function notifyNew() {
+    public function notifyNew()
+    {
         $users = User::where('type_user', 0)->get();
 
         foreach ($users as $key => $user) {
@@ -448,5 +451,10 @@ class AdsCarController extends Controller
             'car' => $car,
             'media' => $media
         ]);
+    }
+
+    public function test()
+    {
+        return view('add-ads.uploadImage');
     }
 }

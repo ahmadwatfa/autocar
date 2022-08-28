@@ -2867,7 +2867,7 @@ textarea,
 
 .ads .ads-space .ads-main-image {
     display: block;
-    margin: 15px 0;
+    margin: 15px auto;
     text-align: center;
 }
 

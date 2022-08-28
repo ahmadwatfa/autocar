@@ -37,7 +37,7 @@
     @endif
     <link rel="stylesheet" href="{{ asset('css/fileinput.min.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
+
     <style type="text/css">
         .slider {
             width: 90%;
@@ -593,7 +593,7 @@
 
     @yield('pagescript')
     <script src="{{ asset('js/script.js') }}"></script>
-
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 
 </html>

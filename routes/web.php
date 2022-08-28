@@ -20,6 +20,7 @@ use App\Http\Controllers\UserSettingdController;
 use App\Models\AdsCar;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use Laravel\Jetstream\Rules\Role;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -66,12 +67,10 @@ Route::group(
         Route::post('settings/change+password', [UserSettingdController::class, 'change_password'])->name('setting.changePassword');
 
         Route::resource('showroom', ShowroomController::class);
-     
+
         Route::post('search/showroom', [ShowroomController::class, 'search'])->name('search.showroom');
 
-        // Route::get('test', function() {
-        //     dd(Request::is());
-        // });
+        Route::get('test/1', [AdsCarController::class, 'test']);
     }
 );
 

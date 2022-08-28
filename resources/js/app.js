@@ -10,4 +10,6 @@ window.onload = function () {
             'crop-gram': CropGram,
         }
     });
+
+    getCanvas();
 }
