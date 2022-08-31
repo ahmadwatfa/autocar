@@ -150,36 +150,13 @@
                             </select>
                         </div>
                         <div class="col-sm-12">
-                            <button type="button" class="btn bottom-btn" id="move-third-car-info">التالي</button>
+                            <button type="button" class="btn bottom-btn" id="move-third-car-info"
+                                onclick="selecteMain();">التالي</button>
                         </div>
                     </div>
                 </div>
                 <div id="forth-car-info" class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-12">
-                            <div class="file-caption">
-                                <div class="input-group ">
-                                    <input readonly="" class="file-caption-name form-control  kv-fileinput-caption"
-                                        placeholder="{{ __('messages.main-image') }}" title="">
-                                    <span class="file-caption-icon"></span>
-                                    <div class="input-group-btn input-group-append">
-
-                                        <button type="button" title="Abort ongoing upload"
-                                            class="btn btn-default btn-outline-secondary kv-hidden fileinput-cancel fileinput-cancel-button"><i
-                                                class="bi-slash-circle"></i> <span
-                                                class="hidden-xs">Cancel</span></button>
-
-                                        <div class="btn btn-primary btn-file" tabindex="500"><i
-                                                class="bi-folder2-open"></i>
-                                            <span class="hidden-xs">Browse …</span><input type="file"
-                                                name="main_image" id="main-image" class="form-control"
-                                                multiple="multiple">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="col-sm-12">
                             <label class="label label-input" for=""></label>
                             <input type="file" name="images[]" id="car-images" class="form-control"
@@ -203,7 +180,7 @@
                         <div class="col-md-6 col-sm-12">
                             <label class="label label-input" for="phone">رقم الهاتف</label>
                             <input type="text" name="phone" class="form-control input-text" placeholder=""
-                                value="{{ $ads->mobile }}">
+                                value="{{ $ads->phone }}">
                         </div>
                         @auth
                             <div class="col-sm-12">
@@ -700,8 +677,7 @@
             // var medias = {!! json_encode($medias->toArray()) !!};
 
             $("#car-images").fileinput({
-                actionDelete: '<button type="button" class="kv-file-remove {removeClass}" title="{removeTitle}"{dataUrl}{dataKey}>{removeIcon}</button>\n',
-                showRemove: true,
+                // actionDelete: '<button type="button" class="kv-file-remove {removeClass}" title="{removeTitle}"{dataUrl}{dataKey}>{removeIcon}</button>\n',
                 initialPreview: [
                     @foreach ($medias as $media)
                         '<img src="{{ asset('images/advs') }}/{{ $media->file_name }}" class="file-preview-image">',
@@ -714,8 +690,79 @@
                     'jpg': '<i class="fas fa-file-image text-warning"></i>',
                     'pdf': '<i class="fas fa-file-pdf text-danger"></i>',
                     'zip': '<i class="fas fa-file-archive text-muted"></i>',
-                }
+                },
+                fileActionSettings: {
+                    showRemove: false,
+                    showUpload: false,
+                    showZoom: true,
+                    showDrag: false,
+                    showIndicator: true,
+
+                },
+                showRemove: false,
+                showUpload: false,
             });
         });
+
+        function insertAfter(newNode, existingNode) {
+            existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+        }
+
+        function selecteMain() {
+            var div = [];
+            var ill = [];
+            var mainImageId = '{{ $mainImage }}';
+            console.log(mainImageId);
+            function createElemeny(s) {
+                div[s] = document.createElement('div');
+                div[s].className = 'file-upload-indicator';
+                div[s].title = 'Select Main Image';
+
+                ill[s] = document.createElement('i');
+                ill[s].className = 'bi-check-circle text-warning removeSelected';
+                div[s].appendChild(ill[s]);
+            }
+
+            allElements = document.querySelectorAll('.file-actions');
+
+            for (var i = 0; i < allElements.length; i++) {
+                allElements[i].id = 'addIcon' + i;
+            }
+
+            for (var ii = 0; ii < allElements.length; ii++) {
+                elem = 'addIcon' + ii;
+                createElemeny(ii)
+                document.getElementById(elem).appendChild(div[ii]);
+
+                if (ii == mainImageId) {
+                    document.getElementById(elem).children[1].children[0].setAttribute("class", "bi-check-circle-fill text-success removeSelected");
+                }
+            }
+
+        }
+
+        function selectMain(selectedID, indexImage) {
+            var inputIndex = document.createElement('input');
+            inputIndex.type = 'hidden';
+            inputIndex.name = 'mainImageIndex';
+            inputIndex.id = 'inputIndex';
+            inputIndex.value = indexImage;
+
+            allElements = document.querySelectorAll('.removeSelected');
+            allElements.forEach(box => {
+                box.setAttribute("class", "bi-check-circle text-warning removeSelected");
+            });
+
+            document.getElementById(selectedID).children[1].children[2].children[1].children[0].setAttribute("class",
+                "bi-check-circle-fill text-success removeSelected");
+
+            allInputs = document.querySelectorAll('#inputIndex');
+            allInputs.forEach(box => {
+                box.remove();
+            });
+
+            document.getElementById(selectedID).appendChild(inputIndex);
+
+        }
     </script>
 @endsection

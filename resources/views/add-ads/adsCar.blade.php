@@ -333,7 +333,7 @@
                 showCancel: true,
                 showRemove: false,
                 showUpload: false,
-                overwriteInitial: false
+                overwriteInitial: false,
             });
 
             $('.step1').on('mouseover', function() {

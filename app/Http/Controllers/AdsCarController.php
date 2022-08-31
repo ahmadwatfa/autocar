@@ -25,6 +25,8 @@ use Intervention\Image\Facades\Image;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Jenssegers\Agent\Agent;
 
+use function PHPUnit\Framework\isNull;
+
 class AdsCarController extends Controller
 {
 
@@ -33,6 +35,7 @@ class AdsCarController extends Controller
 
         // $this->middleware('auth', ['except' => ['index', 'show', 'restore', 'search']]);
         $this->middleware(['throttle:3,1', 'CheckAdsNum', 'verified'], ['only' => ['create', 'store']]);
+        $this->middleware(['throttle:3,1', 'verified'], ['only' => ['edit', 'update']]);
         $this->middleware('ShowAds', ['only' => ['show']]);
         // $this->authorizeResource(AdsCar::class , ['post', 'edit', 'update']);
     }
@@ -242,6 +245,7 @@ class AdsCarController extends Controller
                 'car' => $car,
                 'main_img' => $media->where('is_main', 1)->first(),
                 'medias' => $media,
+                'locale' => $locale,
             ]);
         } else {
 
@@ -250,6 +254,7 @@ class AdsCarController extends Controller
                 'car' => $car,
                 'main_img' => $media->where('is_main', 1)->first(),
                 'medias' => $media,
+                'locale' => $locale,
             ]);
         }
     }
@@ -264,10 +269,11 @@ class AdsCarController extends Controller
     {
         // $this->authorize('edit', $adsCar);
         $media = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->get();
-
+        $mainImage = Media::where('media_type','App\Models\AdsCar')->where('media_id', $adsCar->id)->where('is_main', 1)->first();
         return view('edit-ads.edit-adsCar', [
             'ads' => $adsCar,
             'medias' => $media,
+            'mainImage' => $mainImage->file_sort,
         ]);
     }
 
@@ -287,13 +293,24 @@ class AdsCarController extends Controller
         $adsCar->specification = $request->specification;
         $adsCar->mileage = $request->mileage;
         $adsCar->price = $request->price;
-
-        // $adsCar->update([
-        //     $request
-        // ]);
+        $adsCar->phone = $request->phone;
 
         $adsCar->save();
+        // dd($request->mainImageIndex);
 
+        $mainImagePre = Media::where('media_type','App\Models\AdsCar')->where('media_id', $adsCar->id)->where('is_main', 1)->first();
+        $mainImageID = explode("init-", $request->mainImageIndex);
+        if($request->mainImageIndex == null) {
+            $mainImageID[1] =   $mainImagePre->file_sort;
+        }
+        // dd($mainImageID[1]);
+        if ($mainImageID[1] !=  $mainImagePre->file_sort) {
+            $mainImagePre->is_main = 0;
+            $mainImagePre->update();
+            $mainImageNew = Media::where('media_type','App\Models\AdsCar')->where('media_id', $adsCar->id)->where('file_sort', $mainImageID[1])->first();
+            $mainImageNew->is_main = 1;
+            $mainImageNew->update();
+        }
         return redirect(route('index'));
     }
 

@@ -517,9 +517,6 @@
                         pauseOnFocus: true,
                         touchMove: true,
                         centerMode: true,
-                        rtl: '{{app()->getLocale()}}' == 'ar' ? 'true' : 'false',
-                        // app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true',
-
                     });
 
                     $('.base-modal .modal-body .email').on('click', function() {
@@ -562,9 +559,6 @@
                         pauseOnFocus: true,
                         touchMove: true,
                         centerMode: false,
-                        rtl: '{{app()->getLocale()}}' == 'ar' ? 'true' : 'false',
-                        // app() - > getLocale() == 'ar' ? 'rtl: true' : 'ltr: true',
-
                     });
 
                     $('.base-modal .modal-body .email').on('click', function() {

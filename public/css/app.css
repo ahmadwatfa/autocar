@@ -981,6 +981,8 @@ video {
   margin-left: 1.5rem;
 }.mb-4 {
   margin-bottom: 1rem;
+}.mb-1 {
+  margin-bottom: 0.25rem;
 }.mb-0 {
   margin-bottom: 0px;
 }.-mt-px {
@@ -991,8 +993,6 @@ video {
   margin-right: auto;
 }.ml-auto {
   margin-left: auto;
-}.mb-1 {
-  margin-bottom: 0.25rem;
 }.block {
   display: block;
 }.inline {

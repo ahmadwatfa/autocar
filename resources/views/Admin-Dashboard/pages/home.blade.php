@@ -10,10 +10,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-
                 لوحة التحكم
             </h1>
-
         </section>
 
         <!-- Main content -->
@@ -28,21 +26,12 @@
                 .info-box-number {
                     font-size: 24px;
                 }
-
             </style>
             <!-- Info Boxes Style 2 -->
-
-
-
-
-
-
             <!-- Main row -->
             <div class="row">
                 <!-- Left col -->
-
                 <section class="col-lg-12 connectedSortable ui-sortable">
-
                     <div class="box box-navy">
                         <div class="box-header with-border ui-sortable-handle" style="cursor: move;">
                             <i class="fa fa-tasks"></i>
@@ -62,44 +51,23 @@
                                             <th>البريد الالكتروني</th>
                                             <th>العنوان</th>
                                             <th>النص</th>
-
-
-
                                         </tr>
                                     </thead>
-                                     <tbody>
-
-
-
-
-                                          <tr>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                          </tr>
-
-
-
-
-
-                                      </tbody>
-
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
-
-
                         </div><!-- /.box-body -->
                     </div>
-
-
-
                 </section><!-- right col -->
-
-
             </div><!-- /.row (main row) -->
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
-
 @endsection

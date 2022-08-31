@@ -28,13 +28,6 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/assets/admin/dist/css/skins/_all-skins.min.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <!-- jQuery 2.1.4 -->
     <script src="/assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="/assets/admin/dist/js/jquery.validate.js"></script>
@@ -42,13 +35,10 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+
     <div class="wrapper">
-
-
-
-
         <!-- Right side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
+        <aside class="main-sidebar ">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <!-- Sidebar user panel -->
@@ -57,7 +47,6 @@
                         <a href="{{ route('Dashboard.index') }}">
                             <i class="fa fa-home"></i> <span>الرئيسية</span>
                         </a>
-
                     </li>
 
                     <li class="treeview">
@@ -66,14 +55,12 @@
                             <span>الاعلانات</span>
                             <i class="fa fa-angle-left pull-left"></i>
                         </a>
-
                         <ul class="treeview-menu">
                             <li><a href="{{route('advcar.index')}}"><i class="fa fa-circle-o"></i> اعلانات السيارات</a></li>
                             {{-- <li><a href=""><i class="fa fa-circle-o"></i>اعلانات القوارب</a></li>
                             <li><a href=""><i class="fa fa-circle-o"></i>اعلانات الدراجات النارية</a></li>
                             <li><a href=""><i class="fa fa-circle-o"></i>اعلانات العربات الثقيلة</a></li> --}}
                         </ul>
-
                     </li>
 
                     <li class="treeview">
@@ -128,33 +115,6 @@
                                     جديد</a></li>
                         </ul>
                     </li>
-                    {{-- <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-laptop"></i>
-                            <span>جدول الاعمال</span>
-                            <i class="fa fa-angle-left pull-left"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href=""><i class="fa fa-circle-o"></i> قائمة جداول
-                                    الاعمال </a></li>
-                            <li><a href=""><i class="fa fa-circle-o"></i> إضافة جدول
-                                    اعمال جديد</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-laptop"></i>
-                            <span>الموظفين</span>
-                            <i class="fa fa-angle-left pull-left"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href=""><i class="fa fa-circle-o"></i> قائمة الموظفين </a>
-                            </li>
-                            <li><a href=""><i class="fa fa-circle-o"></i> إضافة خطة موظف
-                                    جديد</a></li>
-                        </ul>
-                    </li> --}}
-
                 </ul>
             </section>
         </aside>

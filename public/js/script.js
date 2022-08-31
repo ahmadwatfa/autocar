@@ -64,7 +64,6 @@ $(window).load(function() {
    {
       thumbBox: '.thumbBox',
       spinner: '.spinner',
-    //   imgSrc: 'http://www.9t.com/wp-content/themes/9t/image/mascot.png'
    }
 
    var cropper = $('.imageBox').cropbox(options);
@@ -81,7 +80,6 @@ $(window).load(function() {
           cropper = $('.imageBox').cropbox(options);
       }
       reader.readAsDataURL(this.files[0]);
-      // this.files = [];
    })
    $('#btnSet, #btnSet_desktop').on('click', function(){
       var img = cropper.getDataURL();
@@ -116,7 +114,6 @@ $(window).load(function() {
    $('#btn_remove_image').on('click', function() {
       if(confirm('Your are sure DEL my image profile ?')) {
          $('.control-upload').hide();
-        //  $('.img-profile').css({"background-image": "url('http://www.9t.com/wp-content/themes/9t/image/mascot.png')"});
       }
    })
 });
@@ -187,7 +184,6 @@ $('.tab-menu > li').on('click', function() {
     {
        thumbBox: '.thumbBox',
        spinner: '.spinner',
-    //    imgSrc: 'http://www.9t.com/wp-content/themes/9t/image/mascot.png'
     }
 
     var cropper = $('.imageBox').cropbox(options);
@@ -204,7 +200,6 @@ $('.tab-menu > li').on('click', function() {
            cropper = $('.imageBox').cropbox(options);
        }
        reader.readAsDataURL(this.files[0]);
-       // this.files = [];
     })
     $('#btnSet, #btnSet_desktop').on('click', function(){
        var img = cropper.getDataURL();
@@ -239,7 +234,6 @@ $('.tab-menu > li').on('click', function() {
     $('#btn_remove_image').on('click', function() {
        if(confirm('Your are sure DEL my image profile ?')) {
           $('.control-upload').hide();
-        //   $('.img-profile').css({"background-image": "url('http://www.9t.com/wp-content/themes/9t/image/mascot.png')"});
        }
     })
  });

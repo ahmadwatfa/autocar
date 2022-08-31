@@ -312,7 +312,7 @@
                 <div class="col-sm-12">
                     <div class="similar-cars">
                         <h5>{{ __('messages.similarAds') }}</h5>
-                        <div class="slider slik-demo">
+                        <div class="slider slik-demo" dir="ltr">
                             <div class="advert">
                                 <div class="head">
                                     <div class="title">
@@ -487,13 +487,11 @@
                                 </div>
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExample" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExample" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -518,7 +516,7 @@
         let widthh = screen.width;
         if (widthh > 1080) {
             $(document).on('ready', function() {
-                $('.slik-demo').slick({
+                $('.slik-demo').not('.slick-initialized').slick({
                     accessibility: true,
                     adaptiveHeight: false,
                     arrows: true,
@@ -528,7 +526,7 @@
                     dots: false,
                     prevArrow: '<button type="button" data-role="none" class="slick-prev">Previous</button>',
                     nextArrow: '<button type="button" data-role="none" class="slick-next">Next</button>',
-                    autoplay: false,
+                    autoplay: true,
                     autoplaySpeed: 3000,
                     easing: 'linear',
                     draggable: false,
@@ -536,7 +534,6 @@
                     pauseOnFocus: true,
                     touchMove: true,
                     centerMode: true,
-                    rtl: true,
                 });
 
                 $('.base-modal .modal-body .email').on('click', function() {
@@ -561,7 +558,7 @@
             });
         } else {
             $(document).on('ready', function() {
-                $('.slik-demo').slick({
+                $('.slik-demo').not('.slick-initialized').slick({
                     accessibility: true,
                     adaptiveHeight: false,
                     arrows: true,
@@ -571,7 +568,7 @@
                     dots: false,
                     prevArrow: '<button type="button" data-role="none" class="slick-prev">Previous</button>',
                     nextArrow: '<button type="button" data-role="none" class="slick-next">Next</button>',
-                    autoplay: false,
+                    autoplay: true,
                     autoplaySpeed: 3000,
                     easing: 'linear',
                     draggable: false,
@@ -579,8 +576,9 @@
                     pauseOnFocus: true,
                     touchMove: true,
                     centerMode: true,
-                    rtl: true,
                 });
+
+                // $('.slick-track').attr('style', 'opacity: 1;width: 4200px;transform: translate3d(900px, 0px, 0px);')
 
                 $('.base-modal .modal-body .email').on('click', function() {
                     $('.base-modal').modal("hide");
@@ -602,6 +600,17 @@
                 //     $('.ads-main-image img').attr('src', src);
                 // });
             });
+
+            // function slickAr() {
+            //     $('.slick-track').attr('style', 'opacity: 1;width: 4200px;transform: translate3d(900px, 0px, 0px);')
+            //     console.log("Good");
+
+            // };
+
+            // // window.onload = function() {
+            // // };
+            // window.onload = slickAr();
+
         }
     </script>
 @endsection
