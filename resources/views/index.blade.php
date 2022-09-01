@@ -38,8 +38,13 @@
             </div> --}}
         </div>
     </div>
-    @include('components.new-featured')
-    @include('components.ads-car')
+    @if ($agent->isMobile())
+        @include('components.new-featured-mobile')
+    @else
+        @include('components.new-featured')
+        @include('components.ads-car')
+    @endif
+
 
 
     <div class="browse">

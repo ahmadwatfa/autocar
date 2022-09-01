@@ -47,8 +47,6 @@
                                                     <a href="{{ route('ads-car.show', $ad->id) }}"
                                                         class="col-md-6 nondecoration">
                                                         <div class="sub-ad">
-
-
                                                             <div class="ad-info">
                                                                 <p>{{ $ad->title }}</p>
                                                                 <h5>{{ $ad->price == 0 ? '' : $ad->price . ' ' . __('messages.aed') }}
