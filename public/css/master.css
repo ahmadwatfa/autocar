@@ -251,12 +251,9 @@ body {
         flex: 1;
         text-align: center;
     }
-    /* .quick-access-light div h3 {
-                                    color: #0f141e !important;
-                                } */
+
     .quick-access div img {
-        width: 50%;
-        padding-bottom: .5em;
+        width: 60%;
     }
     .quick-access div h3 {
         color: #e8e8e8;
@@ -3707,27 +3704,6 @@ textarea,
     }
 }
 
-/* @media screen and (max-width: 575.98px) {
-    .quick-access {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: #ee240e;
-        margin: 0 -16px;
-    }
-    #countryMenuCollaps {
-        display: none !important;
-    }
-    .header-fixed {
-        height: 80px !important;
-    }
-    body {
-        padding-top: 0.524em;
-    }
-} */
-/* .navbar-dark .navbar-brand {
-    width: 50%;
-} */
 
 @media screen and (max-width: 575.98px) {
     .quick-access {

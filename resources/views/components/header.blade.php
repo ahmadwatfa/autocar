@@ -118,7 +118,7 @@
         </div>
         <div class="col-sm">
             <a href="{{ route('new.ads') }}">
-                <img src="{{ asset('images/quick-access/add.png') }}" alt="add ads">
+                <img src="{{ asset('images/quick-access/add.png') }}" alt="add ads"><br>
                 <span>{{ __('quick-access.addAds') }}</span>
             </a>
         </div>

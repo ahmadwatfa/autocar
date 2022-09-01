@@ -272,6 +272,7 @@ body {
     .quick-access a,
     .quick-access-light a {
         text-decoration: none;
+        color: #fff;
     }
     .quick-access div {
         padding: 10px;
@@ -3708,7 +3709,10 @@ textarea,
         bottom: 0;
         width: 100%;
         background: #ee240e;
-        margin: 0 -16px;
+        margin: 0 auto;
+        z-index: 9999;
+        min-height: 4em;
+        color: #fff;
     }
     .header-fixed {
         height: 80px !important;
