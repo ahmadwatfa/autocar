@@ -40,6 +40,7 @@
     </div>
     @if ($agent->isMobile())
         @include('components.new-featured-mobile')
+        @include('components.ads-car-mobile')
     @else
         @include('components.new-featured')
         @include('components.ads-car')
@@ -109,5 +110,9 @@
         @endguest
 
         $('#ModalWorng').modal("show");
+
+        function openAds() {
+
+        }
     </script>
 @endsection

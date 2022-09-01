@@ -1118,7 +1118,7 @@ body {
     font-weight: bold;
 }
 
-.featured-ads .title1 .all-ads {
+.all-ads {
     background-color: #ee3926;
     color: #fff;
     text-decoration: none;
@@ -3783,6 +3783,7 @@ textarea,
     grid-template-columns: minmax(0, 1fr) 300px;
     gap: var(--gap);
     margin: 0 auto;
+    text-align: right;
 }
 
 .article-grid {
