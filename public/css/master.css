@@ -3884,6 +3884,7 @@ textarea,
     display: flex;
     flex-direction: column;
     font-weight: bold;
+    font-size: 12px;
 }
 
 .article-article h3 {
