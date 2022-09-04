@@ -6,10 +6,9 @@
                     <img src="{{ asset('images/big-mercedes.png') }}" alt="">
                 </div>
             </div>
-            <div class="search-filed">
+            {{-- <div class="search-filed">
                 <div class="form-main">
                     <form action="{{ route('search.adsCar') }}" method="get">
-                        {{-- @csrf --}}
                         <div class="search-head">
 
                         </div>
@@ -73,7 +72,7 @@
                             <div class="search-shadow"></div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
