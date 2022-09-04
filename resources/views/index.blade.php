@@ -25,7 +25,7 @@
         </div>
     @endif
 
-    @include('components.main-site')
+    {{-- @include('components.main-site') --}}
     <div class="sell-buy">
         <div class="container">
             {{-- <div class="row">
