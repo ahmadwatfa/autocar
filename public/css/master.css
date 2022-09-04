@@ -3880,13 +3880,19 @@ textarea,
     flex: 1;
     position: relative;
     z-index: 5;
-    padding: 1.5rem;
+    padding: 0.25rem 1.25em;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
+}
+
+.article-article h3 {
+    color: #ff4605;
+    font-weight: bold;
 }
 
 .article-info {
-    margin-top: 1em;
+    margin-top: .35em;
     text-align: center;
 }
 
