@@ -279,12 +279,13 @@ body {
         width: 20%;
         flex: 1;
         text-align: center;
+        font-size: 12px;
     }
     /* .quick-access-light div h3 {
         color: #e8e8e8 !important;
     } */
     .quick-access div img {
-        width: 60%;
+        width: 50%;
     }
     .quick-access div h3 {
         color: #e8e8e8;

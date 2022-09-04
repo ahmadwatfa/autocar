@@ -109,11 +109,11 @@
 <div class="header-special quick-access">
     <div class="row">
         <div class="col-sm" >
-            <img src="{{ asset('images/quick-access/country.png') }}" alt="country">
+            <img src="{{ asset('images/quick-access/country.png') }}" alt="country"><br>
             <span>{{ __('quick-access.country') }}</span>
         </div>
         <div class="col-sm">
-            <img src="{{ asset('images/quick-access/language.png') }}" alt="Language">
+            <img src="{{ asset('images/quick-access/language.png') }}" alt="Language"><br>
             <span>{{ __('quick-access.lang') }}</span>
         </div>
         <div class="col-sm">
@@ -124,11 +124,11 @@
         </div>
 
         <div class="col-sm">
-            <img src="{{ asset('images/quick-access/showroom.png') }}" alt="showroom">
+            <img src="{{ asset('images/quick-access/showroom.png') }}" alt="showroom"><br>
             <a href="{{ route('showroom.index') }}">{{ __('quick-access.showroom') }}</a>
         </div>
         <div class="col-sm">
-            <img src="{{ asset('images/quick-access/support.png') }}" alt="support">
+            <img src="{{ asset('images/quick-access/support.png') }}" alt="support"><br>
             <span>{{ __('quick-access.support') }}</span>
         </div>
     </div>

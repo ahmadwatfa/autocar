@@ -250,10 +250,11 @@ body {
         width: 20%;
         flex: 1;
         text-align: center;
+        font-size: 12px;
     }
 
     .quick-access div img {
-        width: 60%;
+        width: 50%;
     }
     .quick-access div h3 {
         color: #e8e8e8;
@@ -2900,8 +2901,7 @@ textarea,
     margin: 0;
 }
 
-.ads .ads-space .space-head .tool a,
-.ads .ads-space .space-head .tool button {
+.ads .ads-space .space-head .tool a {
     border: 1px solid #000;
 }
 
@@ -2910,9 +2910,18 @@ textarea,
     padding-right: 10px;
 }
 
-.ads .ads-space .space-head .tool a:hover,
-.ads .ads-space .space-head .tool button:hover {
+.ads .ads-space .space-head .tool a:hover{
     background-color: #000;
+    color: #fff;
+}
+
+.tool .fav {
+    border: 1px solid #ee3926;
+    color: #ee3926;
+}
+
+.tool .fav:hover {
+    background-color: #ee3926;
     color: #fff;
 }
 

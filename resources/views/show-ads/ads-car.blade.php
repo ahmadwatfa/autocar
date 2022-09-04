@@ -10,7 +10,7 @@
                             <div class="tool">
                                 <a href="#" class="btn">{{ __('messages.share') }}<span><i
                                             class="fa fa-share-alt"></i></span></a>
-                                <button class="btn">{{ __('messages.fav') }}<span><i
+                                <button class="btn fav">{{ __('messages.fav') }}<span><i
                                             class="fa fa-heart"></i></span></button>
                             </div>
                         </div>
