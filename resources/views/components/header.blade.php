@@ -108,28 +108,32 @@
 </div>
 <div class="header-special quick-access">
     <div class="row">
-        <div class="col-sm" >
+        <div class="col-sm" onclick="countryMenuButton();">
             <img src="{{ asset('images/quick-access/country.png') }}" alt="country"><br>
-            <span>{{ __('quick-access.country') }}</span>
+            <span class="nav-quick-access">{{ __('quick-access.country') }}</span>
         </div>
         <div class="col-sm">
             <img src="{{ asset('images/quick-access/language.png') }}" alt="Language"><br>
-            <span>{{ __('quick-access.lang') }}</span>
+            @if (app()->getLocale() == 'en')
+                <a class="nav-quick-access" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">العربية</a>
+            @elseif (app()->getLocale() == 'ar')
+                <a class="nav-quick-access" href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a>
+            @endif
         </div>
         <div class="col-sm">
             <a href="{{ route('new.ads') }}">
                 <img src="{{ asset('images/quick-access/add.png') }}" alt="add ads"><br>
-                <span>{{ __('quick-access.addAds') }}</span>
+                <span class="nav-quick-access">{{ __('quick-access.addAds') }}</span>
             </a>
         </div>
 
         <div class="col-sm">
             <img src="{{ asset('images/quick-access/showroom.png') }}" alt="showroom"><br>
-            <a href="{{ route('showroom.index') }}">{{ __('quick-access.showroom') }}</a>
+            <a class="nav-quick-access" href="{{ route('showroom.index') }}">{{ __('quick-access.showroom') }}</a>
         </div>
         <div class="col-sm">
             <img src="{{ asset('images/quick-access/support.png') }}" alt="support"><br>
-            <span>{{ __('quick-access.support') }}</span>
+            <span class="nav-quick-access">{{ __('quick-access.support') }}</span>
         </div>
     </div>
 </div>

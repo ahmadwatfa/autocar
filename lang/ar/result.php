@@ -19,5 +19,10 @@ return [
     'automatic' => 'أوتوماتيك',
     'all-transmission' => 'الجميع',
 
+    'price' => 'السعر (درهم)',
+    'price_min' => 'السعر من',
+    'to' => 'إلى',
+    'mileage_min' => 'المسافة من',
+
 ]
 ?>

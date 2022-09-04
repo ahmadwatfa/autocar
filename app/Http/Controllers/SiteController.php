@@ -20,8 +20,11 @@ class SiteController extends Controller
     public function index()
     {
 
-        return view('index');
+        return view('index', [
+            'country_id' => 1,
+        ]);
     }
+
     public function country($id)
     {
 
@@ -76,6 +79,7 @@ class SiteController extends Controller
             'car' => $car,
             'media' => $media,
             'ads' => $ads_car,
+            'country_id' => $id,
         );
         return view('country_car')->with($data);
     }

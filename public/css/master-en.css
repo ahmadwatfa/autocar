@@ -225,8 +225,31 @@ body {
     max-width: 1268px;
 }
 
+.range-fields .heading {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #212529;
+    width: 100%;
+    padding-right: 0.7em;
+    text-align: left;
+}
+.range-fields .range-inputs {
+    display: flex;
+}
+.range-fields .range-inputs .text-field {
+    min-height: 51px;
+    width: 100%;
+    color: #2f3b48;
+    border: 1px solid #e7edf3;
+    box-shadow: 1px 1px 0 0 rgb(196 196 196 / 24%);
+    padding: 0 15px 0 27px;
+    background: #fff;
+    border-radius: 10px;
+}
+
 .main-slide {
-    height: 26em;
+    height: 30em;
     background-color: #0f141e;
     background-image: url(https://demo.vehica.com/wp-content/uploads/2020/08/tlo.png);
     background-position: center center;
@@ -275,7 +298,7 @@ body {
         color: #fff;
     }
     .quick-access div {
-        padding: 10px;
+        padding: .7em .7em 0 .7em;
         width: 20%;
         flex: 1;
         text-align: center;
@@ -530,7 +553,7 @@ body {
 @media screen and (max-width: 765px) {
     .main-slide {
         height: 35em;
-        margin-top: 2em;
+        margin-top: 4em;
     }
     .info-slide,
     .search-filed {
@@ -672,7 +695,6 @@ body {
     background-color: #ee3926;
     border-color: #ee3926;
 }
-
 
 .list-search {
     height: auto;
@@ -938,7 +960,7 @@ body {
 
 @media screen and (max-width: 765px) {
     .sell-buy {
-        margin: 110px 0 0;
+        margin: 20px 0;
     }
 }
 
@@ -961,6 +983,7 @@ body {
 .browse .intro {
     display: block;
     margin: 50px 0;
+    color: #fff;
 }
 
 .browse .intro h5 {
@@ -1020,15 +1043,16 @@ body {
 
 @media screen and (max-width: 765px) {
     .browse .categories {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 20px;
+        gap: 1em;
+        padding-bottom: 7em;
     }
     .browse .categories .category {
         height: 110px;
     }
     .browse .categories .category span {
-        font-size: 60px;
+        font-size: 2.5em;;
     }
     .browse .categories .category b {
         font-size: 18px;
@@ -1063,7 +1087,7 @@ body {
     font-weight: bold;
 }
 
-.featured-ads .title1 .all-ads {
+.all-ads {
     background-color: #ee3926;
     color: #fff;
     text-decoration: none;
@@ -3150,6 +3174,7 @@ textarea,
     }
     .ads .ads-space .ads-main-image img {
         height: auto;
+        width: 100%;
     }
     .ads .ads-space .ads-images img {
         width: 22%;
@@ -3654,8 +3679,6 @@ textarea,
     text-decoration: none !important;
 }
 
-
-
 @media screen and (max-width: 820px) {
     .master-ad,
     .sub-ad {
@@ -3721,9 +3744,9 @@ textarea,
     body {
         padding-top: 0.524em;
     }
-    .navbar-dark .navbar-brand {
+    /* .navbar-dark .navbar-brand {
         width: 50%;
-    }
+    } */
 }
 
 .special-details {
@@ -3746,7 +3769,6 @@ textarea,
     padding: 0px 1em;
     margin: 0px 0px 0px 15px;
     list-style: none;
-
 }
 
 .specification-mobile > li {
@@ -3847,7 +3869,6 @@ textarea,
     max-width: 33%;
     font-size: 18px;
 }
-
 
 @media (max-width: 800px) {
     .articles {

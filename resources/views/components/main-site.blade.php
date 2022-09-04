@@ -6,65 +6,59 @@
                     <img src="{{ asset('images/big-mercedes.png') }}" alt="">
                 </div>
             </div>
-            {{-- <div class="info-slide">
-                <div class="head-slide">
-                    <h1>هل تبحث عن</h1>
-                    <h1>سيارة أحلامك</h1>
-                </div>
-                <div class="space"></div>
-                <div class="head-text">
-                    <h2>يمكننا مساعدتك في العثور على أفضل سيارة. تحقق من مراجعاتنا ، قارن النماذج وابحث عن سيارات للبيع.
-                    </h2>
-                </div>
-            </div> --}}
             <div class="search-filed">
                 <div class="form-main">
                     <form action="{{ route('search.adsCar') }}" method="get">
                         {{-- @csrf --}}
                         <div class="search-head">
-                            {{-- <div class="search-radio">
-                                <input type="radio" id="all">
-                                <label for="all">{{ __('messages.all') }} </label>
-                            </div>
-                            <div class="search-radio search-radio-active">
-                                <input type="radio" id="new">
-                                <label for="new">{{ __('messages.new') }}</label>
-                            </div>
-                            <div class="search-radio">
-                                <input type="radio" id="used">
-                                <label for="used">{{ __('messages.used') }}</label>
-                            </div> --}}
+
                         </div>
                         <div class="search-body">
                             <div class="search-form">
-                                <select name="carComany_id" id="carCompany" class="search-makes">
+                                <select name="city_id" id="city" class="search-makes">
+                                    <option value="" hidden>{{ __('messages.selectCity') }}</option>
+                                </select>
+                                <select name="carComany_id" id="carCompany" class="search-makes search-mob" style="margin-top: 1em;">
                                     <option value="" hidden>{{ __('messages.makeCar') }}</option>
                                 </select>
-                                <select name="carModel_id" id="carModel" class="search-makes" style="margin-top: 2em;">
+                                <select name="carModel_id" id="carModel" class="search-makes search-mob" style="margin-top: 1em;">
                                     <option value="" hidden>{{ __('messages.model') }}</option>
                                 </select>
-                                <div style="display: flex">
-                                    <div class="search-input">
-                                        <label for="price_from">{{ __('messages.minPrice') }}</label>
-                                        <input type="number" name="minPrice">
+                                <div>
+                                    <div class="range-fields">
+                                        <label class="heading">{{ __('result.price') }}</label>
+                                        <div class="range-inputs">
+                                            <input class="text-field" type="number" name="minPrice" placeholder="{{ __('result.price_min') }}">
+                                            <input class="text-field" type="number" name="maxPrice" placeholder="{{ __('result.to') }}">
+                                        </div>
                                     </div>
-                                    <div class="search-input">
-                                        <label for="price_to">{{ __('messages.maxPrice') }}</label>
-                                        <input type="number" name="maxPrice">
+
+                                    <div class="range-fields">
+                                        <label class="heading">{{ __('result.mileage') }}</label>
+                                        <div class="range-inputs">
+                                            <input class="text-field" type="number" name="milage_from" placeholder="{{ __('result.mileage_min') }}">
+                                            <input class="text-field" type="number" name="milage_to" placeholder="{{ __('result.to') }}">
+                                        </div>
                                     </div>
-                                </div>
-                                <div style="display: flex">
-                                    <div class="search-input">
-                                    <label for="price">{{ __('result.mileage') }}</label>
-                                    <div class="clear"></div>
-                                    <input type="text" name="milage_from" class="form-control price-range"
-                                        id="milage" min="1" placeholder="{{ __('result.min') }}">
-                                    </div>
-                                    <div class="search-input">
-                                        <label for="price">{{ __('result.mileage') }}</label>
-                                    <input type="text" name="milage_to" class="form-control price-range"
-                                        id="milage" min="1" placeholder="{{ __('result.max') }}">
-                                    <div class="clear"></div>
+
+                                    <div class="range-fields">
+                                        <label class="heading">{{ __('result.year') }}</label>
+                                        <div class="range-inputs">
+                                            <select class="text-field" type="number" name="milage_from" placeholder="">
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                            </select>
+                                            <select class="text-field" type="number" name="milage_to" placeholder="إلى">
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div style="display: flex">
@@ -80,14 +74,30 @@
                     </form>
                 </div>
             </div>
-            {{-- <div class="image-slide">
-                <img src="{{ asset('images/big-mercedes.png') }}" alt="">
-            </div> --}}
         </div>
     </div>
 </div>
 @section('pagescript')
     <script>
+        $.ajax({
+            url: "{{ url('api/city') }}",
+            type: "POST",
+            data: {
+                country_id: {{ $country_id }},
+                local: '{{ app()->getLocale() }}',
+                _token: '{{ csrf_token() }}',
+            },
+            dataType: 'json',
+            success: function(result) {
+                $('#city').append('<option value="" hidden>{{ __('messages.selectCity') }}</option>');
+                $('#city').append('<option value="0">{{ __('messages.allCity') }}</option>');
+                $.each(result['cities'], function(index, el) {
+                    $("select#city").append('<option value="' + el
+                        .id + '">' + el.name + '</option>');
+                });
+            }
+        });
+
         $.ajax({
             url: "{{ url('api/carcompanies') }}",
             type: "POST",
@@ -107,25 +117,25 @@
         });
 
         $('select#carCompany').change(function() {
-                var idCompany = $(this).val();
-                $("#carModel").html('');
-                $.ajax({
-                    url: "{{ url('api/carmodels') }}",
-                    type: "POST",
-                    data: {
-                        companyID: idCompany,
-                        local: '{{ app()->getLocale() }}',
-                        _token: '{{ csrf_token() }}'
-                    },
-                    dataType: 'json',
-                    success: function(result) {
-                        $('#carModel').html('<option value="" hidden>موديل السيارة</option>');
-                        $.each(result, function(index, el) {
-                            $("select#carModel").append('<option value="' + el
-                                .id + '">' + el.name + '</option>');
-                        });
-                    }
-                });
+            var idCompany = $(this).val();
+            $("#carModel").html('');
+            $.ajax({
+                url: "{{ url('api/carmodels') }}",
+                type: "POST",
+                data: {
+                    companyID: idCompany,
+                    local: '{{ app()->getLocale() }}',
+                    _token: '{{ csrf_token() }}'
+                },
+                dataType: 'json',
+                success: function(result) {
+                    $('#carModel').html('<option value="" hidden>موديل السيارة</option>');
+                    $.each(result, function(index, el) {
+                        $("select#carModel").append('<option value="' + el
+                            .id + '">' + el.name + '</option>');
+                    });
+                }
             });
+        });
     </script>
 @endsection

@@ -236,45 +236,37 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 765px) {
-    .quick-access {
-        display: flex;
-    }
-    .quick-access a,
-    .quick-access-light a {
-        text-decoration: none;
-        color: #fff;
-    }
-    .quick-access div {
-        padding: 3px 10px;
-        width: 20%;
-        flex: 1;
-        text-align: center;
-        font-size: 12px;
-    }
+.range-fields {
+    display: inline-block;
+    margin: 0.7em 6px;
+    width: 100%;
+}
 
-    .quick-access div img {
-        width: 50%;
-    }
-    .quick-access div h3 {
-        color: #e8e8e8;
-        padding-top: 10px;
-        font-size: 16px;
-        text-decoration: none;
-    }
-    .showrooms .showroom-slid {
-        margin: 0 !important;
-    }
-    .showrooms {
-        margin: 50px 10px !important;
-    }
-    .showrooms .showroom-owner {
-        margin: 50px 0 !important;
-    }
+.range-fields .heading {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #212529;
+    width: 100%;
+    padding-right: 0.7em;
+    text-align: right;
+}
+.range-fields .range-inputs {
+    display: flex;
+}
+.range-fields .range-inputs .text-field {
+    min-height: 51px;
+    width: 100%;
+    color: #2f3b48;
+    border: 1px solid #e7edf3;
+    box-shadow: 1px 1px 0 0 rgb(196 196 196 / 24%);
+    padding: 0 15px 0 27px;
+    background: #fff;
+    border-radius: 10px;
 }
 
 .main-slide {
-    height: 26em;
+    height: 30em;
     background-color: #0f141e;
     background-image: url(https://demo.vehica.com/wp-content/uploads/2020/08/tlo.png);
     background-position: center center;
@@ -290,12 +282,9 @@ body {
     flex-direction: column;
 }
 
-.info-slide {
-    width: 60%;
-}
-
+.info-slide,
 .search-filed {
-    width: 40%;
+    width: 50%;
 }
 
 .head-slide {
@@ -516,14 +505,63 @@ body {
     opacity: 0.59;
 }
 
+.search-mob {
+    width: 50%;
+}
+
+
 .image-slide img {
-    max-width: 39em;
+    max-width: 30em;
     left: 8em;
-    top: 11em;
+    top: 17.8em;
     position: absolute;
 }
 
 @media screen and (max-width: 765px) {
+    .search-mob {
+        width: 100%;
+    }
+
+    .quick-access {
+        display: flex;
+    }
+    .quick-access a,
+    .quick-access-light a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .quick-access div {
+        padding: 3px 10px;
+        width: 20%;
+        flex: 1;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .quick-access div img {
+        width: 50%;
+    }
+    .quick-access div h3 {
+        color: #e8e8e8;
+        padding-top: 10px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .showrooms .showroom-slid {
+        margin: 0 !important;
+    }
+    .showrooms {
+        margin: 50px 10px !important;
+    }
+    .showrooms .showroom-owner {
+        margin: 50px 0 !important;
+    }
+
+    .nav-quick-access {
+        display: block;
+        padding: 0.6rem 0 0rem 0;
+    }
+
     .navbar-dark .navbar-brand img {
         width: 85px !important;
         height: 50px !important;
@@ -2910,7 +2948,7 @@ textarea,
     padding-right: 10px;
 }
 
-.ads .ads-space .space-head .tool a:hover{
+.ads .ads-space .space-head .tool a:hover {
     background-color: #000;
     color: #fff;
 }
@@ -3856,7 +3894,6 @@ textarea,
     max-width: 33%;
     font-size: 18px;
 }
-
 
 @media (max-width: 800px) {
     .articles {

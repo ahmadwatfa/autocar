@@ -121,5 +121,7 @@ return [
     'similarAds' => 'Similar cars',
 
     'cars' => 'Cars',
-    'Add_ad_info' => 'Add your AD information'
+    'Add_ad_info' => 'Add your AD information',
+
+    'allCity' => 'All City',
 ];
