@@ -1,12 +1,12 @@
 <div class="main-slide">
     <div class="container">
         <div class="row">
-            {{-- <div class="info-slide">
+            <div class="info-slide">
                 <div class="image-slide">
                     <img src="{{ asset('images/big-mercedes.png') }}" alt="">
                 </div>
-            </div> --}}
-            {{-- <div class="search-filed">
+            </div>
+            <div class="search-filed">
                 <div class="form-main">
                     <form action="{{ route('search.adsCar') }}" method="get">
                         <div class="search-head">
@@ -72,7 +72,7 @@
                             <div class="search-shadow"></div>
                     </form>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>
