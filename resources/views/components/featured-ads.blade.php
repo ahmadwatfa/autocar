@@ -1,10 +1,10 @@
 @if ($ads_spical->count() > 0)
     <div class="featured-ads">
         <div class="container">
-            <div class="title1">
+            {{-- <div class="title1">
                 <h5>الإعلانات المميزة</h5>
                 <a href="#" class="btn all-ads">عرض كافة الاعلانات</a>
-            </div>
+            </div> --}}
             @foreach ($ads_spical as $ad)
                 <a href="{{ route('ads-car.show', $ad->id) }}">
                     <div class="advert">

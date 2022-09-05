@@ -6,6 +6,7 @@
                     <img src="{{ asset('images/big-mercedes.png') }}" alt="">
                 </div>
             </div>
+            @if (!$agent->isMobile())
             <div class="search-filed">
                 <div class="form-main">
                     <form action="{{ route('search.adsCar') }}" method="get">
@@ -73,6 +74,8 @@
                     </form>
                 </div>
             </div>
+            @endif
+
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
-<div style="margin-top: 2px">
+{{-- <div style="margin-top: 2px">
     <a href="{{ route('allAds') }}" class="btn all-ads">عرض كافة الاعلانات</a>
-</div>
+</div> --}}
 @if (isset($ads_car) && $ads_car->count() > 0)
     @foreach ($ads_car as $key => $ad)
         <div class="articles" onclick="location.href='{{ route('ads-car.show', $ad->id) }}';">

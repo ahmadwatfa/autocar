@@ -7,5 +7,6 @@ return [
     'addAds' => 'إعلن الآن',
     'showroom' => 'المعارض',
     'support' => 'الدعم',
+    'search' => 'بحث',
 
 ];

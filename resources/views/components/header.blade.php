@@ -128,12 +128,13 @@
         </div>
 
         <div class="col-sm">
+            <img src="{{ asset('images/quick-access/search.png') }}" alt="search"><br>
+            <span class="nav-quick-access">{{ __('quick-access.search') }}</span>
+        </div>
+
+        <div class="col-sm">
             <img src="{{ asset('images/quick-access/showroom.png') }}" alt="showroom"><br>
             <a class="nav-quick-access" href="{{ route('showroom.index') }}">{{ __('quick-access.showroom') }}</a>
-        </div>
-        <div class="col-sm">
-            <img src="{{ asset('images/quick-access/support.png') }}" alt="support"><br>
-            <span class="nav-quick-access">{{ __('quick-access.support') }}</span>
         </div>
     </div>
 </div>

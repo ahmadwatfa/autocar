@@ -154,38 +154,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('components.allAds', function ($view) {
 
-            $ads_car = AdsCar::where('status', 1)->where('is_special', 0)->orderBy('id', 'desc')->paginate(20);
-            //  dd($ads_car);
-            if ($ads_car) {
-                $car = [];
-                $media = [];
-                foreach ($ads_car as $ad) {
-                    // dd($ad->id);
-                    $carComapny = Company::where('id', $ad->carComany_id)->first();
-                    $carModel = ComModel::where('id', $ad->carModel_id)->first();
-                    $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                    if (app()->getLocale() == 'ar') {
-                        $car[$ad->id]['modelName'] = $carModel->name_ar;
-                        $car[$ad->id]['companyName'] = $carComapny->name_ar;
-                        $ad->city = City::where('id', $ad->city_id)->value('name_ar');
-                    } else {
-                        $car[$ad->id]['modelName'] = $carModel->name_en;
-                        $car[$ad->id]['companyName'] = $carComapny->name_en;
-                        $ad->city = City::where('id', $ad->city_id)->value('name_en');
-                    }
-                    $car[$ad->id]['year'] = $carModel->year;
-                    $car[$ad->id]['logo'] = $carComapny->logo;
-                }
-            }
 
-
-            $data = array(
-                'ads' => $ads_car,
-                'car' => $car,
-                'media' => $media,
-                'carComapny' => $carComapny,
-            );
-            $view->with($data);
         });
 
         view()->composer('components.new-featured', function ($view) {

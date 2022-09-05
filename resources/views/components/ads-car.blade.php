@@ -3,10 +3,10 @@
 
         <div class="featured-ads-filter">
             <div class="container">
-                <div class="title-h">
+                {{-- <div class="title-h">
                     <h5>السيارات</h5>
                     <a href="{{ route('allAds') }}" class="btn all-ads">عرض كافة الاعلانات</a>
-                </div>
+                </div> --}}
                 {{-- <select class="form-control">
             <option value="" disabled selected hidden>اختر...</option>
             <option value="">سيارات جديدة</option>

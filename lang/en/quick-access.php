@@ -7,5 +7,6 @@ return [
     'addAds' => 'ADD AD',
     'showroom' => 'Showrooms',
     'support' => 'Support',
+    'search' => 'Search',
 
 ];

@@ -59,11 +59,11 @@
                         </div>
                         @if ($agent->isMobile())
                             <div class="ads-car-specifications">
-                                <div class="head accordion active">
+                                {{-- <div class="head accordion active">
                                     <h5>{{ __('messages.carspec') }}</h5>
                                     <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                         aria-controls="collapseOne"></span>
-                                </div>
+                                </div> --}}
                                 <ul class="specification-mobile">
                                     <li>
                                         <div class="name-specific">
@@ -135,11 +135,11 @@
                             </div>
                         @else
                             <div class="ads-car-specifications">
-                                <div class="head accordion">
+                                {{-- <div class="head accordion">
                                     <h5>{{ __('messages.carspec') }}</h5>
                                     <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                         aria-controls="collapseOne"></span>
-                                </div>
+                                </div> --}}
                                 <div class="specifications panel panel-1" style="max-height: 300px;">
                                     <div>
                                         <span>{{ __('messages.model') }}</span>
@@ -185,11 +185,11 @@
                             </div>
                         @endif
                         <div class="ads-car-details">
-                            <div class="head accordion">
+                            {{-- <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
-                            </div>
+                            </div> --}}
                             <div class="details panel panel-1">
                                 <div>
                                     <div>
@@ -218,11 +218,11 @@
                             </div>
                         </div>
                         <div class="ads-car-description">
-                            <div class="head accordion">
+                            {{-- <div class="head accordion">
                                 <h5>{{ __('messages.description') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
-                            </div>
+                            </div> --}}
                             <div class="panel panel-1">
                                 <p>
                                     {{ $ads->description }}
