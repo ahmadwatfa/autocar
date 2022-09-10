@@ -114,6 +114,27 @@
                                         style="margin-top: 1em;">
                                         <option value="" hidden>{{ __('messages.model') }}</option>
                                     </select>
+                                    <div class="range-fields">
+                                        <label class="heading">{{ __('result.year') }}</label>
+                                        <div class="range-inputs">
+                                            <select class="text-field" type="number" name="milage_from"
+                                                placeholder="">
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                            </select>
+                                            <select class="text-field" type="number" name="milage_to"
+                                                placeholder="إلى">
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div>
                                         <div class="range-fields">
                                             <label class="heading">{{ __('result.price') }}</label>
@@ -135,27 +156,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="range-fields">
-                                            <label class="heading">{{ __('result.year') }}</label>
-                                            <div class="range-inputs">
-                                                <select class="text-field" type="number" name="milage_from"
-                                                    placeholder="">
-                                                    <option value="2022">2022</option>
-                                                    <option value="2021">2021</option>
-                                                    <option value="2020">2020</option>
-                                                    <option value="2019">2019</option>
-                                                    <option value="2018">2018</option>
-                                                </select>
-                                                <select class="text-field" type="number" name="milage_to"
-                                                    placeholder="إلى">
-                                                    <option value="2022">2022</option>
-                                                    <option value="2021">2021</option>
-                                                    <option value="2020">2020</option>
-                                                    <option value="2019">2019</option>
-                                                    <option value="2018">2018</option>
-                                                </select>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div style="display: flex">
                                         <div class="search-action">

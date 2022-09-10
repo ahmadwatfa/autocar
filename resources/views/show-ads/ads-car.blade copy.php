@@ -72,6 +72,11 @@
                         </div>
                         @if ($agent->isMobile())
                             <div class="ads-car-specifications">
+                                {{-- <div class="head accordion active">
+                                    <h5>{{ __('messages.carspec') }}</h5>
+                                    <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne"></span>
+                                </div> --}}
                                 <ul class="specification-mobile">
                                     <li>
                                         <div class="name-specific">
@@ -140,78 +145,6 @@
                                         </div>
                                     </li>
                                 </ul>
-
-                            </div>
-                            <div class="ads-car-specifications">
-                                <ul class="specification-mobile">
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.model') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $car['companyName'] }}</strong>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.year') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->year }}</strong>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.mileage') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->mileage . ' ' . __('messages.km') }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.insurance') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->is_insurance ? __('messages.yes') : __('messages.no') }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.colorEx') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->color }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.fuel') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->petrol_type }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.gear') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->gear == 1 ? __('messages.noraml') : __('messages.automatic') }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.regional') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->specification }}</strong>
-                                        </div>
-                                    </li>
-                                </ul>
-
                             </div>
                         @else
                             <div class="ads-car-specifications">
@@ -265,11 +198,11 @@
                             </div>
                         @endif
                         <div class="ads-car-details">
-                            <div class="head accordion">
+                            {{-- <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
-                            </div>
+                            </div> --}}
                             <div class="details panel panel-1">
                                 <div>
                                     <div>
@@ -298,11 +231,11 @@
                             </div>
                         </div>
                         <div class="ads-car-description">
-                            <div class="head accordion">
+                            {{-- <div class="head accordion">
                                 <h5>{{ __('messages.description') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
-                            </div>
+                            </div> --}}
                             <div class="panel panel-1">
                                 <p>
                                     {{ $ads->description }}
