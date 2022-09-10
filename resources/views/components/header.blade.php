@@ -88,6 +88,91 @@
                     </div>
                 @endauth
             </div>
+
+            {{-- <div class="collapse navbar-collapse navbar-spical" id="modalSearch">
+                search
+            </div> --}}
+
+            {{-- <div class="search-field" id="modalSearch" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel">
+                <div class="search-filed">
+                    <div class="form-main">
+                        <form action="{{ route('search.adsCar') }}" method="get">
+                            <div class="search-head">
+
+                            </div>
+                            <div class="search-body">
+                                <div class="search-form">
+                                    <select name="city_id" id="city" class="search-makes">
+                                        <option value="" hidden>{{ __('messages.selectCity') }}</option>
+                                    </select>
+                                    <select name="carComany_id" id="carCompany" class="search-makes search-mob"
+                                        style="margin-top: 1em;">
+                                        <option value="" hidden>{{ __('messages.makeCar') }}</option>
+                                    </select>
+                                    <select name="carModel_id" id="carModel" class="search-makes search-mob"
+                                        style="margin-top: 1em;">
+                                        <option value="" hidden>{{ __('messages.model') }}</option>
+                                    </select>
+                                    <div>
+                                        <div class="range-fields">
+                                            <label class="heading">{{ __('result.price') }}</label>
+                                            <div class="range-inputs">
+                                                <input class="text-field" type="number" name="minPrice"
+                                                    placeholder="{{ __('result.price_min') }}">
+                                                <input class="text-field" type="number" name="maxPrice"
+                                                    placeholder="{{ __('result.to') }}">
+                                            </div>
+                                        </div>
+
+                                        <div class="range-fields">
+                                            <label class="heading">{{ __('result.mileage') }}</label>
+                                            <div class="range-inputs">
+                                                <input class="text-field" type="number" name="milage_from"
+                                                    placeholder="{{ __('result.mileage_min') }}">
+                                                <input class="text-field" type="number" name="milage_to"
+                                                    placeholder="{{ __('result.to') }}">
+                                            </div>
+                                        </div>
+
+                                        <div class="range-fields">
+                                            <label class="heading">{{ __('result.year') }}</label>
+                                            <div class="range-inputs">
+                                                <select class="text-field" type="number" name="milage_from"
+                                                    placeholder="">
+                                                    <option value="2022">2022</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2018">2018</option>
+                                                </select>
+                                                <select class="text-field" type="number" name="milage_to"
+                                                    placeholder="إلى">
+                                                    <option value="2022">2022</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2018">2018</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex">
+                                        <div class="search-action">
+                                            <a
+                                                href="{{ route('searchmore.adsCar') }}">{{ __('messages.advSearch') }}</a>
+                                        </div>
+                                        <div class="search-action">
+                                            <button>{{ __('messages.search') }}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-shadow"></div>
+                        </form>
+                    </div>
+                </div>
+            </div> --}}
+
             @if ($agent->isMobile())
                 <div class="collapse navbar-collapse navbar-spical" id="countryMenuCollaps">
                     <ul class="navbar-nav mr-auto">
@@ -127,7 +212,7 @@
             </a>
         </div>
 
-        <div class="col-sm">
+        <div class="col-sm" onclick="searchButton();">
             <img src="{{ asset('images/quick-access/search.png') }}" alt="search"><br>
             <span class="nav-quick-access">{{ __('quick-access.search') }}</span>
         </div>

@@ -448,6 +448,17 @@
         function countryMenuButton() {
             $('#countryMenu').click();
         }
+
+        function searchButton() {
+            var isVisible = $('#modalSearch').is(":visible");
+            console.log(isVisible);
+            // disp = document.getElementById('#modalSearch').style.display
+            if (isVisible) {
+                $('.search-field').hide();
+            } else {
+                $('.search-field').show('slow');
+            }
+        }
     </script>
     <script type="text/javascript">
         function hidemenu() {

@@ -509,7 +509,6 @@ body {
     width: 50%;
 }
 
-
 .image-slide img {
     max-width: 30em;
     left: 8em;
@@ -3899,7 +3898,7 @@ textarea,
 }
 
 .article-info {
-    margin-top: .35em;
+    margin-top: 0.35em;
     text-align: center;
 }
 
@@ -3915,4 +3914,29 @@ textarea,
         text-align: right;
         padding: 0 0.3em;
     }
+}
+/*
+.search-field.fade {
+
+    transform: translate3d(0, 100vh, 0);
+    transition:all ease-in-out 1.5s;
+}
+
+.search-field.in {
+    transform: translate3d(0, 0, 0);
+    transition:all ease-in-out 1.5s;
+} */
+
+.search-field {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    z-index: 9999;
+    min-height: 45em;
+    transform: translateY(2%);
+    transition: all 0.5s ease-in-out;
 }
