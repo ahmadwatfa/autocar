@@ -93,7 +93,7 @@
                 search
             </div> --}}
 
-            {{-- <div class="search-field" id="modalSearch" tabindex="-1" role="dialog"
+            <div class="search-field" id="modalSearch" tabindex="-1" role="dialog"
                 aria-labelledby="myModalLabel">
                 <div class="search-filed">
                     <div class="form-main">
@@ -171,7 +171,7 @@
                         </form>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
             @if ($agent->isMobile())
                 <div class="collapse navbar-collapse navbar-spical" id="countryMenuCollaps">

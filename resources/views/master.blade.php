@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-@if ($agent->isMobile())
-    <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}"
-        style="background-color: #262626;">
-@else
-    <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-@endif
+
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
@@ -141,73 +137,79 @@
 </head>
 
 <body>
-    @include('components.header')
-    <div class="container-box">
-        @yield('content')
 
-        {{-- <div class="whatsapp">
+    @include('components.header')
+    @if ($agent->isMobile() )
+        <div class="container-box box-dark">
+    @else
+        <div class="container-box">
+    @endif
+
+    @yield('content')
+
+    {{-- <div class="whatsapp">
             <a href="#"><img src="{{ asset('images/whatsapp.png') }}" alt=""></a>
         </div> --}}
-        @if (!$agent->isMobile())
-            <footer class="footer">
-                <!-- WhatsApp -->
+    @if (!$agent->isMobile())
+        <footer class="footer">
+            <!-- WhatsApp -->
 
-                <div class="website-info">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-4">
-                                <div class="about">
-                                    <img src="{{ asset('images/logo.png') }}" alt="Auto Mark">
-                                    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد يمكنك أن تولد
-                                        مثل
-                                        هذا
-                                        النص أو العديد من النصوص ا</p>
-                                    <div class="social-icons">
-                                        <span><i class="fab fa-instagram"></i></span>
-                                        <span><i class="fab fa-whatsapp"></i></span>
-                                        <span><i class="fab fa-snapchat"></i></span>
-                                    </div>
+            <div class="website-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="about">
+                                <img src="{{ asset('images/logo.png') }}" alt="Auto Mark">
+                                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد يمكنك أن تولد
+                                    مثل
+                                    هذا
+                                    النص أو العديد من النصوص ا</p>
+                                <div class="social-icons">
+                                    <span><i class="fab fa-instagram"></i></span>
+                                    <span><i class="fab fa-whatsapp"></i></span>
+                                    <span><i class="fab fa-snapchat"></i></span>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-4">
-                                <div class="links">
-                                    <h5>روابط سريعة</h5>
-                                    <ul>
-                                        <li>الرئيسية</li>
-                                        <li>من نحن</li>
-                                        <li>المعارض</li>
-                                        <li>الأسئلة الشائعة</li>
-                                        <li>سياسات الخصوصية</li>
-                                    </ul>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="links">
+                                <h5>روابط سريعة</h5>
+                                <ul>
+                                    <li>الرئيسية</li>
+                                    <li>من نحن</li>
+                                    <li>المعارض</li>
+                                    <li>الأسئلة الشائعة</li>
+                                    <li>سياسات الخصوصية</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scol-sm-12 col-md-4">
+                            <div class="contact">
+                                <h5>اتصل بنا</h5>
+                                <div class="phone">
+                                    <p><span><i class="fa fa-phone-alt"></i></span>+971540000000</p>
+                                </div>
+                                <div class="email">
+                                    <p><span><i class="fa fa-envelope"></i></span>info@automark.ae</p>
+                                </div>
+                                <div class="location">
+                                    <p><span><i class="fa fa-map-marker-alt"></i></span>الامارات العربية المتحدة-دبي
+                                    </p>
                                 </div>
                             </div>
-                            <div class="scol-sm-12 col-md-4">
-                                <div class="contact">
-                                    <h5>اتصل بنا</h5>
-                                    <div class="phone">
-                                        <p><span><i class="fa fa-phone-alt"></i></span>+971540000000</p>
-                                    </div>
-                                    <div class="email">
-                                        <p><span><i class="fa fa-envelope"></i></span>info@automark.ae</p>
-                                    </div>
-                                    <div class="location">
-                                        <p><span><i class="fa fa-map-marker-alt"></i></span>الامارات العربية المتحدة-دبي
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
 
-                        </div>
-                    </div>
-                    <div class="copyright">
-                        <div class="container">
-                            <p>&copy;{{ date('Y') }} جميع الحقوق محفوظة</p>
-                        </div>
                     </div>
                 </div>
+                <div class="copyright">
+                    <div class="container">
+                        <p>&copy;{{ date('Y') }} جميع الحقوق محفوظة</p>
+                    </div>
+                </div>
+            </div>
 
-            </footer>
-        @endif
+        </footer>
+    @endif
 
     </div>
 
