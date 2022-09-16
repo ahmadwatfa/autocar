@@ -38,7 +38,7 @@
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة المعارض </h3>
-                           
+
 
                         </div><!-- /.box-header -->
                         <div class="box-body">
@@ -58,7 +58,7 @@
                                         <tr>
                                             <td>{{ $i = 1 }}</td>
                                             <td>{{ $showroom->name }}</td>
-                                            <td><img src="{{ $showroom->image }}" height="150" width="150"></td>
+                                            <td style="clip-path: circle();"><img src="{{ $showroom->image }}" height="40"></td>
                                             <td>{{ $showroom->user->name }}</td>
                                             @if($showroom->status == 1)
                                             <td>مفعل</td>
@@ -84,7 +84,7 @@
                             </table>
                         </div>
 
-                       
+
 
                         <div class="modal" id="modaldemo9">
                             <div class="modal-dialog modal-dialog-centered" role="document">

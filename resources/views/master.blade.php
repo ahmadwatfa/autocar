@@ -134,7 +134,6 @@
 
         }
     </style>
-    @preload
 </head>
 
 <body>
