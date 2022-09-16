@@ -22,6 +22,7 @@ class SiteController extends Controller
 
         return view('index', [
             'country_id' => 1,
+            'body_class' => 'dark-body',
         ]);
     }
 

@@ -134,13 +134,14 @@
 
         }
     </style>
+    @preload
 </head>
 
 <body>
 
     @include('components.header')
-    @if ($agent->isMobile() )
-        <div class="container-box box-dark">
+    @if ($agent->isMobile() && isset($body_class))
+        <div class="container-box {{ $body_class }}">
     @else
         <div class="container-box">
     @endif
@@ -448,17 +449,23 @@
         }
 
         function countryMenuButton() {
-            $('#countryMenu').click();
+            // $('#countryMenu').click();
+            var isVisibl = $('#countryMenuCollaps').is(":visible");
+            console.log(isVisibl);
+            if (isVisibl) {
+                $('.country-field').hide();
+            } else {
+                $('.country-field').show();
+            }
         }
 
         function searchButton() {
             var isVisible = $('#modalSearch').is(":visible");
             console.log(isVisible);
-            // disp = document.getElementById('#modalSearch').style.display
             if (isVisible) {
                 $('.search-field').hide();
             } else {
-                $('.search-field').show('slow');
+                $('.search-field').show();
             }
         }
     </script>

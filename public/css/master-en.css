@@ -22,6 +22,10 @@ body {
     height: 1px;
 }
 
+.dark-body {
+    background-color: #262626 !important;
+}
+
 .search-field {
     background-image: url(../images/search-field.jpg);
     background-position: center;
@@ -445,7 +449,7 @@ body {
     float: left;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 15px 0 27px;
+    /* padding: 0 15px 0 27px; */
 }
 
 .search-action a {
@@ -467,7 +471,7 @@ body {
     border: 0 solid transparent;
     box-shadow: none;
     cursor: pointer;
-    padding: 16px 25px;
+    padding: 3px 30px;
     vertical-align: top;
     border-radius: 10px;
     background-color: #ff4605;
@@ -571,7 +575,6 @@ body {
     .info-slide,
     .search-filed {
         width: 100%;
-        padding: 0 10px;
         text-align: center;
     }
     .search-filed {
@@ -1075,6 +1078,7 @@ body {
 
 .browse .categories .category {
     height: 180px;
+    width: 100%;
     background-color: #fff;
     display: flex;
     justify-content: space-evenly;
@@ -3018,7 +3022,7 @@ textarea,
 .ads .ads-space .ads-car-description,
 .ads .ads-space .ads-car-advantages,
 .ads .ads-space .ads-car-location {
-    margin: 50px 0;
+    margin: 20px 0;
     border-top: 1px solid #ccc;
     padding-top: 20px;
 }
@@ -3199,7 +3203,7 @@ textarea,
     justify-content: space-evenly;
     align-items: center;
     background-color: #f1f1f1;
-    padding: 20px 0;
+    padding: 8px 0;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -3208,15 +3212,16 @@ textarea,
 }
 
 .ads .ads-info .seller-phone .phone {
-    height: 75px;
+    height: 60px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .ads .ads-info .seller-phone .phone span {
-    padding: 3px;
+    padding: 8px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -3812,7 +3817,6 @@ textarea,
 
 .specification-mobile .name-specific {
     text-align: left;
-    font-weight: bold;
     box-sizing: border-box;
     width: 41.6667%;
     padding: 0px;
@@ -3923,17 +3927,35 @@ textarea,
     transform: translate3d(0, 0, 0);
     transition:all ease-in-out 1.5s;
 } */
-
 .search-field {
+    z-index: 909;
     display: none;
+    min-height: 45em;
+}
+
+.country-field {
+    z-index: 910;
+    display: none;
+    min-height: 31em;
+}
+
+.search-field,
+.country-field {
     position: fixed;
     bottom: 0;
     right: 0;
     width: 100%;
     background: #fff;
     margin: 0 auto;
-    z-index: 9999;
-    min-height: 45em;
     transform: translateY(2%);
     transition: all 0.5s ease-in-out;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.country-li {
+    text-align: center;
+    font-weight: 800;
+    padding: 1em 0;
+    font-size: 15px;
 }

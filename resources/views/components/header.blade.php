@@ -89,12 +89,19 @@
                 @endauth
             </div>
 
-            {{-- <div class="collapse navbar-collapse navbar-spical" id="modalSearch">
-                search
-            </div> --}}
+            {{-- <div class="search-field" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="search-filed">
+                    <div class="form-main">
+                        <div class="search-body">
+                            <div class="search-form">
 
-            <div class="search-field" id="modalSearch" tabindex="-1" role="dialog"
-                aria-labelledby="myModalLabel">
+                            </div>
+                            <div class="search-shadow"></div>
+                        </div>
+                    </div>
+                </div> --}}
+
+            <div class="search-field" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="search-filed">
                     <div class="form-main">
                         <form action="{{ route('search.adsCar') }}" method="get">
@@ -174,23 +181,25 @@
                 </div>
             </div>
 
-            @if ($agent->isMobile())
-                <div class="collapse navbar-collapse navbar-spical" id="countryMenuCollaps">
-                    <ul class="navbar-nav mr-auto">
-                        @foreach ($countries as $country)
-                            <li>
-                                <a class="dropdown-item" href="/country/{{ $country->id }}">{{ $country->name }}
-                                    <img src="{{ asset($country->flag) }}" alt="country" width="20"
-                                        height="20"></a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+
+            {{-- @if ($agent->isMobile())
+
+                @endif --}}
 
         </nav>
 
     </div>
+</div>
+<div class="country-field" id="countryMenuCollaps" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+    <ul class="navbar-nav mr-auto">
+        @foreach ($countries as $country)
+            <li class="country-li">
+                <a class="dropdown-item" href="/country/{{ $country->id }}"><img src="{{ asset($country->flag) }}"
+                        alt="country" width="25" height="25">&nbsp;&nbsp;&nbsp; {{ $country->name }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
 </div>
 <div class="header-special quick-access">
     <div class="row">

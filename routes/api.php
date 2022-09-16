@@ -41,3 +41,5 @@ Route::post('adsCarChangeStatus', [AdsCarController::class, 'adsCarChangeStatus'
 Route::post('adsCarChangeSpecial', [AdsCarController::class, 'adsCarChangeSpecial'])->name('adsCarChangeSpecial');
 
 Route::post('restore/adscar', [AdsCarController::class, 'restore']);
+
+Route::get('/test', [AdsCarController::class, 'getNameList']);

@@ -146,68 +146,44 @@
                                 <ul class="specification-mobile">
                                     <li>
                                         <div class="name-specific">
-                                            <span>{{ __('messages.model') }}</span>
+                                            <span>{{ __('messages.status') }}</span>
                                         </div>
                                         <div class="details-specific">
-                                            <strong>{{ $car['companyName'] }}</strong>
+                                            <strong>{{ $ads->status_car }}</strong>
                                         </div>
                                     </li>
 
                                     <li>
                                         <div class="name-specific">
-                                            <span>{{ __('messages.year') }}</span>
+                                            <span>{{ __('messages.vehicleBody') }}</span>
                                         </div>
                                         <div class="details-specific">
-                                            <strong>{{ $ads->year }}</strong>
+                                            <strong>{{ $ads->body }}</strong>
                                         </div>
                                     </li>
 
                                     <li>
                                         <div class="name-specific">
-                                            <span>{{ __('messages.mileage') }}</span>
+                                            <span>{{ __('messages.cylinders') }}</span>
                                         </div>
                                         <div class="details-specific">
-                                            <strong>{{ $ads->mileage . ' ' . __('messages.km') }}</strong>
+                                            <strong>{{ $ads->clynder }}</strong>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="name-specific">
-                                            <span>{{ __('messages.insurance') }}</span>
+                                            <span>{{ __('messages.mechanical') }}</span>
                                         </div>
                                         <div class="details-specific">
-                                            <strong>{{ $ads->is_insurance ? __('messages.yes') : __('messages.no') }}</strong>
+                                            <strong>{{ $ads->status_engine }}</strong>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="name-specific">
-                                            <span>{{ __('messages.colorEx') }}</span>
+                                            <span>{{ __('messages.doors') }}</span>
                                         </div>
                                         <div class="details-specific">
-                                            <strong>{{ $ads->color }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.fuel') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->petrol_type }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.gear') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->gear == 1 ? __('messages.noraml') : __('messages.automatic') }}</strong>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="name-specific">
-                                            <span>{{ __('messages.regional') }}</span>
-                                        </div>
-                                        <div class="details-specific">
-                                            <strong>{{ $ads->specification }}</strong>
+                                            <strong>{{ $ads->door }}</strong>
                                         </div>
                                     </li>
                                 </ul>
@@ -264,7 +240,7 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="ads-car-details">
+                        {{-- <div class="ads-car-details">
                             <div class="head accordion">
                                 <h5>{{ __('messages.carspec') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
@@ -296,14 +272,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="ads-car-description">
-                            <div class="head accordion">
+                            <div class="head accordion active">
                                 <h5>{{ __('messages.description') }}</h5>
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne"></span>
                             </div>
-                            <div class="panel panel-1">
+                            <div class="panel panel-1" style="max-height: 88px;">
                                 <p>
                                     {{ $ads->description }}
                                 </p>
@@ -357,7 +333,6 @@
                         <div class="seller-phone">
                             <div class="phone">
                                 <span>{{ __('messages.contactSeller') }}</span>
-                                <br>
                                 <span>{{ $ads->phone }}</span>
                             </div>
                             <div class="whatsapp">

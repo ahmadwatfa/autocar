@@ -197,48 +197,47 @@ class AdsCarController extends Controller
      * @param  \App\Models\AdsCar  $adsCar
      * @return \Illuminate\Http\Response
      */
+    public function getNameListAR($idItem,$locale,$list)
+    {
+        if (isset($idItem)) {
+            if ($locale == 'ar') {
+                $name = $list->where('id', $idItem)->first()['name_ar'];
+            } else {
+                $name = $list->where('id', $idItem)->first()['name_en'];
+            }
+            return $name;
+        } else {
+            return null;
+        }
+    }
+
+
     public function show(AdsCar $adsCar)
     {
-        $agent = new Agent();
-        View::share('agent', $agent);
-        // $ads = Adv::where('id', $id)->first();
-        $list = Lists::all();
         $carComapny = Company::where('id', $adsCar->carComany_id)->first();
         $carModel = ComModel::where('id', $adsCar->carModel_id)->first();
-
         $locale = LaravelLocalization::getCurrentLocale();
 
-        if ($locale == 'ar') {
-            $car['modelName'] = $carModel->name_ar;
-            $car['companyName'] = $carComapny->name_ar;
+        $list = Lists::all();
 
-            $adsCar->specification = $list->where('id', $adsCar->specification)->first()['name_ar'];
-            $adsCar->status_car = $list->where('id', $adsCar->status_car)->first()['name_ar'];
-            $adsCar->status_engine = $list->where('id', $adsCar->status_engine)->first()['name_ar'];
-            $adsCar->color = $list->where('id', $adsCar->color)->first()['name_ar'];
-            $adsCar->petrol_type = $list->where('id', $adsCar->petrol_type)->first()['name_ar'];
-            $adsCar->body = $list->where('id', $adsCar->body)->first()['name_ar'];
-            $adsCar->door = $list->where('id', $adsCar->door)->first()['name_ar'];
-        } else {
-            $car['modelName'] = $carModel->name_en;
-            $car['companyName'] = $carComapny->name_en;
 
-            $adsCar->specification = $list->where('id', $adsCar->specification)->first()['name_en'];
-            $adsCar->status_car = $list->where('id', $adsCar->status_car)->first()['name_en'];
-            $adsCar->status_engine = $list->where('id', $adsCar->status_engine)->first()['name_en'];
-            $adsCar->color = $list->where('id', $adsCar->color)->first()['name_en'];
-            $adsCar->petrol_type = $list->where('id', $adsCar->petrol_type)->first()['name_en'];
-            $adsCar->body = $list->where('id', $adsCar->body)->first()['name_en'];
-            $adsCar->door = $list->where('id', $adsCar->door)->first()['name_en'];
-        }
+        $car['modelName'] = $carModel->name_ar;
+        $car['companyName'] = $carComapny->name_ar;
+
+        $adsCar->specification = $this->getNameListAR($adsCar->specification, $locale, $list);
+        $adsCar->status_car = $this->getNameListAR($adsCar->status_car, $locale, $list);
+        $adsCar->status_engine = $this->getNameListAR($adsCar->status_engine, $locale, $list);
+        $adsCar->color = $this->getNameListAR($adsCar->color, $locale, $list);
+        $adsCar->petrol_type = $this->getNameListAR($adsCar->petrol_type, $locale, $list);
+        $adsCar->body = $this->getNameListAR($adsCar->body, $locale, $list);
+        $adsCar->door = $this->getNameListAR($adsCar->door, $locale, $list);
+
         $car['year'] = $carModel->year;
         $car['logo'] = $carComapny->logo;
         $media = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->get();
 
         if (isset($adsCar->showroom_id)) {
             $showroom = Showroom::where('id', $adsCar->showroom_id)->first();
-            // dd($showroom);
-
             return view('show-ads.ads-car', [
                 'ads' => $adsCar,
                 'showroom' => $showroom,
@@ -248,7 +247,6 @@ class AdsCarController extends Controller
                 'locale' => $locale,
             ]);
         } else {
-
             return view('show-ads.ads-car', [
                 'ads' => $adsCar,
                 'car' => $car,
@@ -269,7 +267,7 @@ class AdsCarController extends Controller
     {
         // $this->authorize('edit', $adsCar);
         $media = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->get();
-        $mainImage = Media::where('media_type','App\Models\AdsCar')->where('media_id', $adsCar->id)->where('is_main', 1)->first();
+        $mainImage = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->where('is_main', 1)->first();
         return view('edit-ads.edit-adsCar', [
             'ads' => $adsCar,
             'medias' => $media,
@@ -298,16 +296,16 @@ class AdsCarController extends Controller
         $adsCar->save();
         // dd($request->mainImageIndex);
 
-        $mainImagePre = Media::where('media_type','App\Models\AdsCar')->where('media_id', $adsCar->id)->where('is_main', 1)->first();
+        $mainImagePre = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->where('is_main', 1)->first();
         $mainImageID = explode("init-", $request->mainImageIndex);
-        if($request->mainImageIndex == null) {
+        if ($request->mainImageIndex == null) {
             $mainImageID[1] =   $mainImagePre->file_sort;
         }
         // dd($mainImageID[1]);
         if ($mainImageID[1] !=  $mainImagePre->file_sort) {
             $mainImagePre->is_main = 0;
             $mainImagePre->update();
-            $mainImageNew = Media::where('media_type','App\Models\AdsCar')->where('media_id', $adsCar->id)->where('file_sort', $mainImageID[1])->first();
+            $mainImageNew = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $adsCar->id)->where('file_sort', $mainImageID[1])->first();
             $mainImageNew->is_main = 1;
             $mainImageNew->update();
         }
