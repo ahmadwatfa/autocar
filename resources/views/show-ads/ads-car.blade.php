@@ -15,9 +15,6 @@
                             </div>
                             @if ($agent->isMobile())
                                 <div class="price" style="width: 100%; margin-top: 1em;">
-                                    @php
-
-                                    @endphp
                                     <span>{!! $ads->price != 0
                                         ? $ads->price . ' ' . __('messages.aed')
                                         : "<a href='http://wa.me/$ads->phone?text=" .
@@ -38,12 +35,12 @@
                                 <img src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img"
                                     alt="ads">
                             </div>
-                            <div class="scrolling-wrapper">
+                            <div class="ads-images">
                                 @foreach ($medias as $key => $media)
-                                    <div class="ads-images">
+                                    {{-- <div class="ads-images"> --}}
                                         <img id="{{ $key }}" src="{{ asset('images/advs/' . $media->file_name) }}"
                                             alt="ads">
-                                    </div>
+                                    {{-- </div> --}}
                                 @endforeach
                             </div>
 
@@ -567,47 +564,6 @@
 @endsection
 @section('pagescript')
     <script type="text/javascript">
-        const slider = document.querySelector('.scrolling-wrapper');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener('mousedown', (e) => {
-            let rect = slider.getBoundingClientRect();
-            isDown = true;
-            slider.classList.add('active');
-            // Get initial mouse position
-            startX = e.pageX - rect.left;
-            // Get initial scroll position in pixels from left
-            scrollLeft = slider.scrollLeft;
-            console.log(startX, scrollLeft);
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.dataset.dragging = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.dataset.dragging = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            let rect = slider.getBoundingClientRect();
-            e.preventDefault();
-            slider.dataset.dragging = true;
-            // Get new mouse position
-            const x = e.pageX - rect.left;
-            // Get distance mouse has moved (new mouse position minus initial mouse position)
-            const walk = (x - startX);
-            // Update scroll position of slider from left (amount mouse has moved minus initial scroll position)
-            slider.scrollLeft = scrollLeft - walk;
-            console.log(x, walk, slider.scrollLeft);
-        });
 
         $('.ads-images img').on('click', function() {
             let src = $(this).attr('src');
