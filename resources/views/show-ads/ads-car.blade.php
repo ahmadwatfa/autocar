@@ -22,7 +22,9 @@
                                         ? $ads->price . ' ' . __('messages.aed')
                                         : "<a href='http://wa.me/$ads->phone?text=" .
                                             URL::current() .
-                                            "%0a أود معرفة سعر السيارة' target='_blank'>" . __('ads.contact-Price') . "</a>" !!}</span>
+                                            "%0a أود معرفة سعر السيارة' target='_blank'>" .
+                                            __('ads.contact-Price') .
+                                            '</a>' !!}</span>
                                 </div>
                             @endif
 
@@ -36,12 +38,15 @@
                                 <img src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img"
                                     alt="ads">
                             </div>
-                            <div class="ads-images">
+                            <div class="scrolling-wrapper">
                                 @foreach ($medias as $key => $media)
-                                    <img id="{{ $key }}" src="{{ asset('images/advs/' . $media->file_name) }}"
-                                        alt="ads">
+                                    <div class="ads-images">
+                                        <img id="{{ $key }}" src="{{ asset('images/advs/' . $media->file_name) }}"
+                                            alt="ads">
+                                    </div>
                                 @endforeach
                             </div>
+
                         </div>
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -562,6 +567,48 @@
 @endsection
 @section('pagescript')
     <script type="text/javascript">
+        const slider = document.querySelector('.scrolling-wrapper');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            let rect = slider.getBoundingClientRect();
+            isDown = true;
+            slider.classList.add('active');
+            // Get initial mouse position
+            startX = e.pageX - rect.left;
+            // Get initial scroll position in pixels from left
+            scrollLeft = slider.scrollLeft;
+            console.log(startX, scrollLeft);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.dataset.dragging = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.dataset.dragging = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            let rect = slider.getBoundingClientRect();
+            e.preventDefault();
+            slider.dataset.dragging = true;
+            // Get new mouse position
+            const x = e.pageX - rect.left;
+            // Get distance mouse has moved (new mouse position minus initial mouse position)
+            const walk = (x - startX);
+            // Update scroll position of slider from left (amount mouse has moved minus initial scroll position)
+            slider.scrollLeft = scrollLeft - walk;
+            console.log(x, walk, slider.scrollLeft);
+        });
+
         $('.ads-images img').on('click', function() {
             let src = $(this).attr('src');
             console.log(src);

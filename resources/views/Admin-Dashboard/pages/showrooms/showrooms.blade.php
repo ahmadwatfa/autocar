@@ -55,10 +55,10 @@
                                 </thead>
                                 <tbody>
                                    @foreach ($showrooms as $showroom)
-                                        <tr>
+                                        <tr style="text-align: center">
                                             <td>{{ $i = 1 }}</td>
                                             <td>{{ $showroom->name }}</td>
-                                            <td style="clip-path: circle();"><img src="{{ $showroom->image }}" height="40"></td>
+                                            <td><img style="clip-path: circle();" src="{{ $showroom->image }}" height="60"></td>
                                             <td>{{ $showroom->user->name }}</td>
                                             @if($showroom->status == 1)
                                             <td>مفعل</td>

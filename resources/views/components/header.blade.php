@@ -207,14 +207,17 @@
             <img src="{{ asset('images/quick-access/country.png') }}" alt="country"><br>
             <span class="nav-quick-access">{{ __('quick-access.country') }}</span>
         </div>
-        <div class="col-sm">
-            <img src="{{ asset('images/quick-access/language.png') }}" alt="Language"><br>
-            @if (app()->getLocale() == 'en')
-                <a class="nav-quick-access" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">العربية</a>
-            @elseif (app()->getLocale() == 'ar')
-                <a class="nav-quick-access" href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a>
-            @endif
-        </div>
+        @if (app()->getLocale() == 'ar')
+            <a href="{{ LaravelLocalization::getLocalizedURL('en') }}">
+                <img src="{{ asset('images/quick-access/language.png') }}" alt="Language"><br>
+                <span class="nav-quick-access">English</span>
+            </a>
+        @else
+            <a href="{{ LaravelLocalization::getLocalizedURL('ar') }}">
+                <img src="{{ asset('images/quick-access/language.png') }}" alt="Language"><br>
+                <span class="nav-quick-access">العربية</span>
+            </a>
+        @endif
         <div class="col-sm">
             <a href="{{ route('new.ads') }}">
                 <img src="{{ asset('images/quick-access/add.png') }}" alt="add ads"><br>

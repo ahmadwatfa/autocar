@@ -532,7 +532,8 @@ body {
         text-decoration: none;
         color: #fff;
     }
-    .quick-access div {
+    .quick-access div,
+    .quick-access a {
         padding: 3px 10px;
         width: 20%;
         flex: 1;
@@ -2526,7 +2527,7 @@ textarea,
         float: inherit;
     }
     .whatsapp {
-        z-index: 1000;
+        z-index: 100;
     }
     .whatsapp a img {
         width: 48px;
@@ -2993,19 +2994,15 @@ textarea,
 }
 
 .ads .ads-space .ads-images img {
-    width: 100px;
-    height: 100px;
+    width: 85px;
     margin-right: 10px;
     border-radius: 5px;
-    margin-top: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     cursor: pointer;
     object-fit: cover;
-    /* filter: blur(1px); */
-    /* -webkit-filter: blur(1px); */
 }
 
 .ads .ads-space .ads-images img:hover {
@@ -3251,7 +3248,7 @@ textarea,
         width: 100%;
     }
     .ads .ads-space .ads-images img {
-        width: 22%;
+        /* width: 22%; */
         height: auto;
     }
     .btn {
@@ -3768,13 +3765,15 @@ textarea,
         z-index: 9999;
         min-height: 4em;
         color: #fff;
+        line-height: 2px;
     }
     .header-fixed {
         height: 80px !important;
     }
-    body {
+
+    /* body {
         padding-top: 0.524em;
-    }
+    } */
     /* .navbar-dark .navbar-brand {
         width: 50%;
     } */
@@ -3959,3 +3958,30 @@ textarea,
     padding: 1em 0;
     font-size: 15px;
 }
+
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: no-wrap;
+    overflow-x: hidden;
+    cursor: grab;
+  }
+
+  .scrolling-wrapper.active {
+    cursor: grabbing;
+  }
+
+  .scrolling-wrapper[data-dragging="true"] a {
+    pointer-events: none;
+  }
+
+  .ads-images {
+    color: white;
+    font-family: monospace;
+    margin-right: 1rem;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
