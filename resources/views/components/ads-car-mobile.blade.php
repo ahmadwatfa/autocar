@@ -7,9 +7,20 @@
             <div class="article-grid">
                 <div class="article-card" id="{{ $ad->id }}">
                     <div class="article-thumbnail">
-                        <a href="{{ route('ads-car.show', $ad->id) }}">
-                            <img src="{{ asset('images/advs/' . $media[$ad->id]->file_name) }}" alt="{{ $ad->title }}">
-                        </a>
+                        @foreach ($media[$ad->id] as $item)
+                            {{-- {{ dd($item->is_main) }} --}}
+                            @if ($item->is_main)
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="{{ asset('images/advs/' . $item->file_name) }}"
+                                        alt="First slide">
+                                </div>
+                            @else
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="{{ asset('images/advs/' . $item->file_name) }}"
+                                        alt="First slide">
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="article-article">
                         <h3>{{ $ad->price == 0 ? '' : $ad->price . ' ' . __('messages.aed') }}</h3>

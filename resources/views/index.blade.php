@@ -48,7 +48,7 @@
 
 
 
-    <div class="browse">
+    {{-- <div class="browse">
         <div class="container">
             <div class="intro">
                 <h5>تصفح المركبات حسب النوع...</h5>
@@ -73,7 +73,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
     {{-- @include('components.ads-motorcycle') --}}
     {{-- @include('components.testimonials') --}}
 
@@ -111,8 +112,16 @@
 
         $('#ModalWorng').modal("show");
 
-        function openAds() {
-
-        }
+        $(document).on('ready', function() {
+            $('.ads-images1').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                prevArrow: false,
+                nextArrow: false,
+            });
+        });
     </script>
 @endsection

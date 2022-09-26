@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-editor.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css"
         crossorigin="anonymous">
-    {{-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css'> --}}
     <link rel="stylesheet" href="{{ asset('fonts/css/all.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -429,6 +429,7 @@
     <script src="{{ asset('js/fileinput.min.js') }}"></script>
     <script src="{{ asset('js/slick.js') }}"></script>
     <script src="{{ asset('js/theme.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/master.js') }}"></script>
 
     <script>
