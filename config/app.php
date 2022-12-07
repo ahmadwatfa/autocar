@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'ar',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,10 @@ return [
         /*
          * Package Service Providers...
          */
+        Jenssegers\Agent\AgentServiceProvider::class,
+        \Torann\GeoIP\GeoIPServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -180,9 +184,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
-        'Intervention\Image\ImageServiceProvider',
-        // Intervention\Image\ImageServiceProvider::class,
-        Jenssegers\Agent\AgentServiceProvider::class,
+        // 'Intervention\Image\ImageServiceProvider',
     ],
 
     /*
@@ -201,6 +203,8 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        // 'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+
     ])->toArray(),
 
 ];

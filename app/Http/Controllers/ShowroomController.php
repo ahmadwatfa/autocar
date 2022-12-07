@@ -25,6 +25,7 @@ class ShowroomController extends Controller
      */
     public function index()
     {
+        // dd('test');
         return view('showrooms',[
             'showrooms' => Showroom::where('status', 1)->where('data_complete', 1)->paginate(9)
         ]);
@@ -88,7 +89,8 @@ class ShowroomController extends Controller
      */
     public function show(Showroom $showroom)
     {
-        $ads = AdsCar::where('showroom_id', $showroom->id)->Where('status' , 1)->paginate(5);
+        $ads = AdsCar::where('showroom_id', $showroom->id)->Where('status' , 1)->paginate(9);
+        $showroom->count_ads = count($ads);
         $car = [];
         $media = [];
         foreach($ads as $ad) {

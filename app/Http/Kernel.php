@@ -72,6 +72,7 @@ class Kernel extends HttpKernel
         'localeViewPath'            => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
 
         //// For App
+        'Country'                   => \App\Http\Middleware\CountryMiddleware::class,
         'IsAdmin'                   => \App\Http\Middleware\IsAdmin::class,
         'CheckAdsNum'               => \App\Http\Middleware\CheckUserAdsNumber::class,
         'ShowAds'               => \App\Http\Middleware\ShowAds::class,

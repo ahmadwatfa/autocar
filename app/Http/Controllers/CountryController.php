@@ -148,6 +148,11 @@ class CountryController extends Controller
                 $country->name = $country->name_en;
             }
         }
+
+        // $keys = array('uae', 'ksa', 'kw', 'qa', 'bh', 'om');
+        // $countries = array_fill_keys($keys, $countries);
+
+        // dd($countries);
         return $countries;
     }
 

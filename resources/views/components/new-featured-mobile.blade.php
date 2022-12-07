@@ -12,7 +12,9 @@
                         </a> --}}
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-indicators">
-                                @foreach ($media[$ad->id] as $key => $item)
+                                {{-- {{ dd($media[$ad->id]) }} --}}
+                                {{-- @foreach ($media[$ad->id] as $key => $item)
+                                    {{ dd($item) }}
                                     @if ($item->is_main)
                                         <button type="button" data-bs-target="#carouselExampleIndicators"
                                             data-bs-slide-to="{{ $key }}" class="active" aria-current="true"
@@ -22,10 +24,14 @@
                                             data-bs-slide-to="{{ $key }}"
                                             aria-label="Slide {{ $key }}"></button>
                                     @endif
-                                @endforeach
+                                @endforeach --}}
                             </div>
                             <div class="carousel-inner">
-                                @foreach ($media[$ad->id] as $item)
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100"
+                                        src="{{ asset('images/advs/' . $media[$ad->id]->file_name) }}" alt="First slide">
+                                </div>
+                                {{-- @foreach ($media[$ad->id] as $item)
                                     @if ($item->is_main)
                                         <div class="carousel-item active">
                                             <img class="d-block w-100"
@@ -37,7 +43,7 @@
                                                 src="{{ asset('images/advs/' . $item->file_name) }}" alt="First slide">
                                         </div>
                                     @endif
-                                @endforeach
+                                @endforeach --}}
 
                             </div>
 

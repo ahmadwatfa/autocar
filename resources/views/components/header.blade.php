@@ -38,15 +38,24 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        @if (isset($_COOKIE['country']))
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ $countries[$_COOKIE['country']]->name }} <img
+                                    src="{{ asset($countries[$_COOKIE['country']]->flag) }}" alt="country"
+                                    width="20" height="20">
+                            </a>
+                        @endif
+                        {{-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ $countries[0]->name }} <img src="{{ asset($countries[0]->flag) }}" alt="country"
                                 width="20" height="20">
-                        </a>
+                        </a> --}}
                         <div id="countries" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($countries as $country)
-                                <a class="dropdown-item" href="/country/{{ $country->id }}">{{ $country->name }} <img
-                                        src="{{ asset($country->flag) }}" alt="country" width="20"
+                                <a class="dropdown-item"
+                                    href="{{ route('country', strtolower($country->sortname)) }}">{{ $country->name }}
+                                    <img src="{{ asset($country->flag) }}" alt="country" width="20"
                                         height="20"></a>
                             @endforeach
                         </div>
@@ -194,8 +203,9 @@
     <ul class="navbar-nav mr-auto">
         @foreach ($countries as $country)
             <li class="country-li">
-                <a class="dropdown-item" href="/country/{{ $country->id }}"><img src="{{ asset($country->flag) }}"
-                        alt="country" width="25" height="25">&nbsp;&nbsp;&nbsp; {{ $country->name }}
+                <a class="dropdown-item" href="{{ route('country', strtolower($country->sortname)) }}"><img
+                        src="{{ asset($country->flag) }}" alt="country" width="25"
+                        height="25">&nbsp;&nbsp;&nbsp; {{ $country->name }}
                 </a>
             </li>
         @endforeach
@@ -204,8 +214,13 @@
 <div class="header-special quick-access">
     <div class="row">
         <div class="col-sm" onclick="countryMenuButton();">
-            <img src="{{ asset('images/quick-access/country.png') }}" alt="country"><br>
-            <span class="nav-quick-access">{{ __('quick-access.country') }}</span>
+            @if (isset($_COOKIE['country']))
+                <img src="{{ asset($countries[$_COOKIE['country']]->flag) }}" alt="country"><br>
+                <span class="nav-quick-access">{{ $countries[$_COOKIE['country']]->name }}</span>
+            @else
+                <img src="{{ asset('images/quick-access/country.png') }}" alt="country"><br>
+                <span class="nav-quick-access">{{ __('quick-access.country') }}</span>
+            @endif
         </div>
         @if (app()->getLocale() == 'ar')
             <a href="{{ LaravelLocalization::getLocalizedURL('en') }}">

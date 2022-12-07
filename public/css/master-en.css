@@ -267,6 +267,7 @@ body {
     padding: 0 15px 0 27px;
     background: #fff;
     border-radius: 10px;
+    margin-left: 10px;
 }
 
 .main-slide {
@@ -2343,9 +2344,7 @@ textarea,
 }
 
 .showroom .showroom-info .info .title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    width: 30%;
 }
 
 .showroom .showroom-info .info .title h5 {
@@ -2358,6 +2357,7 @@ textarea,
     width: 100px;
     height: 70px;
     margin-bottom: 20px;
+    width: 30%;
 }
 
 .showroom .showroom-info .info p span {
@@ -2387,7 +2387,7 @@ textarea,
     width: 100%;
     text-align: left;
     margin-bottom: 30px;
-    padding-left: 25px;
+    /* padding-left: 25px; */
 }
 
 .showroom .showroom-cars .filter .search-box {

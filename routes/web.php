@@ -48,8 +48,8 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
+
         Route::get('/', [SiteController::class, 'index'])->name('index');
-        Route::get('/country/{id}', [SiteController::class, 'country'])->name('country');
         Route::get('/add-Ads', [SiteController::class, 'add_Ads'])->name('new.ads');
         Route::get('/allAds', [SiteController::class, 'allAds'])->name('allAds');
 
@@ -57,7 +57,7 @@ Route::group(
         Route::post('ads-car/{id}/restore', [AdsCarController::class, 'restore']);
         Route::get('search', [AdsCarController::class, 'search'])->name('search.adsCar');
         Route::get('search/more', [AdsCarController::class, 'search_view'])->name('searchmore.adsCar');
-        Route::post('search/more', [AdsCarController::class, 'search_more'])->name('searchmore.adsCar');
+        Route::post('search/more', [AdsCarController::class, 'search_more'])->name('searchMoreSend.adsCar');
 
         Route::post('loginPost', [AdsCarController::class, 'loginPost'])->name('loginPost');
 
@@ -71,6 +71,7 @@ Route::group(
         Route::post('search/showroom', [ShowroomController::class, 'search'])->name('search.showroom');
 
         Route::get('test/1', [AdsCarController::class, 'test']);
+        Route::get('/{shortCode}', [SiteController::class, 'country'])->name('country');
     }
 );
 
@@ -82,12 +83,12 @@ Route::group([
     Route::get('/', [DashboardController::class, 'index'])->name('Dashboard.index');
     Route::resource('country', CountryController::class);
     Route::resource('city', CityController::class);
-    Route::get('/country/{id}/cities', [CityController::class, 'index'])->name('city.index');
-    Route::get('/country/{id}/add-city', [CityController::class, 'create'])->name('city.create');
+    // Route::get('/country/{id}/cities', [CityController::class, 'index'])->name('city.index');
+    // Route::get('/country/{id}/add-city', [CityController::class, 'create'])->name('city.create');
     Route::resource('company', CompanyController::class);
     Route::resource('brand', ComModelController::class);
-    Route::get('/company/{id}/brands', [ComModelController::class, 'index'])->name('brand.index');
-    Route::get('/company/{id}/add-brand', [ComModelController::class, 'create'])->name('brand.create');
+    // Route::get('/company/{id}/brands', [ComModelController::class, 'index'])->name('brand.index');
+    // Route::get('/company/{id}/add-brand', [ComModelController::class, 'create'])->name('brand.create');
     Route::resource('lists', ListsController::class);
     Route::resource('AdminAds', AdminAds::class);
     Route::get('/adsCar', [AdminDashboardController::class, 'adsCarChangeStatus'])->name('Admin.AdsCar');

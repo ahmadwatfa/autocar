@@ -268,6 +268,7 @@ body {
     padding: 0 15px 0 27px;
     background: #fff;
     border-radius: 10px;
+    margin-left: 10px;
 }
 
 .main-slide {
@@ -739,6 +740,11 @@ body {
     position: relative;
     z-index: 999;
     display: none;
+}
+.list-search {
+    display: none;
+    height: auto;
+    z-index: 100;
 }
 
 .list-search ul {
@@ -2154,13 +2160,15 @@ textarea,
 .showrooms .showroom-head form {
     width: 580px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
 }
 
-.showrooms .showroom-head form input[type="text"] {
-    height: 69px;
+.showrooms .showroom-head form input[type="text"],
+.showrooms .showroom-head form select {
+    height: 50px;
     width: calc(579px - 158px);
     border: none;
     border-top-right-radius: 10px;
@@ -2172,7 +2180,7 @@ textarea,
     background-color: #ee3926;
     color: #fff;
     font-size: 25px;
-    height: 70px;
+    height: 50px;
     width: 158px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -2185,7 +2193,7 @@ textarea,
 
 .showrooms .showroom-slid {
     margin: 50px 0;
-    padding-top: 50px;
+    padding-top: 8em;
 }
 
 .showrooms .showroom-slid > div {
@@ -2290,7 +2298,7 @@ textarea,
     h5 {
         width: 100%;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 1.5rem;
     }
     .showrooms .showroom-owner .contact-us {
         width: 100%;
@@ -2310,7 +2318,8 @@ textarea,
     .showrooms .showroom-slid {
         margin: 80px 0 50px;
     }
-    .showrooms .showroom-head form input[type="text"] {
+    .showrooms .showroom-head form input[type="text"],
+    .showrooms .showroom-head form select {
         width: 75%;
         height: 50px;
         font-size: 14px;
@@ -2340,13 +2349,27 @@ textarea,
 }
 
 .showroom .showroom-info .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: right;
 }
 
-.showroom .showroom-info .info .title {
+.details-showroom {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    flex-direction: column;
+    padding-top: 0.8em;
+    padding-right: 1em;
+}
+
+.details-showroom p {
+    margin-bottom: .3em;
+}
+
+.showroom .showroom-info .info .title {
+    max-width: 30%;
 }
 
 .showroom .showroom-info .info .title h5 {
@@ -2356,9 +2379,9 @@ textarea,
 }
 
 .showroom .showroom-info .info .title img {
-    width: 100px;
-    height: 70px;
     margin-bottom: 20px;
+    clip-path: circle();
+    height: 6em;
 }
 
 .showroom .showroom-info .info p span {
@@ -2920,7 +2943,7 @@ textarea,
 
 .ads {
     display: block;
-    margin: 24px 0 50px;
+    margin: 24px 0 20px;
 }
 
 .ads .ads-space {
@@ -3557,7 +3580,7 @@ textarea,
     #show-adds,
     #section_add,
     #cars-show {
-        display: none;
+        /* display: none; */
     }
     .navHeight {
         height: 100vh;

@@ -141,8 +141,8 @@
     @include('components.header')
     @if ($agent->isMobile() && isset($body_class))
         <div class="container-box {{ $body_class }}">
-    @else
-        <div class="container-box">
+        @else
+            <div class="container-box">
     @endif
 
     @yield('content')
@@ -419,6 +419,64 @@
             </div>
         </div>
     </div>
+    <!-- Modal Chng lng & contry-->
+
+    @if (!isset($_COOKIE['lang']))
+        <div class="modal fade modal-account" id="ChngLng" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true" {{-- data-backdrop="static" data-keyboard="false" --}}>
+            <div class="modal-dialog modal-dialog-centered" role="document"
+                style="display: flex; justify-content: space-evenly;">
+                <div class="modal-content" style="width: 85%">
+                    <div class="modal-header modal-header-account">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Change Language & Country</h5>
+                    </div>
+                    <form id="setLng">
+                        <div class="modal-contnt">
+                            <div class="contnt-lng">
+                                <h5>Select Languge</h5>
+                                <select name="lng">
+                                    <option value="ar">العربية</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                            <div class="contnt-ctry">
+                                <h5>Select Country</h5>
+                                <select name="lng">
+
+                                    @foreach ($countries as $key => $country)
+                                        <option value="{{$key}}">{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="modal-body" id="modal-body" style="margin: 0 auto;">
+                        {{-- <button href="" class="btn btn-danger new-ads"
+                    onclick="window.open('{{ route('new.ads') }}','_self')">Submit</button> --}}
+                        <input type="button" value="Go!" id="submit"
+                            onclick="putCookie(document.getElementById('setLng'));">
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    <script>
+        var today = new Date();
+        var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+        function setCookie(name, value) {
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+        }
+
+        function putCookie(form)
+        //this should set the UserName cookie to the proper value;
+        {
+            setCookie("lang", form[0].value);
+            setCookie("country", form[1].value);
+        }
+    </script>
 
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
@@ -433,6 +491,12 @@
     <script src="{{ asset('js/master.js') }}"></script>
 
     <script>
+        $('#ChngLng').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+        $('#ChngLngm').modal('show');
+
         const acc = document.getElementsByClassName("accordion");
         const panel = document.getElementsByClassName("panel");
 
@@ -619,8 +683,11 @@
     @endif
 
     @yield('pagescript')
+    @yield('pagescript1')
+
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
+
 </body>
 
 </html>

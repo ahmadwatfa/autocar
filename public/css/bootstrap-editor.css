@@ -4,50 +4,50 @@
     left: -65px;
     text-align: right;
     transition-duration: 0.3s;
-  }
+}
 
-  .navbar-nav .dropdown-menu.show {
+.navbar-nav .dropdown-menu.show {
     transition-delay: 0.3s;
-  }
+}
 
-  .navbar.bg-light {
+.navbar.bg-light {
     background-color: transparent !important;
-  }
+}
 
-  .navbar-nav .nav-item {
+.navbar-nav .nav-item {
     margin-left: 13px;
-  }
+}
 
-  .navbar-light .navbar-nav .active > .nav-link {
+.navbar-light .navbar-nav .active > .nav-link {
     color: #ee3926;
-  }
+}
 
-  .navbar .btn {
+.navbar .btn {
     background-color: #ee3926;
     border: none;
     padding: 10px;
-  }
+}
 
-  .navbar .user {
+.navbar .user {
     display: inline-block;
-  }
+}
 
-  .navbar .user .btn {
+.navbar .user .btn {
     background: transparent;
     padding: 0 10px;
-  }
+}
 
-  .modal-header {
-    border-bottom: none;
-  }
+.modal-header {
+    border-bottom: solid 1px #ccc;
+}
 
-  .modal-header .modal-title {
+.modal-header .modal-title {
     width: 95%;
     text-align: center;
     padding: 15px 0;
-  }
+}
 
-  .modal-header .close {
+.modal-header .close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,19 +69,62 @@
     font-weight: lighter;
     text-shadow: none;
     outline: none;
-  }
+}
 
-  .modal-header .close span {
+.modal-header .close span {
     padding-top: 0;
     padding-bottom: 5px;
-  }
+}
 
-  .modal-body {
+.modal-contnt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.contnt-lng,
+.contnt-ctry {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contnt-lng {
+    border-right: solid 1px #ccc;
+    padding-left: 5%;
+}
+
+.contnt-ctry {
+    padding-left: 5%;
+}
+
+.contnt-lng h5,
+.contnt-ctry h5 {
+    text-align: left;
+    font-size: 1em;
+}
+
+.contnt-lng select,
+.contnt-ctry select {
+    min-height: 35px;
+    width: 90%;
+    color: #2f3b48;
+    border: 1px solid #abacad;
+    box-shadow: 1px 1px 0 0 rgb(196 196 196 / 24%);
+    padding: 0 0px 0 10px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.modal-body {
     padding-bottom: 0;
-  }
+}
 
-  .modal-body > a {
-
+.modal-body > a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -98,70 +141,70 @@
     color: #212529;
 }
 
-  .modal-body a div {
+.modal-body a div {
     width: 60px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .modal-body a div img {
+.modal-body a div img {
     width: 30px;
     height: 30px;
-  }
+}
 
-  .modal-body div span {
+.modal-body div span {
     font-size: 16px;
-  }
+}
 
-  .modal-footer {
+.modal-footer {
     border-top: none;
     padding-top: 0;
-  }
+}
 
-  .modal-footer p,
-  .modal-footer button {
+.modal-footer p,
+.modal-footer button {
     width: 100%;
     margin: 15px 0;
     text-align: center;
-  }
+}
 
-  .modal-footer p {
+.modal-footer p {
     font-size: 16px;
-  }
+}
 
-  .modal-footer p::before,
-  .modal-footer p::after {
+.modal-footer p::before,
+.modal-footer p::after {
     display: inline-block;
     content: "";
     border-top: 1px solid #777;
     width: 7rem;
     margin: 0 1rem;
-  }
-  @media screen and (max-width: 765px) {
+}
+@media screen and (max-width: 765px) {
     .modal-footer p::before,
     .modal-footer p::after {
-      display: none;
+        display: none;
     }
-  }
+}
 
-  .modal-footer button {
+.modal-footer button {
     height: 60px;
     background-color: #ee3926;
     font-size: 18px;
     font-weight: bold;
-  }
+}
 
-  /*******************************************************/
+/*******************************************************/
 
-  .modal-email .modal-header-email,
-  .modal-account .modal-header-account {
+.modal-email .modal-header-email,
+.modal-account .modal-header-account {
     padding: 16px;
-  }
+}
 
-  .modal-email .modal-header-email .left-arrow-email,
-  .modal-account .modal-header-account .left-arrow-account {
+.modal-email .modal-header-email .left-arrow-email,
+.modal-account .modal-header-account .left-arrow-account {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,47 +227,47 @@
     text-shadow: none;
     outline: none;
     border: none;
-  }
+}
 
-  .modal-email .modal-header-email .close,
-  .modal-account .modal-header-account .close {
+.modal-email .modal-header-email .close,
+.modal-account .modal-header-account .close {
     position: relative;
     left: 0;
-  }
+}
 
-  .modal-email .modal-header-email .modal-title,
-  .modal-account .modal-header-account .modal-title {
-    width: 88%;
-    text-align: center;
-    padding: 15px 0;
-  }
+.modal-email .modal-header-email .modal-title,
+.modal-account .modal-header-account .modal-title {
+    width: 100%;
+    text-align: left;
+    padding: 0px 0;
+}
 
-  .modal-email .modal-body form button,
-  .modal-account .modal-body form button {
+.modal-email .modal-body form button,
+.modal-account .modal-body form button {
     width: 100%;
     height: 60px;
     background-color: #ee3926;
     font-size: 18px;
     font-weight: bold;
-  }
+}
 
-  .modal-account .modal-body form select {
+.modal-account .modal-body form select {
     height: auto;
     margin-bottom: 5px;
-  }
+}
 
-  .modal-email .modal-body p {
+.modal-email .modal-body p {
     display: block;
     text-align: right;
     color: #707070;
     padding-top: 5px;
-  }
+}
 
-  .modal-email .modal-body p a {
+.modal-email .modal-body p a {
     text-decoration: underline;
     color: #707070;
-  }
+}
 
-  .modal-account .modal-body {
+.modal-account .modal-body {
     padding-bottom: 20px;
-  }
+}

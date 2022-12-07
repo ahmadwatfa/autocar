@@ -38,12 +38,13 @@
             </div> --}}
         </div>
     </div>
+
     @if ($agent->isMobile())
         @include('components.new-featured-mobile')
-        @include('components.ads-car-mobile')
+        {{-- @include('components.ads-car-mobile') --}}
     @else
         @include('components.new-featured')
-        @include('components.ads-car')
+        {{-- @include('components.ads-car') --}}
     @endif
 
 
@@ -80,39 +81,18 @@
 
 
     @guest
-        <!-- Modal -->
-        <div class="modal fade modal-account" id="adsFree" tabindex="-1" role="dialog" data-backdrop="static"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document"
-                style="display: flex;
-                                    justify-content: space-evenly;">
-                <div class="modal-content" style="width: 65%">
-                    <div class="modal-header modal-header-account">
-                        <h5 class="modal-title" id="exampleModalLongTitle">إعلن مجاناً</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="modal-body" style="margin: 0 auto;">
-                        <button href="" class="btn btn-danger new-ads"
-                            onclick="window.open('{{ route('new.ads') }}','_self')">أضف إعلانك مجانا على موقع أوتو
-                            مارك</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     @endguest
 @endsection
 
-@section('pagescript')
-    <script>
-        @guest
-        $('#adsFree').modal('show');
-        @endguest
-
+@section('pagescript1')
+    <script type="text/javascript">
         $('#ModalWorng').modal("show");
 
         $(document).on('ready', function() {
+            // $('#adsFree').modal({backdrop: 'static', keyboard: false})
+            $('#adsFree').modal('show');
+
             $('.ads-images1').slick({
                 dots: true,
                 infinite: true,

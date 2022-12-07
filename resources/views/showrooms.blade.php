@@ -5,6 +5,15 @@
             <div class="showroom-head row">
                 <h5>معارض السيارات في الامارات</h5>
                 <form action="">
+                    <div class="input-group" id="searchCity" style="margin-bottom: 5px;">
+                        <select type="text" id="selectCity" name="search" class="form-control" style="margin-top: 14px;">
+                            <option value="" disabled selected>كل المدن</option>
+                        </select>
+
+                        <div class="input-group-append search-btn">
+                            <button class="btn btn-outline-danger" type="submit">المدينة</button>
+                        </div>
+                    </div>
                     <div class="input-group" id="search">
                         <input type="text" id="input-search" name="search" class="form-control"
                             placeholder="...ابحث عن معرض">
@@ -13,17 +22,15 @@
                         </div>
                         <div class="form-control list-search">
                             <ul id="result" class="result">
-                                {{-- <li><a>معرض 1</a></li>
-                                <li>test</li>
-                                <li>test</li> --}}
+
                             </ul>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="showroom-slid row">
+            <div class="showroom-slid row" id="showrooms">
                 @foreach ($showrooms as $showroom)
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-4 col-sm-12" data-cityId="{{ $showroom->city_id }}">
                         <a href="{{ route('showroom.show', ['showroom' => $showroom->id]) }}" class="card">
                             <img src="{{ asset($showroom->image) }}" alt="{{ $showroom->name }}">
                             <div class="card-body">
@@ -80,39 +87,65 @@
 
                     $(".list-search").css('display', 'block');
                     $("#result li").remove();
-                    // $.each(result['showrooms'], function(index, el) {
-                    //     var node = document.createElement("LI");
-                    //     var textnode = document.createTextNode(el.name);
-                    //     node.appendChild(textnode);
-                    //     document.getElementById("result").appendChild(node);
-                    // });
                     $.each(result, function(index, el) {
-                        $("#result").append('<li><a href="showroom/' + el.id + '">' + el.name + '</a></li>');
-                        console.log(el);
+                        $("#result").append('<li><a href="showroom/' + el.id + '">' + el.name +
+                            '</a></li>');
+                        // console.log(el);
+                    });
+                }
+            });
+        });
+        $(document).ready(function() {
+            $.ajax({
+                url: "{{ url('api/city') }}",
+                type: "POST",
+                data: {
+                    country_id: {{ $_COOKIE['country'] + 1 }},
+                    local: '{{ app()->getLocale() }}',
+                    _token: '{{ csrf_token() }}'
+                },
+                dataType: 'json',
+                success: function(result) {
+                    console.log(result);
+                    $('#selectCity').html('<option value="all" selected>الكل</option>');
+                    $.each(result['cities'], function(index, el) {
+                        $("select#selectCity").append('<option value="' + el
+                            .id + '"' + '>' + el
+                            .name + '</option>');
                     });
                 }
             });
         });
 
-        // $('#search').on('mouseleave', function() {
-        //     $(".list-search").css('display', 'none');
-        // })
+        // if ($(".list-search").focus) {
 
-
-        // $('#search').on('keyup', function() {
-        //     search();
-        // });
-        // search();
-
-        // function search() {
-        //     var keyword = $('#search').val();
-        //     $.post('{{ route('search.showroom') }}', {
-        //             _token: '{{ csrf_token() }}',
-        //             text: keyword
-        //         },
-        //         function(data) {
-        //             console.log(data);
-        //         });
+        // } else {
+        //     $(".list-search").hide();
         // }
+
+
+        $(document).unbind('click');
+        $(document).click(function(event) {
+            if ($(event.target).closest('#result').length == 0) {
+                $(".list-search").hide();
+            }
+        });
+
+        $('#selectCity').change(function() {
+            var sel = $(this).val();
+            // $('a[data-cityId="Offices"] div').hide();
+            // if (sel != "00") {
+            if (sel === 'all') {
+                $('#showrooms').children().show();
+            } else {
+                $('#showrooms').children().hide();
+                $('div[data-cityid="' + sel + '"]').show();
+            }
+
+            // console.log(sel);
+            // } else {
+            //     $('a[name="Offices"] div').show();
+            // }
+        });
     </script>
 @endsection

@@ -279,7 +279,7 @@
                         </div>
 
                         <div class="price">
-                            <span>
+                            <span style="direction: ltr;">
                                 {{ $ads->phone }}
                             </span>
                         </div>

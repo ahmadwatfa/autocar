@@ -44,6 +44,7 @@
                                         <div class="row">
                                             @foreach ($ads_spical as $key => $ad)
                                                 @if ($key >= 1 && $key < 5)
+                                                {{-- {{ dd($media)}} --}}
                                                     <a href="{{ route('ads-car.show', $ad->id) }}"
                                                         class="col-md-6 nondecoration">
                                                         <div class="sub-ad">
