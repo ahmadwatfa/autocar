@@ -44,14 +44,16 @@
                                     <div class="range-fields">
                                         <label class="heading">{{ __('result.year') }}</label>
                                         <div class="range-inputs">
-                                            <select class="text-field" type="number" name="milage_from" placeholder="">
+                                            <select class="text-field" type="number" name="year_from" placeholder="">
+                                                <option value="null">اختر سنة البداية</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2021">2021</option>
                                                 <option value="2020">2020</option>
                                                 <option value="2019">2019</option>
                                                 <option value="2018">2018</option>
                                             </select>
-                                            <select class="text-field" type="number" name="milage_to" placeholder="إلى">
+                                            <select class="text-field" type="number" name="year_to" placeholder="إلى">
+                                                <option value="null">اختر سنة النهاية</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2021">2021</option>
                                                 <option value="2020">2020</option>

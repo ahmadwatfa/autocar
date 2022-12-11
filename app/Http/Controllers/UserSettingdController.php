@@ -8,6 +8,7 @@ use App\Models\ComModel;
 use App\Models\Company;
 use App\Models\Media;
 use App\Models\User;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -29,11 +30,15 @@ class UserSettingdController extends Controller
     {
         $user_ads = AdsCar::where('user_id', Auth::id())->orderBy('id', 'desc')->paginate(8);
         $ads_deleted = AdsCar::where('user_id', Auth::id())->onlyTrashed()->get();
+        $fav_ads = Wishlist::with('ads_car')->where('user_id', Auth::id())->latest()->get();
+        
         if ($user_ads) {
             return view('account.account-setting', [
                 'user' => Auth::user(),
                 'ads' => $user_ads,
                 'trashed' => $ads_deleted,
+                'fav_ads' => $fav_ads,
+                
             ]);
 
         }

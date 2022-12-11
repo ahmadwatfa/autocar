@@ -29,4 +29,8 @@ class AdsCar extends Model
     {
         return $this->belongsToMany(User::class);
     }
+    public function wishlist()
+    {
+        return $this->belongsToMany(wishlist::class);
+    }
 }

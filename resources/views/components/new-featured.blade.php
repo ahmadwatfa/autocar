@@ -18,7 +18,7 @@
                                             <div class="image-cover">
                                                 <img src="{{ asset('images/advs/' . $media[$ads_spical[0]->id]->file_name) }}"
                                                     alt="car">
-                                                <span class="star"><i class="fa fa-star"></i></span>
+                                                    <span class="star" data-id="{{$ads_spical[0]->id}}"><i class="fa fa-star"></i></span>
                                             </div>
                                             <div class="details special-details">
                                                 <div class="location">
@@ -57,7 +57,7 @@
                                                             <div class="image-cover">
                                                                 <img src="{{ asset('images/advs/' . $media[$ad->id]->file_name) }}"
                                                                     alt="car">
-                                                                <span class="star"><i class="fa fa-star"></i></span>
+                                                                <span class="star" data-id="{{$ad->id}}"><i class="fa fa-star"></i></span>
                                                             </div>
 
                                                             <div class="details">
@@ -85,6 +85,7 @@
                                     </div>
                                 </div>
                             </div>
+                           
                             <div class="col-sm-12 featured-listing">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -102,7 +103,7 @@
                                                             <div class="image-cover">
                                                                 <img src="{{ asset('images/advs/' . $media[$ad->id]->file_name) }}"
                                                                     alt="car">
-                                                                <span class="star"><i class="fa fa-star"></i></span>
+                                                                    <span class="star" data-id="{{$ad->id}}"><i class="fa fa-star"></i></span>
                                                             </div>
                                                             <div class="details">
                                                                 <div class="location">
@@ -154,7 +155,7 @@
                                             <div class="image-cover">
                                                 <img src="{{ asset('images/advs/' . $media[$ad->id]->file_name) }}"
                                                     alt="car">
-                                                <span class="star"><i class="fa fa-star"></i></span>
+                                                    <span class="star" data-id="{{$ad->id}}"><i class="fa fa-star"></i></span>
                                             </div>
                                             <div class="details">
                                                 <div class="location">

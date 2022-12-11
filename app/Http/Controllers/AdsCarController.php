@@ -13,6 +13,7 @@ use App\Models\Lists;
 use App\Models\Media;
 use App\Models\Showroom;
 use App\Models\User;
+use App\Models\Wishlist;
 use App\Notifications\AddNew;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
 use Illuminate\Validation\Rules;
-
+use Illuminate\Validation\Rules\Exists;
 use Intervention\Image\Facades\Image;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Jenssegers\Agent\Agent;
@@ -392,13 +393,16 @@ class AdsCarController extends Controller
     public function search(Request $request)
     {
 
-        // dd($request);
-        if (isset($request->carModel_id)) {
-            $ads = AdsCar::where('carModel_id', $request->carModel_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
-        } else {
-            $ads = AdsCar::where('carComany_id', $request->carComany_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
-        }
+        // dd($request->all());
+        // if (isset($request->city_id)) {
+        //     // $ads = AdsCar::where('carModel_id', $request->carModel_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
+        //     $ads = AdsCar::where('city_id' , $request->city_id)->orWhere('carComany_id', $request->carComany_id)->orWhere('carModel_id', $request->carModel_id)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->orWhereBetween('mileage', [$request->milage_from, $request->milage_to])->orWhereBetween('year', [$request->year_from, $request->year_to])->where('status', 1)->paginate(15);
 
+        // } else {
+        //     $ads = AdsCar::where('carComany_id', $request->carComany_id)->where('status', 1)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->paginate(15);
+        // }
+        $ads = AdsCar::where('status', 1)->where('city_id' , $request->city_id)->orWhere('carComany_id', $request->carComany_id)->orWhere('carModel_id', $request->carModel_id)->orWhereBetween('price', [$request->minPrice, $request->maxPrice])->orWhereBetween('mileage', [$request->milage_from, $request->milage_to])->orWhereBetween('year', [$request->year_from, $request->year_to])->paginate(15);
+     
         if ($ads) {
             $car = [];
             $media = [];
@@ -471,5 +475,26 @@ class AdsCarController extends Controller
     public function test()
     {
         return view('add-ads.uploadImage');
+    }
+
+    public function wishlist_get()
+    {
+        # code...
+    }
+    public function wishlist_store(Request $request)
+    {
+        $wishads = Wishlist::where('ads_id' , $request->adsId)->first();
+        if ($wishads == null) {
+            Wishlist::create([
+                'ads_id' =>  $request->adsId,
+                'user_id' => Auth::user()->id,
+            ]);
+        return response()->json(['msg'=>'تم اضافة الاعلان للمفضلة بنجاح']);
+        }
+    }
+    public function wishlist_delete($ads_id)
+    {
+       $ads = Wishlist::where('ads_id' , $ads_id)->where('user_id' , Auth::user()->id)->delete();
+       return redirect()->back();
     }
 }

@@ -164,12 +164,11 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-
+        Brian2694\Toastr\ToastrServiceProvider::class,
         /*
          * Package Service Providers...
          */
         Jenssegers\Agent\AgentServiceProvider::class,
-        \Torann\GeoIP\GeoIPServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
 

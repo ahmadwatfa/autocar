@@ -17,7 +17,7 @@
                         {{-- <a href="#" id="pop" class="ads-main-image">
                             <img id="imageresource" src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img" alt="ads">
                         </a> --}}
-
+                        
                         <div class="row" id="gallery" data-toggle="modal" data-target="#viewImages">
                             {{-- <div class="ads-main-image">
                                 <img src="{{ asset('images/advs/' . $main_img->file_name) }}" id="main-ads-img"

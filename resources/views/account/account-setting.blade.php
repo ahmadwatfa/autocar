@@ -140,42 +140,50 @@
                 <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
                     <div class="row">
                         <div class="col-md-9">
+                            @foreach ($fav_ads as $fav_ad)
                             <div class="advert">
+
                                 <div class="image">
                                     <img src="images/small-golf.png" alt="car">
                                 </div>
                                 <div class="info">
                                     <div class="title">
-                                        <h6>مرسيدس بنز جي ال اس</h6>
+                                        <h6>{{ $fav_ad->ads_car->title }}</h6>
                                     </div>
                                     <div class="price">
-                                        <b>234,500 درهم</b>
+                                        <b>{{ $fav_ad->ads_car->title }} درهم</b>
                                     </div>
                                     <div class="details">
                                         <div class="location">
                                             <span><i class="fa fa-map-marker-alt"></i></span>
                                             <br>
-                                            <span>دبي</span>
+                                            @php
+                                                 $city = App\Models\City::where('id' , $fav_ad->ads_car->city_id)->first();
+                                            @endphp
+                                            <span>{{ $city->name_en }}</span>
                                         </div>
                                         <div class="distance">
                                             <span><i class="fa fa-tachometer-alt"></i></span>
                                             <br>
-                                            <span>كم 2446</span>
+                                            <span>كم {{ $fav_ad->ads_car->mileage }}</span>
                                         </div>
                                         <div class="year">
                                             <span><i class="fa fa-cog"></i></span>
                                             <br>
-                                            <span>2019</span>
+                                            <span>{{ $fav_ad->ads_car->year }}</span>
                                         </div>
                                     </div>
                                 </div>
+                               
                                 <div class="un-favorite">
-                                    <button class="btn">
+                                    <a class="btn" href="{{ route('wishlist.delete' , $fav_ad->ads_id) }}" >
+                                        <button class="btn">
                                         <span><i class="fa fa-trash-alt"></i></span>
                                         حذف من المفضلة
-                                    </button>
+                                        </button></a>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

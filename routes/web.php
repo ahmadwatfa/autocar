@@ -109,3 +109,7 @@ Route::controller(FacebookController::class)->group(function(){
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+Route::get('wishlist', [AdsCarController::class, 'wishlist_get'])->name('wishlist.get');
+Route::post('wishlist', [AdsCarController::class, 'wishlist_store'])->name('wishlist.store');
+Route::get('wishlist/{adsId}', [AdsCarController::class, 'wishlist_delete'])->name('wishlist.delete');

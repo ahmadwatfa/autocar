@@ -78,7 +78,24 @@
 
     {{-- @include('components.ads-motorcycle') --}}
     {{-- @include('components.testimonials') --}}
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">تنبيه</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="text-align: right;">
+               يجب عليك التسجيل او تسجيل الدخول لاضافة الاعلانات للمفضلة
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     @guest
 
@@ -103,5 +120,26 @@
                 nextArrow: false,
             });
         });
+
+        $('.star').on('click', function (e) {
+            e.preventDefault();
+            @guest()
+                $('#exampleModal').modal('show');
+            @endguest
+            $.ajax({
+                type: "POST",
+                url: "{{ route('wishlist.store') }}",
+                data: {
+                    '_token': '{{ csrf_token() }}',
+                    adsId: $(this).attr('data-id'
+                    )
+                },
+                dataType: "json",
+                success: function (response) {
+                    toastr.success(response.msg);
+                }
+            });
+        });
+
     </script>
 @endsection
