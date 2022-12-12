@@ -150,7 +150,7 @@
     {{-- <div class="whatsapp">
             <a href="#"><img src="{{ asset('images/whatsapp.png') }}" alt=""></a>
         </div> --}}
-    @if (!$agent->isMobile())
+    {{-- @if (!$agent->isMobile()) --}}
         <footer class="footer">
             <!-- WhatsApp -->
 
@@ -209,7 +209,7 @@
             </div>
 
         </footer>
-    @endif
+    {{-- @endif --}}
 
     </div>
 
