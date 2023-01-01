@@ -50,7 +50,7 @@
                         </a>
                         <div id="countries" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($countries as $country)
-                                <a class="dropdown-item" href="#">{{ $country->name }} <img
+                                <a class="dropdown-item" href="{{ $country->sortname }}">{{ $country->name }} <img
                                         src="{{ asset($country->flag) }}" alt="country" width="20" height="20"></a>
                             @endforeach
                         </div>
