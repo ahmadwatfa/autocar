@@ -3,6 +3,7 @@
     <div class="ads">
         <div class="container">
             <div class="row">
+                
                 <div class="col-md-9 col-sm-12">
                     <div class="ads-space">
                         <div class="space-head">
@@ -99,8 +100,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="published">
                             <span>{{ __('messages.published') }} </span>{{ $ads->created_at->diffForHumans() }}
@@ -594,42 +593,42 @@
             $('.ads-main-image img').attr('src', src);
         });
         let widthh = screen.width;
-        if (widthh > 1080) {
-            $(document).on('ready', function() {
-                // $('.slik-demo').not('.slick-initialized').slick({
-                //     accessibility: true,
-                //     adaptiveHeight: false,
-                //     arrows: true,
-                //     infinite: true,
-                //     slidesToShow: 3,
-                //     slidesToScroll: 1,
-                //     dots: false,
-                //     prevArrow: '<button type="button" data-role="none" class="slick-prev">Previous</button>',
-                //     nextArrow: '<button type="button" data-role="none" class="slick-next">Next</button>',
-                //     autoplay: true,
-                //     autoplaySpeed: 3000,
-                //     easing: 'linear',
-                //     draggable: false,
-                //     pauseOnHover: true,
-                //     pauseOnFocus: true,
-                //     touchMove: true,
-                //     centerMode: true,
-                // });
+        // if (widthh > 1080) {
+        //     $(document).on('ready', function() {
+        //         $('.slik-demo').not('.slick-initialized').slick({
+        //             accessibility: true,
+        //             adaptiveHeight: false,
+        //             arrows: true,
+        //             infinite: true,
+        //             slidesToShow: 3,
+        //             slidesToScroll: 1,
+        //             dots: false,
+        //             prevArrow: '<button type="button" data-role="none" class="slick-prev">Previous</button>',
+        //             nextArrow: '<button type="button" data-role="none" class="slick-next">Next</button>',
+        //             autoplay: true,
+        //             autoplaySpeed: 3000,
+        //             easing: 'linear',
+        //             draggable: false,
+        //             pauseOnHover: true,
+        //             pauseOnFocus: true,
+        //             touchMove: true,
+        //             centerMode: true,
+        //         });
 
-                $('.base-modal .modal-body .email').on('click', function() {
-                    $('.base-modal').modal("hide");
-                });
-                $('.modal-email .left-arrow-email').on('click', function() {
-                    $('.modal-email').modal("hide");
-                });
-                $('.base-modal .modal-footer .new-account').on('click', function() {
-                    $('.base-modal').modal("hide");
-                });
-                $('.modal-account .left-arrow-account').on('click', function() {
-                    $('.modal-account').modal("hide");
-                });
-            });
-        } else {
+        //         $('.base-modal .modal-body .email').on('click', function() {
+        //             $('.base-modal').modal("hide");
+        //         });
+        //         $('.modal-email .left-arrow-email').on('click', function() {
+        //             $('.modal-email').modal("hide");
+        //         });
+        //         $('.base-modal .modal-footer .new-account').on('click', function() {
+        //             $('.base-modal').modal("hide");
+        //         });
+        //         $('.modal-account .left-arrow-account').on('click', function() {
+        //             $('.modal-account').modal("hide");
+        //         });
+        //     });
+        // } else {
             $(document).on('ready', function() {
                 // $('.slik-demo').not('.slick-initialized').slick({
                 //     accessibility: true,
@@ -734,6 +733,6 @@
                 });
 
             });
-        }
+        // }
     </script>
 @endsection
