@@ -82,7 +82,7 @@
     </div>
 </div>
 @section('pagescript')
-    <script>
+    {{-- <script>
         $.ajax({
             url: "{{ url('api/city') }}",
             type: "POST",
@@ -140,6 +140,25 @@
                     });
                 }
             });
+        });
+    </script> --}}
+    <script>
+        $.ajax({
+            url: "{{ url('api/carcompanies') }}",
+            type: "POST",
+            data: {
+                local: '{{ app()->getLocale() }}',
+                _token: '{{ csrf_token() }}',
+                type: 'car'
+            },
+            dataType: 'json',
+            success: function(result) {
+                $('#carCompany').html('<option value="" hidden>{{ __('messages.makeCar') }}</option>');
+                $.each(result, function(index, el) {
+                    $("select#carCompany").append('<option value="' + el
+                        .id + '">' + el.name + '</option>');
+                });
+            }
         });
     </script>
 @endsection

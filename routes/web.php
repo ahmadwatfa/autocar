@@ -50,6 +50,7 @@ Route::group(
     function () {
 
         Route::get('/', [SiteController::class, 'index'])->name('index');
+        Route::get('/country/{id}', [SiteController::class, 'country'])->name('country');
         Route::get('/add-Ads', [SiteController::class, 'add_Ads'])->name('new.ads');
         Route::get('/allAds', [SiteController::class, 'allAds'])->name('allAds');
 

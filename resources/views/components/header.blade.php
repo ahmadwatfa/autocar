@@ -41,7 +41,21 @@
                                 href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a>
                         @endif
                     </li>
-
+                   @if (isset($id))
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ $countries[$id-1]->name }} <img src="{{ asset($countries[$id-1]->flag) }}" alt="country"
+                            width="20" height="20">
+                    </a>
+                    <div id="countries" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach ($countries as $country)
+                            <a  class="dropdown-item" href="/country/{{$country->id}}">{{ $country->name }} <img
+                                    src="{{ asset($country->flag) }}" alt="country" width="20" height="20"></a>
+                        @endforeach
+                    </div>
+                </li>
+                   @else
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,11 +64,12 @@
                         </a>
                         <div id="countries" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($countries as $country)
-                                <a class="dropdown-item" href="{{ $country->sortname }}">{{ $country->name }} <img
+                                <a class="dropdown-item" href="/country/{{$country->id}}">{{ $country->name }} <img
                                         src="{{ asset($country->flag) }}" alt="country" width="20" height="20"></a>
                             @endforeach
                         </div>
                     </li>
+                    @endif
                 </ul>
                 <a class="btn btn-danger my-2 my-sm-0 ml-2"
                     href="{{ route('new.ads') }}">{{ __('messages.AddAdv1') }}</a>

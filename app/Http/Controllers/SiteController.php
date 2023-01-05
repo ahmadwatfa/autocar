@@ -98,46 +98,62 @@ class SiteController extends Controller
         }
     }
 
-    public function country($shortCode)
+    public function country($id)
     {
-        $country = Country::where('sortname', $shortCode)->first();
-        if (isset($country)) {
-            setcookie('country', ($country->id - 1), time() + (86400 * 360), "/");
-            $_COOKIE['country'] = $country->id - 1;
-            $ads_car = AdsCar::where('country_id', $country->id)->where('status', 1)->orderBy('id', 'desc')->get();
-        //    dd($ads_car);
-            if (isset($ads_car)) {
-                $car = [];
-                $media = [];
-                foreach ($ads_car as $ad) {
-                    $carComapny = Company::where('id', $ad->carComany_id)->first();
-                    $carModel = ComModel::where('id', $ad->carModel_id)->first();
-                    $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
-                    if (app()->getLocale() == 'ar') {
-                        $car[$ad->id]['modelName'] = $carModel->name_ar;
-                        $car[$ad->id]['companyName'] = $carComapny->name_ar;
-                        $ad->city = City::where('id', $ad->city_id)->value('name_ar');
-                    } else {
-                        $car[$ad->id]['modelName'] = $carModel->name_en;
-                        $car[$ad->id]['companyName'] = $carComapny->name_en;
-                        $ad->city = City::where('id', $ad->city_id)->value('name_en');
-                    }
-                    $car[$ad->id]['year'] = $carModel->year;
-                    $car[$ad->id]['logo'] = $carComapny->logo;
-                }
-            }
+        $ads_car = AdsCar::where('country_id', $id)->where('status', 1)->where('is_special', 0)->orderBy('id', 'desc')->get();
+        if ($ads_car) {
+            $car = [];
+            $media = [];
+            foreach ($ads_car as $ad) {
 
-            $data = array(
-                'ads_spical' => $ads_car,
-                'car' => $car,
-                'media' => $media,
-                'ads' => $ads_car,
-                'country_id' => $country->id,
-            );
-            return view('index')->with($data);
-        } else {
-            return abort('404');
+                $carComapny = Company::where('id', $ad->carComany_id)->first();
+                $carModel = ComModel::where('id', $ad->carModel_id)->first();
+                $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
+                if (app()->getLocale() == 'ar') {
+                    $car[$ad->id]['modelName'] = $carModel->name_ar;
+                    $car[$ad->id]['companyName'] = $carComapny->name_ar;
+                    $ad->city = City::where('id', $ad->city_id)->value('name_ar');
+                } else {
+                    $car[$ad->id]['modelName'] = $carModel->name_en;
+                    $car[$ad->id]['companyName'] = $carComapny->name_en;
+                    $ad->city = City::where('id', $ad->city_id)->value('name_en');
+                }
+                $car[$ad->id]['year'] = $carModel->year;
+                $car[$ad->id]['logo'] = $carComapny->logo;
+            }
         }
+
+        $ads_car = AdsCar::where('country_id', $id)->where('status', 1)->where('is_special', 1)->inRandomOrder()->limit(9)->orderBy('id', 'desc')->get();
+        if ($ads_car) {
+            $car = [];
+            $media = [];
+            foreach ($ads_car as $ad) {
+                // dd($ad->id);
+                $carComapny = Company::where('id', $ad->carComany_id)->first();
+                $carModel = ComModel::where('id', $ad->carModel_id)->first();
+                $media[$ad->id] = Media::where('media_type', 'App\Models\AdsCar')->where('media_id', $ad->id)->where('is_main', 1)->first();
+                if (app()->getLocale() == 'ar') {
+                    $car[$ad->id]['modelName'] = $carModel->name_ar;
+                    $car[$ad->id]['companyName'] = $carComapny->name_ar;
+                    $ad->city = City::where('id', $ad->city_id)->value('name_ar');
+                } else {
+                    $car[$ad->id]['modelName'] = $carModel->name_en;
+                    $car[$ad->id]['companyName'] = $carComapny->name_en;
+                    $ad->city = City::where('id', $ad->city_id)->value('name_en');
+                }
+                $car[$ad->id]['year'] = $carModel->year;
+                $car[$ad->id]['logo'] = $carComapny->logo;
+            }
+        }
+
+        $data = array(
+            'id' => $id,
+            'ads_spical' => $ads_car,
+            'car' => $car,
+            'media' => $media,
+            'ads' => $ads_car,
+        );
+        return view('country_car')->with($data);
     }
     /**
      * Show the form for creating a new resource.
